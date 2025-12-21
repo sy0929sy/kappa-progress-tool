@@ -248,7 +248,7 @@ function renderTasks() {
     // トレーダー名の小文字変換（ファイル名用）
     const traderLower = task.trader.toLowerCase();
     // 画像パス（環境に合わせて変更してください）
-    const imagePath = `assets/traders/${traderLower}.jpg`; 
+    const imagePath = `assets/traders/${traderLower}.png`; 
     
     let wikiUrl = wikiLang === "en" 
       ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` 
