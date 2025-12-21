@@ -72,12 +72,6 @@ function renderTasks() {
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
 
-    // 1. 先に itemsHtml を定義する（エラー防止）
-    const itemsHtml = task.requiredItems ? task.requiredItems.map(item => 
-      `<div>・${item.name} x${item.count}${item.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`
-    ).join("") : "";
-
-  filtered.forEach(task => {
     // Wiki URLの動的生成
     let wikiUrl = "";
     if (wikiLang === "en") {
@@ -103,7 +97,6 @@ function renderTasks() {
         ${isCompleted ? "DONE" : "TO DO"}
       </button>
     `;
-    // ...
   });
 
   updateProgress();
