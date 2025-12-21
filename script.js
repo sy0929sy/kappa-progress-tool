@@ -141,12 +141,21 @@ function renderHideout() {
     
     if (hasNext) {
       (data.requirements[nextLevel] || []).forEach(r => {
-        if (r.type === "pre_facility") nextReqHtml += `・【前提】${r.name} Lv.${r.level}<br>`;
-        else if (r.type === "pre_trader") nextReqHtml += `・【信頼】${r.name} LL${r.level}<br>`;
-        else nextReqHtml += `・${r.name} x${r.count.toLocaleString()}${r.fir ? ' (FIR)' : ''}<br>`;
+        // --- 修正箇所：データの種類によって出し分けを確実に行う ---
+        if (r.type === "pre_facility") {
+          nextReqHtml += `・【前提】${r.name} Lv.${r.level}<br>`;
+        } else if (r.type === "pre_trader") {
+          nextReqHtml += `・【信頼】${r.name} LL${r.level}<br>`;
+        } else {
+          // アイテムの場合：r.count が存在するかチェック
+          const countStr = r.count !== undefined ? r.count.toLocaleString() : "0";
+          const firTag = r.fir ? '<span class="fir-badge">(FIR)</span>' : '';
+          nextReqHtml += `・${r.name} x${countStr}${firTag}<br>`;
+        }
       });
     }
 
+    // ... (カードの生成コード) ...
     const card = document.createElement("div");
     card.className = "task-card hideout-card";
     card.innerHTML = `
@@ -160,12 +169,16 @@ function renderHideout() {
     `;
     container.appendChild(card);
 
+    // 合計計算部分も同様にガード
     for (let lv = nextLevel; lv <= data.max; lv++) {
       (data.requirements[lv] || []).forEach(r => {
-        if (r.type) return;
+        if (r.type) return; // 前提条件（facility/trader）はスキップ
         if (hideoutFirOnly && !r.fir) return;
+        
         const key = r.fir ? `${r.name} (FIR)` : r.name;
-        totalCounts[key] = (totalCounts[key] || 0) + r.count;
+        // r.count が未定義なら 0 を足す
+        const countValue = r.count || 0;
+        totalCounts[key] = (totalCounts[key] || 0) + countValue;
       });
     }
   });
