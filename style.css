@@ -426,6 +426,25 @@ input:checked + .slider:before {
   justify-content: center;
 }
 
+.trader-name-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.wiki-link {
+  color: var(--bg-blue);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--bg-blue);
+}
+
+.wiki-link:hover {
+  color: var(--primary-pink);
+  border-bottom-color: var(--primary-pink);
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }
