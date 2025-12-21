@@ -14,7 +14,7 @@ const db = getFirestore(app);
 
 let TASKS = [];
 let HIDEOUT_DATA = {};
-let userData = { tasks: {}, hideout: {}, inventory: {} };
+let userData = { tasks: {}, hideout: {} };
 let uid = "";
 let wikiLang = "jp";
 let hideCompleted = true;
@@ -36,9 +36,13 @@ async function init() {
         uid = user.uid;
         const userDoc = await getDoc(doc(db, "users", uid));
         if (userDoc.exists()) {
-          userData = userDoc.data();
-          if (!userData.tasks) userData.tasks = {};
-          if (!userData.hideout) userData.hideout = {};
+          const data = userDoc.data();
+          userData.tasks = data.tasks || {};
+          userData.hideout = data.hideout || {};
+          if (data.wikiLang) {
+            wikiLang = data.wikiLang;
+            updateWikiLangUI();
+          }
         }
         setupTraderFilters();
         refreshUI();
@@ -48,10 +52,10 @@ async function init() {
     });
 
     setupEventListeners();
-  } catch (e) { console.error("Init Error:", e); }
+  } catch (e) {
+    console.error("Init Error:", e);
+  }
 }
-
-// --- 描画関数 ---
 
 function renderTasks() {
   const container = document.getElementById("taskList");
@@ -72,18 +76,15 @@ function renderTasks() {
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
 
-    // Wiki URLの動的生成
-    let wikiUrl = "";
-    if (wikiLang === "en") {
-      wikiUrl = `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`;
-    } else {
-      wikiUrl = `https://wikiwiki.jp/eft/${encodeURIComponent(task.name)}`;
-    }
-
-    // itemsHtmlの定義（前回のエラー対策含む）
-    const itemsHtml = task.requiredItems ? task.requiredItems.map(item => 
+    // アイテムリストのHTML作成
+    const itemsHtml = (task.requiredItems || []).map(item => 
       `<div>・${item.name} x${item.count}${item.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`
-    ).join("") : "";
+    ).join("");
+
+    // Wiki URLの生成
+    let wikiUrl = (wikiLang === "en") 
+      ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`
+      : `https://wikiwiki.jp/eft/${encodeURIComponent(task.name)}`;
 
     card.innerHTML = `
       <div class="task-info">
@@ -97,12 +98,11 @@ function renderTasks() {
         ${isCompleted ? "DONE" : "TO DO"}
       </button>
     `;
+    container.appendChild(card);
   });
 
   updateProgress();
 }
-
-// --- グローバル関数 (onclick用) ---
 
 window.toggleTask = async (taskId) => {
   userData.tasks[taskId] = !userData.tasks[taskId];
@@ -110,15 +110,21 @@ window.toggleTask = async (taskId) => {
   renderTasks();
 };
 
-window.updateStationLevel = async (station, level) => {
-  const val = parseInt(level);
-  userData.hideout[station] = val;
-  await setDoc(doc(db, "users", uid), { hideout: { [station]: val } }, { merge: true });
-  refreshUI();
-};
+function switchWikiLang(lang) {
+  wikiLang = lang;
+  updateWikiLangUI();
+  if (uid) {
+    updateDoc(doc(db, "users", uid), { wikiLang: lang });
+  }
+  renderTasks();
+}
 
-// --- Hideout 描画 ---
+function updateWikiLangUI() {
+  document.getElementById("wikiLangJP").classList.toggle("active", wikiLang === "jp");
+  document.getElementById("wikiLangEN").classList.toggle("active", wikiLang === "en");
+}
 
+// --- Hideout 関連 ---
 function renderHideout() {
   const container = document.getElementById("hideoutList");
   if (!container) return;
@@ -137,10 +143,7 @@ function renderHideout() {
       (data.requirements[nextLevel] || []).forEach(r => {
         if (r.type === "pre_facility") nextReqHtml += `・【前提】${r.name} Lv.${r.level}<br>`;
         else if (r.type === "pre_trader") nextReqHtml += `・【信頼】${r.name} LL${r.level}<br>`;
-        else {
-          const firTag = r.fir ? '<span class="fir-badge">(FIR)</span>' : '';
-          nextReqHtml += `・${r.name} x${r.count.toLocaleString()}${firTag}<br>`;
-        }
+        else nextReqHtml += `・${r.name} x${r.count.toLocaleString()}${r.fir ? ' (FIR)' : ''}<br>`;
       });
     }
 
@@ -169,6 +172,13 @@ function renderHideout() {
   renderHideoutTotal(totalCounts);
 }
 
+window.updateStationLevel = async (station, level) => {
+  const val = parseInt(level);
+  userData.hideout[station] = val;
+  await setDoc(doc(db, "users", uid), { hideout: { [station]: val } }, { merge: true });
+  refreshUI();
+};
+
 function renderHideoutTotal(totalCounts) {
   const container = document.getElementById("hideoutTotalItems");
   if (!container) return;
@@ -176,8 +186,6 @@ function renderHideoutTotal(totalCounts) {
     <div class="task-card"><span>${name}</span><strong>x${count.toLocaleString()}</strong></div>
   `).join("") || "<p>必要なアイテムはありません</p>";
 }
-
-// --- その他設定 ---
 
 function refreshUI() {
   renderTasks();
@@ -208,30 +216,22 @@ function setupTraderFilters() {
   });
 }
 
-function switchWikiLang(lang) {
-  wikiLang = lang;
-  document.getElementById("wikiLangJP").classList.toggle("active", lang === "jp");
-  document.getElementById("wikiLangEN").classList.toggle("active", lang === "en");
-  
-  // Firebaseに保存（任意）
-  if (uid) {
-    updateDoc(doc(db, "users", uid), { wikiLang: lang });
-  }
-  
-  renderTasks(); // 再描画してリンクを更新
-}
-
 function setupEventListeners() {
   document.getElementById("searchBox")?.addEventListener("input", renderTasks);
   document.getElementById("hideoutFirOnly")?.addEventListener("change", (e) => {
     hideoutFirOnly = e.target.checked;
     renderHideout();
   });
+
+  document.getElementById("wikiLangJP").onclick = () => switchWikiLang("jp");
+  document.getElementById("wikiLangEN").onclick = () => switchWikiLang("en");
+
   document.getElementById("toggleCompletedBtn").onclick = (e) => {
     hideCompleted = !hideCompleted;
     e.target.textContent = hideCompleted ? "完了済を非表示中" : "完了済を表示中";
     renderTasks();
   };
+
   document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.onclick = () => {
       document.querySelectorAll(".tab-btn, .tab-panel").forEach(el => el.classList.remove("active"));
@@ -239,17 +239,25 @@ function setupEventListeners() {
       document.getElementById(btn.dataset.tab).classList.add("active");
     };
   });
-  document.querySelectorAll(".sub-tab-btn").forEach(btn => {
+
+  const subTabButtons = document.querySelectorAll(".sub-tab-btn");
+  const subTabPanels = document.querySelectorAll(".sub-tab-panel");
+  subTabButtons.forEach(btn => {
     btn.onclick = () => {
-      document.querySelectorAll(".sub-tab-btn, .sub-tab-panel").forEach(el => el.classList.remove("active"));
+      subTabButtons.forEach(b => b.classList.remove("active"));
+      subTabPanels.forEach(p => p.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById(btn.dataset.subtab).classList.add("active");
     };
   });
- 
-  // Wiki言語切り替えのリスナー
-  document.getElementById("wikiLangJP").onclick = () => switchWikiLang("jp");
-  document.getElementById("wikiLangEN").onclick = () => switchWikiLang("en");
+
+  document.getElementById("resetBtn").onclick = async () => {
+    if(confirm("進捗をすべてリセットしますか？")) {
+      userData.tasks = {};
+      await updateDoc(doc(db, "users", uid), { tasks: {} });
+      refreshUI();
+    }
+  };
 }
 
 init();

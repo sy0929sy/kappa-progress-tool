@@ -39,29 +39,27 @@
 
       <div id="hideout-tab" class="tab-panel">
         <div class="sub-tab-container">
-          <button class="sub-tab-btn active" data-subtab="h-upgrade">施設アップグレード</button>
-          <button class="sub-tab-btn" data-subtab="h-total">Hideout合計必要アイテム</button>
+          <button class="sub-tab-btn active" data-subtab="h-list">施設状況</button>
+          <button class="sub-tab-btn" data-subtab="h-total">買い物リスト</button>
         </div>
-      
-        <div class="hideout-content">
-          <div id="h-upgrade" class="sub-tab-panel active">
-            <h3>施設アップグレード状況</h3>
-            <div id="hideoutList" class="card-list"></div>
-          </div>
-          
-          <div id="h-total" class="sub-tab-panel">
-            <div class="h-total-header">
-              <h3>Hideout必要アイテム一覧</h3>
-              <div class="toggle-wrapper">
-                <span class="toggle-label">FIRのみ</span>
-                <label class="switch">
-                  <input type="checkbox" id="hideoutFirOnly">
-                  <span class="slider round"></span>
-                </label>
-              </div>
+
+        <div id="h-list" class="sub-tab-panel active">
+          <h3>施設アップグレード状況</h3>
+          <div id="hideoutList" class="card-list"></div>
+        </div>
+        
+        <div id="h-total" class="sub-tab-panel">
+          <div class="h-total-header">
+            <h3>Hideout必要アイテム一覧</h3>
+            <div class="toggle-wrapper">
+              <span class="toggle-label">FIRのみ</span>
+              <label class="switch">
+                <input type="checkbox" id="hideoutFirOnly">
+                <span class="slider round"></span>
+              </label>
             </div>
-            <div id="hideoutTotalItems" class="card-list"></div>
           </div>
+          <div id="hideoutTotalItems" class="card-list"></div>
         </div>
       </div>
     </main>
@@ -79,8 +77,7 @@
         <div id="progressCount" class="count-text">0 / 0</div>
       </div>
       <button id="toggleCompletedBtn" class="action-btn">完了済を非表示中</button>
-      <button id="resetBtn" class="reset-btn">進捗リセット</button>
-      <p id="status" class="status-text"></p>
+      <button id="resetBtn" class="action-btn reset">データリセット</button>
     </aside>
   </div>
   <script type="module" src="script.js"></script>
