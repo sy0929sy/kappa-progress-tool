@@ -89,7 +89,7 @@ function renderTasks() {
     } else {
       // 日本語Wiki: 「トレーダー名/タスク名」の階層構造に対応
       // 例: https://wikiwiki.jp/eft/Jaeger/The%20Tarkov%20Shooter%20-%20Part%201
-      wikiUrl = `https://wikiwiki.jp/eft/${encodeURIComponent(task.trader)}/${encodeURIComponent(task.name)}`;
+      wikiUrl = `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
     }
   
     card.innerHTML = `
