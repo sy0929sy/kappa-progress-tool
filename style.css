@@ -402,6 +402,30 @@ input:checked + .slider:before {
   background-color: #f0fff0 !important;
 }
 
+/* トレーダー名のラベルスタイル */
+.trader-name-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #888; /* 少しグレーにしてタスク名と差をつける */
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* タスク名の位置調整（必要に応じて） */
+.task-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--bg-blue);
+  margin-bottom: 5px;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }

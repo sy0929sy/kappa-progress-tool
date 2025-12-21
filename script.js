@@ -109,18 +109,16 @@ function renderTasks() {
 
     const card = document.createElement("div");
     card.className = "task-card";
-    card.innerHTML = `
-      <div>
-        <h4 style="margin:0">${task.name}</h4>
-        <div style="margin-top:5px;">
-          <a href="${jpWiki}" target="_blank" class="wiki-link" style="color:var(--primary-pink); margin-right:12px;">JP Wiki 🔗</a>
-          <a href="${enWiki}" target="_blank" class="wiki-link" style="color:var(--bg-blue);">EN Wiki 🔗</a>
-        </div>
-      </div>
-      <button class="done-btn" style="${userData[task.id] ? 'opacity:0.5' : ''}">
-        ${userData[task.id] ? 'COMPLETED!' : 'DONE?'}
-      </button>
-    `;
+	card.innerHTML = `
+	  <div class="task-info">
+	    <div class="trader-name-label">${task.trader}</div>
+	    <div class="task-name">${task.name}</div>
+	    ${itemsHtml ? `<div class="task-items">${itemsHtml}</div>` : ""}
+	  </div>
+	  <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="toggleTask('${task.id}')">
+	    ${isCompleted ? "DONE" : "TO DO"}
+	  </button>
+	`;
 
 	card.querySelector(".done-btn").onclick = async (e) => {
       // 1. ボタンを即座に無効化して連打を防ぐ
