@@ -117,13 +117,13 @@ function renderRequiredItems() {
 
   const itemSummary = {};
 
-  // まだ完了していないタスクからアイテムを抽出
   TASKS.forEach(task => {
     if (!userData.tasks[task.id] && task.requiredItems) {
       task.requiredItems.forEach(item => {
-        const key = item.fir ? `${item.name} (FIR)` : item.name;
+        // キーに (FIR) を含めず、純粋な名前だけで集計する
+        const key = item.name; 
         if (!itemSummary[key]) {
-          itemSummary[key] = { count: 0, fir: item.fir };
+          itemSummary[key] = { count: 0 };
         }
         itemSummary[key].count += item.count;
       });
@@ -132,15 +132,16 @@ function renderRequiredItems() {
 
   const items = Object.entries(itemSummary);
   if (items.length === 0) {
-    container.innerHTML = "<p>必要なアイテムはありません（すべて完了済みです）</p>";
+    container.innerHTML = "<p>必要なアイテムはありません</p>";
     return;
   }
 
   items.forEach(([name, data]) => {
     const card = document.createElement("div");
     card.className = "task-card";
+    // (FIR)バッジを表示しないシンプルな構成
     card.innerHTML = `
-      <span>${name} ${data.fir ? '<span class="fir-badge">(FIR)</span>' : ''}</span>
+      <span>${name}</span>
       <strong>x${data.count.toLocaleString()}</strong>
     `;
     container.appendChild(card);
@@ -217,13 +218,15 @@ function renderHideout() {
     // 合計計算部分も同様にガード
     for (let lv = nextLevel; lv <= data.max; lv++) {
       (data.requirements[lv] || []).forEach(r => {
-        if (r.type) return; // 前提条件（facility/trader）はスキップ
+        if (r.type) return;
         if (hideoutFirOnly && !r.fir) return;
         
-        const key = r.fir ? `${r.name} (FIR)` : r.name;
-        // r.count が未定義なら 0 を足す
-        const countValue = r.count || 0;
-        totalCounts[key] = (totalCounts[key] || 0) + countValue;
+        // 名前そのものに (FIR) を混ぜず、オブジェクトで状態を持つ
+        const key = r.name;
+        if (!totalCounts[key]) {
+          totalCounts[key] = { count: 0, fir: r.fir };
+        }
+        totalCounts[key].count += (r.count || 0);
       });
     }
   });
@@ -240,8 +243,15 @@ window.updateStationLevel = async (station, level) => {
 function renderHideoutTotal(totalCounts) {
   const container = document.getElementById("hideoutTotalItems");
   if (!container) return;
-  container.innerHTML = Object.entries(totalCounts).map(([name, count]) => `
-    <div class="task-card"><span>${name}</span><strong>x${count.toLocaleString()}</strong></div>
+  
+  container.innerHTML = Object.entries(totalCounts).map(([name, data]) => `
+    <div class="task-card ${data.fir ? 'fir-item-highlight' : ''}">
+      <span>
+        ${name} 
+        ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}
+      </span>
+      <strong>x${data.count.toLocaleString()}</strong>
+    </div>
   `).join("") || "<p>必要なアイテムはありません</p>";
 }
 
