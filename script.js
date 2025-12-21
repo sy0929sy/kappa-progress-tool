@@ -22,7 +22,7 @@ const db = getFirestore(app);
 
 let TASKS = [];
 let HIDEOUT_DATA = {};
-let userData = { tasks: {}, hideout: {} };
+let userData = { tasks: {}, hideout: {}, favorites: {} };
 let itemProgress = {}; 
 let uid = "";
 let wikiLang = "jp";
@@ -121,7 +121,11 @@ function renderRequiredItems() {
     }
   });
 
+  // お気に入り(最優先) > 完了状況(次点) でソート
   const sorted = Object.entries(itemSummary).sort(([nA, tA], [nB, tB]) => {
+    const favA = userData.favorites[nA] ? 1 : 0;
+    const favB = userData.favorites[nB] ? 1 : 0;
+    if (favA !== favB) return favB - favA;
     const doneA = (itemProgress[nA] || 0) >= tA;
     const doneB = (itemProgress[nB] || 0) >= tB;
     return doneA === doneB ? 0 : doneA ? 1 : -1;
@@ -130,10 +134,14 @@ function renderRequiredItems() {
   sorted.forEach(([name, target]) => {
     const current = itemProgress[name] || 0;
     const isDone = current >= target;
+    const isFav = userData.favorites[name];
     const card = document.createElement("div");
     card.className = `task-card ${isDone ? 'item-done' : ''}`;
     card.innerHTML = `
-      <div class="item-info"><span>${name}</span><div class="item-target">必要: ${target}</div></div>
+      <div style="display:flex; align-items:center;">
+        <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
+        <div class="item-info"><span>${name}</span><div class="item-target">必要: ${target}</div></div>
+      </div>
       <div class="counter-group">
         <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
         <input type="text" class="count-input" data-item-name="${name}" value="${current}" 
@@ -150,12 +158,10 @@ function renderHideout() {
   if (!container) return;
   container.innerHTML = "";
   let totalCounts = {};
-
   Object.entries(HIDEOUT_DATA).forEach(([station, data]) => {
     const currentLevel = userData.hideout[station] || 0;
     const nextLevel = currentLevel + 1;
     const hasNext = nextLevel <= data.max;
-
     let reqContent = hasNext ? `<span class="req-title">Lv.${nextLevel}への必要条件:</span><ul class="req-item-list">` : `<div class="max-level-text">最大レベルです</div>`;
     if (hasNext) {
       (data.requirements[nextLevel] || []).forEach(r => {
@@ -168,7 +174,6 @@ function renderHideout() {
       });
       reqContent += `</ul>`;
     }
-
     const card = document.createElement("div");
     card.className = "task-card hideout-card";
     card.innerHTML = `
@@ -179,16 +184,10 @@ function renderHideout() {
       </div>
       <div class="req-area">${reqContent}</div>`;
     container.appendChild(card);
-
-    // 集計ロジックの修正
     for (let lv = nextLevel; lv <= data.max; lv++) {
-      const requirements = data.requirements[lv] || [];
-      requirements.forEach(r => {
-        // 施設やスキルではなく「アイテム」かつ「FIR設定に合致」する場合
+      (data.requirements[lv] || []).forEach(r => {
         if (!r.type && (!hideoutFirOnly || r.fir)) {
-          if (!totalCounts[r.name]) {
-            totalCounts[r.name] = { count: 0, fir: r.fir };
-          }
+          if (!totalCounts[r.name]) totalCounts[r.name] = { count: 0, fir: r.fir };
           totalCounts[r.name].count += r.count;
         }
       });
@@ -202,25 +201,26 @@ function renderHideoutTotal(totalCounts) {
   if (!container) return;
   
   const sorted = Object.entries(totalCounts).sort(([nA, dA], [nB, dB]) => {
+    const favA = userData.favorites[nA] ? 1 : 0;
+    const favB = userData.favorites[nB] ? 1 : 0;
+    if (favA !== favB) return favB - favA;
     const doneA = (itemProgress[nA] || 0) >= dA.count;
     const doneB = (itemProgress[nB] || 0) >= dB.count;
     return doneA === doneB ? 0 : doneA ? 1 : -1;
   });
 
-  if (sorted.length === 0) {
-    container.innerHTML = "<p>必要なアイテムはありません</p>";
-    return;
-  }
-
   container.innerHTML = sorted.map(([name, data]) => {
     const current = itemProgress[name] || 0;
-    const isDone = current >= data.count; // ここでisDoneを定義
-    
+    const isDone = current >= data.count;
+    const isFav = userData.favorites[name];
     return `
       <div class="task-card ${isDone ? 'item-done' : ''} ${data.fir ? 'fir-item-highlight' : ''}">
-        <div class="item-info">
-          <span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span>
-          <div class="item-target">必要: ${data.count}</div>
+        <div style="display:flex; align-items:center;">
+          <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
+          <div class="item-info">
+            <span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span>
+            <div class="item-target">必要: ${data.count}</div>
+          </div>
         </div>
         <div class="counter-group">
           <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
@@ -233,6 +233,12 @@ function renderHideoutTotal(totalCounts) {
   }).join("");
 }
 
+window.toggleFavorite = async (itemId) => {
+  userData.favorites[itemId] = !userData.favorites[itemId];
+  await updateDoc(doc(db, "users", uid), { favorites: userData.favorites });
+  refreshUI();
+};
+
 function renderTasks() {
   const container = document.getElementById("taskList");
   if (!container) return;
@@ -244,12 +250,8 @@ function renderTasks() {
     const isCompleted = userData.tasks[task.id];
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
-    
-    // トレーダー名の小文字変換（ファイル名用）
     const traderLower = task.trader.toLowerCase();
-    // 画像パス（環境に合わせて変更してください）
     const imagePath = `assets/traders/${traderLower}.png`; 
-    
     let wikiUrl = wikiLang === "en" 
       ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` 
       : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
@@ -261,25 +263,20 @@ function renderTasks() {
             <img src="${imagePath}" alt="${task.trader}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <span style="display:none;">${task.trader.charAt(0)}</span>
           </div>
-          
           <div class="task-title-group">
             <div class="trader-name-label">${task.trader.toUpperCase()}</div>
-            <div class="task-name">
-              <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
-            </div>
+            <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
           </div>
         </div>
-
         <div class="task-items">
           ${(task.requiredItems || []).map(i => `<div>・${i.name} x${i.count}${i.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`).join("")}
         </div>
       </div>
-      
       <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
         ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
       </button>`;
     container.appendChild(card);
-});
+  });
   updateProgress();
 }
 
