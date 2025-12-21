@@ -110,10 +110,47 @@ function renderTasks() {
   updateProgress();
 }
 
+function renderRequiredItems() {
+  const container = document.getElementById("requiredItemsList");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const itemSummary = {};
+
+  // まだ完了していないタスクからアイテムを抽出
+  TASKS.forEach(task => {
+    if (!userData.tasks[task.id] && task.requiredItems) {
+      task.requiredItems.forEach(item => {
+        const key = item.fir ? `${item.name} (FIR)` : item.name;
+        if (!itemSummary[key]) {
+          itemSummary[key] = { count: 0, fir: item.fir };
+        }
+        itemSummary[key].count += item.count;
+      });
+    }
+  });
+
+  const items = Object.entries(itemSummary);
+  if (items.length === 0) {
+    container.innerHTML = "<p>必要なアイテムはありません（すべて完了済みです）</p>";
+    return;
+  }
+
+  items.forEach(([name, data]) => {
+    const card = document.createElement("div");
+    card.className = "task-card";
+    card.innerHTML = `
+      <span>${name} ${data.fir ? '<span class="fir-badge">(FIR)</span>' : ''}</span>
+      <strong>x${data.count.toLocaleString()}</strong>
+    `;
+    container.appendChild(card);
+  });
+}
+
 window.toggleTask = async (taskId) => {
   userData.tasks[taskId] = !userData.tasks[taskId];
   await updateDoc(doc(db, "users", uid), { [`tasks.${taskId}`]: userData.tasks[taskId] });
-  renderTasks();
+  refreshUI();
 };
 
 function switchWikiLang(lang) {
@@ -210,6 +247,7 @@ function renderHideoutTotal(totalCounts) {
 
 function refreshUI() {
   renderTasks();
+  renderRequiredItems();
   renderHideout();
 }
 
