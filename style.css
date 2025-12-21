@@ -807,6 +807,34 @@ input:checked + .slider:before {
   opacity: 0.9;
 }
 
+/* トレーダーアイコンのコンテナ */
+.trader-icon-badge {
+  width: 40px; /* 少し大きくすると画像が見やすい */
+  height: 40px;
+  border-radius: 8px; /* 丸より四角に近い方がタルコフっぽい */
+  overflow: hidden; /* 画像がはみ出さないように */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333; /* 画像読み込み前の背景色 */
+  flex-shrink: 0;
+  border: 1px solid var(--card-border);
+}
+
+/* アイコン画像自体のスタイル */
+.trader-icon-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 縦横比を維持してフィット */
+}
+
+/* 画像がない時の文字スタイル */
+.trader-icon-badge span {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }

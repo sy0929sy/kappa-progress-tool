@@ -244,18 +244,35 @@ function renderTasks() {
     const isCompleted = userData.tasks[task.id];
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
-    let wikiUrl = wikiLang === "en" ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
+    
+    // トレーダー名の小文字変換（ファイル名用）
+    const traderLower = task.trader.toLowerCase();
+    // 画像パス（環境に合わせて変更してください）
+    const imagePath = `assets/traders/${traderLower}.jpg`; 
+    
+    let wikiUrl = wikiLang === "en" 
+      ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` 
+      : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
+
     card.innerHTML = `
       <div class="task-info">
-        <div class="trader-name-label">${task.trader.toUpperCase()}</div>
-        <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
+        <div class="task-header-flex">
+          <div class="trader-icon-badge">
+            <img src="${imagePath}" alt="${task.trader}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="display:none;">${task.trader.charAt(0)}</span>
+          </div>
+          <div>
+            <div class="trader-name-label">${task.trader.toUpperCase()}</div>
+            <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
+          </div>
+        </div>
         <div class="task-items">${(task.requiredItems || []).map(i => `<div>・${i.name} x${i.count}${i.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`).join("")}</div>
       </div>
       <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
         ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
-      </button>`; // ← ここにアイコンとテキストを配置
+      </button>`;
     container.appendChild(card);
-  });
+});
   updateProgress();
 }
 
