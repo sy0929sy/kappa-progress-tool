@@ -16,6 +16,7 @@ let TASKS = [];
 let HIDEOUT_DATA = {};
 let userData = { tasks: {}, hideout: {}, inventory: {} };
 let uid = "";
+let wikiLang = "jp";
 let hideCompleted = true;
 let hideoutFirOnly = false;
 const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
@@ -76,10 +77,20 @@ function renderTasks() {
       `<div>・${item.name} x${item.count}${item.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`
     ).join("") : "";
 
-    // 2. Wikiリンクを生成
-    const wikiUrl = `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`;
+  filtered.forEach(task => {
+    // Wiki URLの動的生成
+    let wikiUrl = "";
+    if (wikiLang === "en") {
+      wikiUrl = `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`;
+    } else {
+      wikiUrl = `https://wikiwiki.jp/eft/${encodeURIComponent(task.name)}`;
+    }
 
-    // 3. HTMLを組み立てる
+    // itemsHtmlの定義（前回のエラー対策含む）
+    const itemsHtml = task.requiredItems ? task.requiredItems.map(item => 
+      `<div>・${item.name} x${item.count}${item.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`
+    ).join("") : "";
+
     card.innerHTML = `
       <div class="task-info">
         <div class="trader-name-label">${task.trader.toUpperCase()}</div>
@@ -92,7 +103,7 @@ function renderTasks() {
         ${isCompleted ? "DONE" : "TO DO"}
       </button>
     `;
-    container.appendChild(card);
+    // ...
   });
 
   updateProgress();
@@ -204,6 +215,19 @@ function setupTraderFilters() {
   });
 }
 
+function switchWikiLang(lang) {
+  wikiLang = lang;
+  document.getElementById("wikiLangJP").classList.toggle("active", lang === "jp");
+  document.getElementById("wikiLangEN").classList.toggle("active", lang === "en");
+  
+  // Firebaseに保存（任意）
+  if (uid) {
+    updateDoc(doc(db, "users", uid), { wikiLang: lang });
+  }
+  
+  renderTasks(); // 再描画してリンクを更新
+}
+
 function setupEventListeners() {
   document.getElementById("searchBox")?.addEventListener("input", renderTasks);
   document.getElementById("hideoutFirOnly")?.addEventListener("change", (e) => {
@@ -229,6 +253,10 @@ function setupEventListeners() {
       document.getElementById(btn.dataset.subtab).classList.add("active");
     };
   });
+ 
+  // Wiki言語切り替えのリスナー
+  document.getElementById("wikiLangJP").onclick = () => switchWikiLang("jp");
+  document.getElementById("wikiLangEN").onclick = () => switchWikiLang("en");
 }
 
 init();
