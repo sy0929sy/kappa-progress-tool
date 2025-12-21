@@ -15,6 +15,7 @@ const db = getFirestore(app);
 let TASKS = [];
 let HIDEOUT_DATA = {};
 let userData = { tasks: {}, hideout: {} };
+let itemProgress = {}; // 全タブ共通の所持数管理オブジェクト
 let uid = "";
 let wikiLang = "jp";
 let hideCompleted = true;
@@ -39,6 +40,7 @@ async function init() {
           const data = userDoc.data();
           userData.tasks = data.tasks || {};
           userData.hideout = data.hideout || {};
+          itemProgress = data.itemProgress || {}; // 既存の所持数データを読み込み
           if (data.wikiLang) {
             wikiLang = data.wikiLang;
             updateWikiLangUI();
@@ -56,6 +58,23 @@ async function init() {
     console.error("Init Error:", e);
   }
 }
+
+// アイテム所持数を更新する共通関数。ここを更新すると全タブに反映されます。
+window.updateItemCount = async (name, delta) => {
+  let current = itemProgress[name] || 0;
+  if (delta === null) {
+    const inputEl = document.querySelectorAll(`input[data-item-name="${name}"]`);
+    const val = parseInt(inputEl[0]?.value) || 0;
+    current = Math.max(0, val);
+  } else {
+    current = Math.max(0, current + delta);
+  }
+  
+  itemProgress[name] = current;
+  // Firebaseの同一フィールドを更新するため、全てのタブで共有される
+  await updateDoc(doc(db, "users", uid), { itemProgress: itemProgress });
+  refreshUI(); // 全ての描画関数を再実行して数値を同期
+};
 
 function renderTasks() {
   const container = document.getElementById("taskList");
@@ -76,21 +95,13 @@ function renderTasks() {
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
   
-    // アイテムリストの作成 (FIRバッジ付き)
     const itemsHtml = (task.requiredItems || []).map(item => 
       `<div>・${item.name} x${item.count}${item.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`
     ).join("");
   
-    // --- Wiki URLの動的生成 (修正版) ---
-    let wikiUrl = "";
-    if (wikiLang === "en") {
-      // 英語Wiki: 空白をアンダースコアに置換
-      wikiUrl = `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`;
-    } else {
-      // 日本語Wiki: 「トレーダー名/タスク名」の階層構造に対応
-      // 例: https://wikiwiki.jp/eft/Jaeger/The%20Tarkov%20Shooter%20-%20Part%201
-      wikiUrl = `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
-    }
+    let wikiUrl = wikiLang === "en" 
+      ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`
+      : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
   
     card.innerHTML = `
       <div class="task-info">
@@ -116,33 +127,30 @@ function renderRequiredItems() {
   container.innerHTML = "";
 
   const itemSummary = {};
-
   TASKS.forEach(task => {
     if (!userData.tasks[task.id] && task.requiredItems) {
       task.requiredItems.forEach(item => {
-        // キーに (FIR) を含めず、純粋な名前だけで集計する
         const key = item.name; 
-        if (!itemSummary[key]) {
-          itemSummary[key] = { count: 0 };
-        }
-        itemSummary[key].count += item.count;
+        itemSummary[key] = (itemSummary[key] || 0) + item.count;
       });
     }
   });
 
-  const items = Object.entries(itemSummary);
-  if (items.length === 0) {
-    container.innerHTML = "<p>必要なアイテムはありません</p>";
-    return;
-  }
-
-  items.forEach(([name, data]) => {
+  Object.entries(itemSummary).forEach(([name, target]) => {
+    const current = itemProgress[name] || 0;
+    const isDone = current >= target;
     const card = document.createElement("div");
-    card.className = "task-card";
-    // (FIR)バッジを表示しないシンプルな構成
+    card.className = `task-card ${isDone ? 'item-done' : ''}`;
     card.innerHTML = `
-      <span>${name}</span>
-      <strong>x${data.count.toLocaleString()}</strong>
+      <div class="item-info">
+        <span>${name}</span>
+        <div class="item-target">必要: ${target}</div>
+      </div>
+      <div class="counter-group">
+        <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
+        <input type="number" class="count-input" data-item-name="${name}" value="${current}" onchange="window.updateItemCount('${name}', null)">
+        <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
+      </div>
     `;
     container.appendChild(card);
   });
@@ -157,9 +165,7 @@ window.toggleTask = async (taskId) => {
 function switchWikiLang(lang) {
   wikiLang = lang;
   updateWikiLangUI();
-  if (uid) {
-    updateDoc(doc(db, "users", uid), { wikiLang: lang });
-  }
+  if (uid) updateDoc(doc(db, "users", uid), { wikiLang: lang });
   renderTasks();
 }
 
@@ -168,7 +174,6 @@ function updateWikiLangUI() {
   document.getElementById("wikiLangEN").classList.toggle("active", wikiLang === "en");
 }
 
-// --- Hideout 関連 ---
 function renderHideout() {
   const container = document.getElementById("hideoutList");
   if (!container) return;
@@ -185,47 +190,34 @@ function renderHideout() {
     
     if (hasNext) {
       (data.requirements[nextLevel] || []).forEach(r => {
-        // --- 修正箇所：データの種類によって出し分けを確実に行う ---
-        if (r.type === "pre_facility") {
-          nextReqHtml += `・【前提】${r.name} Lv.${r.level}<br>`;
-        } else if (r.type === "pre_trader") {
-          nextReqHtml += `・【信頼】${r.name} LL${r.level}<br>`;
-        } else if (r.type === "pre_skill") {
-          nextReqHtml += `・【スキル】${r.name} LL${r.level}<br>`;
+        if (r.type) {
+          const typeLabel = r.type === "pre_facility" ? "前提" : r.type === "pre_trader" ? "信頼" : "スキル";
+          nextReqHtml += `・【${typeLabel}】${r.name} Lv.${r.level}<br>`;
         } else {
-          // アイテムの場合：r.count が存在するかチェック
-          const countStr = r.count !== undefined ? r.count.toLocaleString() : "0";
-          const firTag = r.fir ? '<span class="fir-badge">(FIR)</span>' : '';
-          nextReqHtml += `・${r.name} x${countStr}${firTag}<br>`;
+          nextReqHtml += `・${r.name} x${(r.count || 0).toLocaleString()}${r.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}<br>`;
         }
       });
     }
 
-    // ... (カードの生成コード) ...
     const card = document.createElement("div");
     card.className = "task-card hideout-card";
     card.innerHTML = `
-      <div class="hideout-card-header">
-        <h4>${station}</h4>
+      <div class="hideout-card-header" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <h4 style="margin:0;">${station}</h4>
         <select class="level-select" onchange="window.updateStationLevel('${station}', this.value)">
           ${Array.from({length: data.max + 1}, (_, i) => `<option value="${i}" ${currentLevel === i ? 'selected' : ''}>Lv.${i}</option>`).join("")}
         </select>
       </div>
-      <div class="req-area">${nextReqHtml}</div>
+      <div class="req-area" style="margin-top:10px; font-size:0.9em;">${nextReqHtml}</div>
     `;
     container.appendChild(card);
 
-    // 合計計算部分も同様にガード
     for (let lv = nextLevel; lv <= data.max; lv++) {
       (data.requirements[lv] || []).forEach(r => {
         if (r.type) return;
         if (hideoutFirOnly && !r.fir) return;
-        
-        // 名前そのものに (FIR) を混ぜず、オブジェクトで状態を持つ
         const key = r.name;
-        if (!totalCounts[key]) {
-          totalCounts[key] = { count: 0, fir: r.fir };
-        }
+        if (!totalCounts[key]) totalCounts[key] = { count: 0, fir: r.fir };
         totalCounts[key].count += (r.count || 0);
       });
     }
@@ -234,9 +226,8 @@ function renderHideout() {
 }
 
 window.updateStationLevel = async (station, level) => {
-  const val = parseInt(level);
-  userData.hideout[station] = val;
-  await setDoc(doc(db, "users", uid), { hideout: { [station]: val } }, { merge: true });
+  userData.hideout[station] = parseInt(level);
+  await setDoc(doc(db, "users", uid), { hideout: { [station]: userData.hideout[station] } }, { merge: true });
   refreshUI();
 };
 
@@ -244,15 +235,23 @@ function renderHideoutTotal(totalCounts) {
   const container = document.getElementById("hideoutTotalItems");
   if (!container) return;
   
-  container.innerHTML = Object.entries(totalCounts).map(([name, data]) => `
-    <div class="task-card ${data.fir ? 'fir-item-highlight' : ''}">
-      <span>
-        ${name} 
-        ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}
-      </span>
-      <strong>x${data.count.toLocaleString()}</strong>
-    </div>
-  `).join("") || "<p>必要なアイテムはありません</p>";
+  container.innerHTML = Object.entries(totalCounts).map(([name, data]) => {
+    const current = itemProgress[name] || 0;
+    const isDone = current >= data.count;
+    return `
+      <div class="task-card ${isDone ? 'item-done' : ''} ${data.fir ? 'fir-item-highlight' : ''}">
+        <div class="item-info">
+          <span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span>
+          <div class="item-target">必要: ${data.count}</div>
+        </div>
+        <div class="counter-group">
+          <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
+          <input type="number" class="count-input" data-item-name="${name}" value="${current}" onchange="window.updateItemCount('${name}', null)">
+          <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
+        </div>
+      </div>
+    `;
+  }).join("") || "<p>必要なアイテムはありません</p>";
 }
 
 function refreshUI() {
@@ -291,16 +290,13 @@ function setupEventListeners() {
     hideoutFirOnly = e.target.checked;
     renderHideout();
   });
-
   document.getElementById("wikiLangJP").onclick = () => switchWikiLang("jp");
   document.getElementById("wikiLangEN").onclick = () => switchWikiLang("en");
-
   document.getElementById("toggleCompletedBtn").onclick = (e) => {
     hideCompleted = !hideCompleted;
     e.target.textContent = hideCompleted ? "完了済を非表示中" : "完了済を表示中";
     renderTasks();
   };
-
   document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.onclick = () => {
       document.querySelectorAll(".tab-btn, .tab-panel").forEach(el => el.classList.remove("active"));
@@ -308,22 +304,17 @@ function setupEventListeners() {
       document.getElementById(btn.dataset.tab).classList.add("active");
     };
   });
-
-  const subTabButtons = document.querySelectorAll(".sub-tab-btn");
-  const subTabPanels = document.querySelectorAll(".sub-tab-panel");
-  subTabButtons.forEach(btn => {
+  document.querySelectorAll(".sub-tab-btn").forEach(btn => {
     btn.onclick = () => {
-      subTabButtons.forEach(b => b.classList.remove("active"));
-      subTabPanels.forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".sub-tab-btn, .sub-tab-panel").forEach(el => el.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById(btn.dataset.subtab).classList.add("active");
     };
   });
-
   document.getElementById("resetBtn").onclick = async () => {
-    if(confirm("進捗をすべてリセットしますか？")) {
-      userData.tasks = {};
-      await updateDoc(doc(db, "users", uid), { tasks: {} });
+    if(confirm("すべての進捗をリセットしますか？")) {
+      userData.tasks = {}; userData.hideout = {}; itemProgress = {};
+      await updateDoc(doc(db, "users", uid), { tasks: {}, hideout: {}, itemProgress: {} });
       refreshUI();
     }
   };
