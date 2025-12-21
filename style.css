@@ -629,6 +629,64 @@ input:checked + .slider:before {
   margin-top: 2px;
 }
 
+/* 施設カード内のレイアウト整理 */
+.hideout-card {
+  display: flex;
+  flex-direction: row; /* 横並びに変更 */
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.hideout-info-main {
+  flex: 0 0 200px; /* 左側の幅を固定 */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hideout-info-main h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--bg-blue);
+}
+
+.req-area {
+  flex: 1; /* 右側が残りの幅を占有 */
+  margin-top: 0 !important;
+  padding-left: 20px;
+  border-left: 2px solid #eee;
+  font-size: 0.9rem;
+  line-height: 1.6; /* 行間を広げて読みやすく */
+}
+
+.req-title {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+.req-item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.req-item-list li {
+  margin-bottom: 4px;
+  color: #555;
+}
+
+/* 「最大レベルです」の表示をマイルドに */
+.max-level-text {
+  color: #999;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }

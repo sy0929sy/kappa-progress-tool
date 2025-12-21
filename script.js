@@ -186,32 +186,39 @@ function renderHideout() {
     const nextLevel = currentLevel + 1;
     const hasNext = nextLevel <= data.max;
 
-    let nextReqHtml = hasNext ? `<strong>Lv.${nextLevel}への必要条件:</strong><br>` : `<span style="color:#888;">最大レベルです</span>`;
-    
+    // 必要条件のHTML生成
+    let reqContent = "";
     if (hasNext) {
+      reqContent = `<span class="req-title">Lv.${nextLevel}への必要条件:</span><ul class="req-item-list">`;
       (data.requirements[nextLevel] || []).forEach(r => {
         if (r.type) {
           const typeLabel = r.type === "pre_facility" ? "前提" : r.type === "pre_trader" ? "信頼" : "スキル";
-          nextReqHtml += `・【${typeLabel}】${r.name} Lv.${r.level}<br>`;
+          reqContent += `<li>・【${typeLabel}】${r.name} Lv.${r.level}</li>`;
         } else {
-          nextReqHtml += `・${r.name} x${(r.count || 0).toLocaleString()}${r.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}<br>`;
+          reqContent += `<li>・${r.name} x${(r.count || 0).toLocaleString()}${r.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</li>`;
         }
       });
+      reqContent += `</ul>`;
+    } else {
+      reqContent = `<div class="max-level-text">最大レベルに達しています</div>`;
     }
 
     const card = document.createElement("div");
     card.className = "task-card hideout-card";
     card.innerHTML = `
-      <div class="hideout-card-header" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
-        <h4 style="margin:0;">${station}</h4>
+      <div class="hideout-info-main">
+        <h4>${station}</h4>
         <select class="level-select" onchange="window.updateStationLevel('${station}', this.value)">
           ${Array.from({length: data.max + 1}, (_, i) => `<option value="${i}" ${currentLevel === i ? 'selected' : ''}>Lv.${i}</option>`).join("")}
         </select>
       </div>
-      <div class="req-area" style="margin-top:10px; font-size:0.9em;">${nextReqHtml}</div>
+      <div class="req-area">
+        ${reqContent}
+      </div>
     `;
     container.appendChild(card);
 
+    // 集計ロジック（変更なし）
     for (let lv = nextLevel; lv <= data.max; lv++) {
       (data.requirements[lv] || []).forEach(r => {
         if (r.type) return;
