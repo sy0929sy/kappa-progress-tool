@@ -75,24 +75,30 @@ function renderTasks() {
     const isCompleted = userData.tasks[task.id];
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
-
-    // アイテムリストのHTML作成
+  
+    // アイテムリストの作成 (FIRバッジ付き)
     const itemsHtml = (task.requiredItems || []).map(item => 
       `<div>・${item.name} x${item.count}${item.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`
     ).join("");
-
-    // Wiki URLの生成
-    let wikiUrl = (wikiLang === "en") 
-      ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`
-      : `https://wikiwiki.jp/eft/${encodeURIComponent(task.name)}`;
-
+  
+    // --- Wiki URLの動的生成 (修正版) ---
+    let wikiUrl = "";
+    if (wikiLang === "en") {
+      // 英語Wiki: 空白をアンダースコアに置換
+      wikiUrl = `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`;
+    } else {
+      // 日本語Wiki: 「トレーダー名/タスク名」の階層構造に対応
+      // 例: https://wikiwiki.jp/eft/Jaeger/The%20Tarkov%20Shooter%20-%20Part%201
+      wikiUrl = `https://wikiwiki.jp/eft/${encodeURIComponent(task.trader)}/${encodeURIComponent(task.name)}`;
+    }
+  
     card.innerHTML = `
       <div class="task-info">
         <div class="trader-name-label">${task.trader.toUpperCase()}</div>
         <div class="task-name">
           <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
         </div>
-        ${itemsHtml ? `<div class="task-items">${itemsHtml}</div>` : ""}
+        <div class="task-items">${itemsHtml}</div>
       </div>
       <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
         ${isCompleted ? "DONE" : "TO DO"}
