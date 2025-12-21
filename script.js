@@ -251,7 +251,9 @@ function renderTasks() {
         <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
         <div class="task-items">${(task.requiredItems || []).map(i => `<div>・${i.name} x${i.count}${i.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`).join("")}</div>
       </div>
-      <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">${isCompleted ? "未完了" : "完了"}</button>`;
+      <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
+        ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
+      </button>`; // ← ここにアイコンとテキストを配置
     container.appendChild(card);
   });
   updateProgress();

@@ -761,6 +761,52 @@ input:checked + .slider:before {
   margin-bottom: 10px;
 }
 
+/* --- モダンなステータスボタンのスタイル --- */
+.status-btn {
+  padding: 8px 16px;
+  border-radius: 20px; /* 丸みのあるシェイプ */
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid var(--bg-blue);
+  background-color: transparent;
+  color: var(--bg-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+  justify-content: center;
+}
+
+/* ホバー時の挙動 */
+.status-btn:hover {
+  background-color: var(--bg-blue);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(74, 105, 189, 0.2);
+}
+
+/* 完了状態のスタイル */
+.status-btn.completed {
+  background-color: var(--done-green);
+  border-color: var(--done-green);
+  color: white;
+}
+
+.status-btn.completed:hover {
+  background-color: #3eb49d; /* 少し濃い緑 */
+  border-color: #3eb49d;
+  box-shadow: 0 4px 8px rgba(72, 201, 176, 0.2);
+}
+
+/* タスクカード自体の完了時スタイルを調整 */
+.task-card.completed {
+  border-color: var(--done-green);
+  background-color: #f0faf8;
+  opacity: 0.9;
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }
