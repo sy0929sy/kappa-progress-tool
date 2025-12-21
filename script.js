@@ -180,10 +180,15 @@ function renderHideout() {
       <div class="req-area">${reqContent}</div>`;
     container.appendChild(card);
 
+    // 集計ロジックの修正
     for (let lv = nextLevel; lv <= data.max; lv++) {
-      (data.requirements[lv] || []).forEach(r => {
+      const requirements = data.requirements[lv] || [];
+      requirements.forEach(r => {
+        // 施設やスキルではなく「アイテム」かつ「FIR設定に合致」する場合
         if (!r.type && (!hideoutFirOnly || r.fir)) {
-          if (!totalCounts[r.name]) totalCounts[r.name] = { count: 0, fir: r.fir };
+          if (!totalCounts[r.name]) {
+            totalCounts[r.name] = { count: 0, fir: r.fir };
+          }
           totalCounts[r.name].count += r.count;
         }
       });
@@ -195,17 +200,28 @@ function renderHideout() {
 function renderHideoutTotal(totalCounts) {
   const container = document.getElementById("hideoutTotalItems");
   if (!container) return;
+  
   const sorted = Object.entries(totalCounts).sort(([nA, dA], [nB, dB]) => {
     const doneA = (itemProgress[nA] || 0) >= dA.count;
     const doneB = (itemProgress[nB] || 0) >= dB.count;
     return doneA === doneB ? 0 : doneA ? 1 : -1;
   });
 
+  if (sorted.length === 0) {
+    container.innerHTML = "<p>必要なアイテムはありません</p>";
+    return;
+  }
+
   container.innerHTML = sorted.map(([name, data]) => {
     const current = itemProgress[name] || 0;
+    const isDone = current >= data.count; // ここでisDoneを定義
+    
     return `
       <div class="task-card ${isDone ? 'item-done' : ''} ${data.fir ? 'fir-item-highlight' : ''}">
-        <div class="item-info"><span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span><div class="item-target">必要: ${data.count}</div></div>
+        <div class="item-info">
+          <span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span>
+          <div class="item-target">必要: ${data.count}</div>
+        </div>
         <div class="counter-group">
           <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
           <input type="text" class="count-input" data-item-name="${name}" value="${current}" 
@@ -214,7 +230,7 @@ function renderHideoutTotal(totalCounts) {
           <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
         </div>
       </div>`;
-  }).join("") || "<p>必要なアイテムはありません</p>";
+  }).join("");
 }
 
 function renderTasks() {
