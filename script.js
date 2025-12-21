@@ -136,7 +136,9 @@ function renderRequiredItems() {
       <div class="item-info"><span>${name}</span><div class="item-target">必要: ${target}</div></div>
       <div class="counter-group">
         <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
-        <input type="number" class="count-input" data-item-name="${name}" value="${current}" onchange="window.updateItemCount('${name}', null)">
+        <input type="text" class="count-input" data-item-name="${name}" value="${current}" 
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+          onchange="window.updateItemCount('${name}', null)">
         <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
       </div>`;
     container.appendChild(card);
@@ -201,13 +203,14 @@ function renderHideoutTotal(totalCounts) {
 
   container.innerHTML = sorted.map(([name, data]) => {
     const current = itemProgress[name] || 0;
-    const isDone = current >= data.count;
     return `
       <div class="task-card ${isDone ? 'item-done' : ''} ${data.fir ? 'fir-item-highlight' : ''}">
         <div class="item-info"><span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span><div class="item-target">必要: ${data.count}</div></div>
         <div class="counter-group">
           <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
-          <input type="number" class="count-input" data-item-name="${name}" value="${current}" onchange="window.updateItemCount('${name}', null)">
+          <input type="text" class="count-input" data-item-name="${name}" value="${current}" 
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+            onchange="window.updateItemCount('${name}', null)">
           <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
         </div>
       </div>`;
@@ -232,7 +235,7 @@ function renderTasks() {
         <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
         <div class="task-items">${(task.requiredItems || []).map(i => `<div>・${i.name} x${i.count}${i.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`).join("")}</div>
       </div>
-      <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">${isCompleted ? "Done!" : "Undone"}</button>`;
+      <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">${isCompleted ? "未完了" : "完了"}</button>`;
     container.appendChild(card);
   });
   updateProgress();

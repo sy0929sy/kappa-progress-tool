@@ -603,12 +603,13 @@ input:checked + .slider:before {
 .count-btn.minus { background: #999; }
 
 .count-input {
-  width: 50px;
+  width: 45px;          /* 幅を少し調整 */
   text-align: center;
-  padding: 4px;
+  padding: 6px 2px;     /* 上下パディングを微調整 */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-weight: bold;
+  font-size: 1rem;      /* 入力しやすいサイズに */
 }
 
 /* 完了時のスタイル */
