@@ -76,6 +76,29 @@
         </div>
         <div id="progressCount" class="count-text">0 / 0</div>
       </div>
+    
+      <div class="account-section">
+        <h4>マルチデバイス同期</h4>
+        <div id="authStatus" class="auth-status">
+          <span class="status-badge anon">一時保存中</span>
+          <p class="auth-msg">キャッシュ削除でデータが消えます。同期するには登録してください。</p>
+        </div>
+        
+        <div id="unauthFields">
+          <input type="email" id="authEmail" placeholder="メールアドレス" class="auth-input">
+          <input type="password" id="authPassword" placeholder="パスワード" class="auth-input">
+          <div class="auth-buttons">
+            <button id="linkAccountBtn" class="auth-btn link">このデータで登録</button>
+            <button id="loginBtn" class="auth-btn login">既存垢でログイン</button>
+          </div>
+        </div>
+    
+        <div id="authFields" style="display: none;">
+          <p id="userEmailDisplay" class="user-email"></p>
+          <button id="logoutBtn" class="auth-btn logout">ログアウト</button>
+        </div>
+      </div>
+    
       <button id="toggleCompletedBtn" class="action-btn">完了済を非表示中</button>
       <button id="resetBtn" class="action-btn reset">データリセット</button>
     </aside>

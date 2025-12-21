@@ -687,6 +687,79 @@ input:checked + .slider:before {
   height: 100%;
 }
 
+/* サイドバー・アカウントセクション */
+.account-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.account-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.auth-status {
+  margin-bottom: 12px;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.status-badge.anon { background: #ffeaa7; color: #d6a312; }
+.status-badge.linked { background: #55efc4; color: #00b894; }
+
+.auth-msg {
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 5px;
+  line-height: 1.2;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.auth-btn {
+  flex: 1;
+  padding: 8px 2px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.auth-btn.link { background: var(--bg-blue); color: white; }
+.auth-btn.login { background: #636e72; color: white; }
+.auth-btn.logout { background: #fab1a0; color: #d63031; width: 100%; }
+
+.user-email {
+  font-size: 0.8rem;
+  color: #333;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }
