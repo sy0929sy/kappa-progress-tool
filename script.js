@@ -146,6 +146,8 @@ function renderHideout() {
           nextReqHtml += `・【前提】${r.name} Lv.${r.level}<br>`;
         } else if (r.type === "pre_trader") {
           nextReqHtml += `・【信頼】${r.name} LL${r.level}<br>`;
+        } else if (r.type === "pre_skill") {
+          nextReqHtml += `・【スキル】${r.name} LL${r.level}<br>`;
         } else {
           // アイテムの場合：r.count が存在するかチェック
           const countStr = r.count !== undefined ? r.count.toLocaleString() : "0";
