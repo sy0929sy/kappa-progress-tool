@@ -136,7 +136,24 @@ function renderRequiredItems() {
     }
   });
 
-  Object.entries(itemSummary).forEach(([name, target]) => {
+  // アイテムを配列化してソート
+  const sortedItems = Object.entries(itemSummary).sort(([nameA, targetA], [nameB, targetB]) => {
+    const currentA = itemProgress[nameA] || 0;
+    const currentB = itemProgress[nameB] || 0;
+    const isDoneA = currentA >= targetA;
+    const isDoneB = currentB >= targetB;
+
+    if (isDoneA && !isDoneB) return 1;  // 完了済みを下に
+    if (!isDoneA && isDoneB) return -1; // 未完了を上に
+    return 0;
+  });
+
+  if (sortedItems.length === 0) {
+    container.innerHTML = "<p>必要なアイテムはありません</p>";
+    return;
+  }
+
+  sortedItems.forEach(([name, target]) => {
     const current = itemProgress[name] || 0;
     const isDone = current >= target;
     const card = document.createElement("div");
@@ -242,7 +259,19 @@ function renderHideoutTotal(totalCounts) {
   const container = document.getElementById("hideoutTotalItems");
   if (!container) return;
   
-  container.innerHTML = Object.entries(totalCounts).map(([name, data]) => {
+  // ソート処理
+  const sortedItems = Object.entries(totalCounts).sort(([nameA, dataA], [nameB, dataB]) => {
+    const currentA = itemProgress[nameA] || 0;
+    const currentB = itemProgress[nameB] || 0;
+    const isDoneA = currentA >= dataA.count;
+    const isDoneB = currentB >= dataB.count;
+
+    if (isDoneA && !isDoneB) return 1;
+    if (!isDoneA && isDoneB) return -1;
+    return 0;
+  });
+
+  container.innerHTML = sortedItems.map(([name, data]) => {
     const current = itemProgress[name] || 0;
     const isDone = current >= data.count;
     return `
