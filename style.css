@@ -1,0 +1,407 @@
+:root {
+  --primary-pink: #e95470;
+  --secondary-yellow: #f9d977;
+  --bg-blue: #4a69bd;
+  --card-border: #3c56a5;
+  --done-green: #48c9b0;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  background-color: var(--primary-pink);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* メインコンテンツ */
+.main-content {
+  flex: 3;
+  padding: 25px;
+  background-color: #f8f9fa;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.trader-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.trader-btn {
+  padding: 12px 5px;
+  border: 2px solid #eee;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  transition: 0.2s;
+}
+
+.trader-btn.active {
+  border-color: var(--primary-pink);
+  background-color: #fff0f3;
+  color: var(--primary-pink);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* タブ */
+.tab-container {
+  display: flex;
+  margin: 25px 0 15px;
+  border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  color: #888;
+}
+
+.tab-btn.active {
+  color: var(--bg-blue);
+  border-bottom: 4px solid var(--bg-blue);
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* カード */
+.task-card {
+  background: white;
+  border: 3px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wiki-link {
+  font-size: 0.85em;
+  text-decoration: none;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.done-btn {
+  background-color: var(--done-green);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* サイドバー */
+.sidebar {
+  flex: 1;
+  background-color: var(--secondary-yellow);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* 要素間の均等な隙間 */
+}
+
+/* 進捗セクションのグループ化 */
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.progress-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.action-btn {
+  background: white;
+  border: 2px solid #333;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.circle-progress-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 10px; /* 下のカウントとの間隔 */
+}
+
+.count-text {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #444;
+  margin-top: 5px;
+}
+
+svg { transform: rotate(-90deg); width: 160px; height: 160px; }
+circle { fill: none; stroke-width: 10; }
+circle.bg { stroke: rgba(0,0,0,0.05); }
+circle.bar {
+  stroke: var(--bg-blue);
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.6s ease;
+  stroke-linecap: round;
+}
+
+.percent-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* リセットボタンの調整 */
+.reset-btn {
+  background-color: var(--primary-pink);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  margin-top: auto; /* サイドバーの最下部に配置したい場合 */
+}
+
+.hideout-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.level-select {
+  padding: 10px;
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  font-weight: bold;
+  background: white;
+  cursor: pointer;
+}
+
+.fir-badge {
+  color: #e95470;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* サブタブのコンテナ */
+.sub-tab-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: #eee;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.sub-tab-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #666;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.sub-tab-btn.active {
+  background: white;
+  color: var(--bg-blue);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* サブタブパネルの制御 */
+.sub-tab-panel {
+  display: none;
+}
+
+.sub-tab-panel.active {
+  display: block;
+}
+
+/* Hideout内は1カラムにするため横並び設定を解除 */
+.hideout-content {
+  width: 100%;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  user-select: none;
+}
+
+.toggle-container input {
+  cursor: pointer;
+}
+
+.h-total-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* トグルボタン本体のスタイル */
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-label {
+  font-size: 0.85em;
+  font-weight: bold;
+  color: #666;
+}
+
+/* スイッチの土台 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+/* チェックボックスを隠す */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* スライダー */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+/* ONの状態の背景色 (Kappaと同じ青系統にする場合) */
+input:checked + .slider {
+  background-color: var(--bg-blue);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--bg-blue);
+}
+
+/* つまみの移動 */
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* 角丸にする */
+.slider.round {
+  border-radius: 24px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.counter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.count-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  background: var(--bg-blue);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.count-btn:hover {
+  opacity: 0.8;
+}
+
+.count-btn.minus {
+  background: #666;
+}
+
+.count-display {
+  font-size: 0.9em;
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+}
+
+.item-done {
+  border-left: 5px solid #4CAF50 !important;
+  background-color: #f0fff0 !important;
+}
+
+.column { flex: 1; }
+.side-border { border-left: 2px solid #eee; padding-left: 20px; }
+.status-text { font-size: 12px; color: #666; margin-top: 15px; }

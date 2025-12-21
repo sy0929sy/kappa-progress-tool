@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarkov Multi Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <main class="main-content">
+      <header class="filter-header">
+        <div id="traderButtons" class="trader-grid"></div>
+        <div class="search-bar">
+          <input type="text" id="searchBox" placeholder="検索...">
+        </div>
+      </header>
+
+      <div class="tab-container">
+        <button class="tab-btn active" data-tab="task-tab">Kappaタスク一覧</button>
+        <button class="tab-btn" data-tab="item-tab">Kappa必要アイテム</button>
+        <button class="tab-btn" data-tab="hideout-tab">Hideout管理</button>
+      </div>
+
+      <div id="task-tab" class="tab-panel active">
+        <div id="taskList" class="card-list"></div>
+      </div>
+      
+      <div id="item-tab" class="tab-panel">
+        <div id="requiredItemsList" class="card-list"></div>
+      </div>
+
+      <div id="hideout-tab" class="tab-panel">
+        <div class="sub-tab-container">
+          <button class="sub-tab-btn active" data-subtab="h-upgrade">施設アップグレード</button>
+          <button class="sub-tab-btn" data-subtab="h-total">Hideout合計必要アイテム</button>
+        </div>
+      
+        <div class="hideout-content">
+          <div id="h-upgrade" class="sub-tab-panel active">
+            <h3>施設アップグレード状況</h3>
+            <div id="hideoutList" class="card-list"></div>
+          </div>
+          
+          <div id="h-total" class="sub-tab-panel">
+            <div class="h-total-header">
+              <h3>Hideout必要アイテム一覧</h3>
+              <div class="toggle-wrapper">
+                <span class="toggle-label">FIRのみ</span>
+                <label class="switch">
+                  <input type="checkbox" id="hideoutFirOnly">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div id="hideoutTotalItems" class="card-list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="progress-section">
+        <h3>Kappa進捗</h3>
+        <div class="circle-progress-container">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45"></circle>
+            <circle id="progressCircle" class="bar" cx="50" cy="50" r="45"></circle>
+          </svg>
+          <div id="progressPercent" class="percent-text">0%</div>
+        </div>
+        <div id="progressCount" class="count-text">0 / 0</div>
+      </div>
+      <button id="toggleCompletedBtn" class="action-btn">完了済を非表示中</button>
+      <button id="resetBtn" class="reset-btn">進捗リセット</button>
+      <p id="status" class="status-text"></p>
+    </aside>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

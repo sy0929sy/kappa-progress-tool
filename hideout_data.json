@@ -1,0 +1,687 @@
+{
+  "スタッシュ": {
+    "max": 4,
+    "requirements": {
+      "2": [
+        { "type": "pre_facility", "name": "通気口", "level": 1 },
+        { "name": "Roubles", "count": 2500000 },
+        { "name": "WD-40 100ml", "count": 4 },
+        { "name": "Hand drill", "count": 1, "fir": true },
+        { "name": "Pack of nails", "count": 5, "fir": true },
+        { "name": "Pack of screws", "count": 10 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "通気口", "level": 2 },
+        { "type": "pre_facility", "name": "暖房", "level": 2 },
+        { "type": "pre_trader", "name": "Prapor", "level": 3 },
+        { "type": "pre_trader", "name": "Ragman", "level": 3 },
+        { "name": "Roubles", "count": 8500000 },
+        { "name": "Electric drill", "count": 2, "fir": true },
+        { "name": "Pack of screws", "count": 15 },
+        { "name": "Pack of nails", "count": 7, "fir": true }
+      ],
+      "4": [
+        { "type": "pre_facility", "name": "発電機", "level": 3 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 3 },
+        { "type": "pre_facility", "name": "暖房", "level": 3 },
+        { "type": "pre_facility", "name": "インテリジェンスセンター", "level": 2 },
+        { "type": "pre_trader", "name": "Peacekeeper", "level": 4 },
+        { "type": "pre_trader", "name": "Ragman", "level": 4 },
+        { "name": "Euros", "count": 200000 },
+        { "name": "Screw nuts", "count": 10 },
+        { "name": "Bolts", "count": 10 },
+        { "name": "Shustrilo sealing foam", "count": 8 },
+        { "name": "Ratchet wrench", "count": 2, "fir": true }
+      ]
+    }
+  },
+  "セキュリティ": {
+    "max": 3,
+    "requirements": {
+      "1": [{ "name": "Roubles", "count": 20000 }],
+      "2": [
+        { "type": "pre_facility", "name": "照明", "level": 1 },
+        { "name": "Roubles", "count": 45000 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "照明", "level": 3 },
+        { "name": "NIXXOR Lens", "count": 2 },
+        { "name": "SSD Drive", "count": 1 },
+        { "name": "Wires", "count": 4 },
+        { "name": "Roubles", "count": 75000 }
+      ]
+    }
+  },
+  "通気口": {
+    "max": 3,
+    "requirements": {
+      "1": [{ "name": "Roubles", "count": 25000 }],
+      "2": [
+        { "name": "Electric Motor", "count": 1 },
+        { "name": "Wires", "count": 4 }
+      ],
+      "3": [
+        { "name": "Electric Motor", "count": 2 },
+        { "name": "Wires", "count": 10 },
+        { "name": "Printed Circuit Board", "count": 3 }
+      ]
+    }
+  },
+  "照明": {
+    "max": 3,
+    "requirements": {
+      "1": [{ "name": "Roubles", "count": 10000 }],
+      "2": [
+        { "type": "pre_facility", "name": "発電機", "level": 1 },
+        { "name": "Light Bulb", "count": 14 },
+        { "name": "Wires", "count": 10 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "発電機", "level": 2 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 1 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 2 },
+        { "name": "Energy-Saving Lamp", "count": 12 },
+        { "name": "Capacitors", "count": 7, "fir": true },
+        { "name": "Wires", "count": 12 },
+        { "name": "Roubles", "count": 50000 }
+      ]
+    }
+  },
+  "暖房": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "name": "Roubles", "count": 25000 },
+        { "name": "Classic Matches", "count": 2 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "通気口", "level": 1 },
+        { "type": "pre_skill", "name": "持久力", "level": 1 },
+        { "name": "Roubles", "count": 50000 },
+        { "name": "Dry Fuel", "count": 5 },
+        { "name": "Hunting Matches", "count": 2, "fir": true },
+        { "name": "Crickent Lighter", "count": 5 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "発電機", "level": 2 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 2 },
+        { "type": "pre_trader", "name": "Ragman", "level": 2 },
+        { "name": "Military Corrugated Tube", "count": 2, "fir": true },
+        { "name": "Radiator Helix", "count": 10 },
+        { "name": "Wires", "count": 10 },
+        { "name": "Phase Control Relay", "count": 4, "fir": true }
+      ]
+    }
+  },
+  "休憩スペース": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "通気口", "level": 1 },
+        { "name": "Roubles", "count": 10000 },
+        { "name": "Classic matches", "count": 1 },
+        { "name": "Duct tape", "count": 1 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "発電機", "level": 1 },
+        { "name": "Roubles", "count": 75000 },
+        { "name": "Energy-Saving Lamp", "count": 5 },
+        { "name": "Magnet", "count": 1, "fir": true },
+        { "name": "DVD drive", "count": 1, "fir": true }
+      ],
+      "3": [
+        { "type": "pre_trader", "name": "Skier", "level": 1 },
+        { "name": "GreenBat lithium battery", "count": 4, "fir": true },
+        { "name": "Wires", "count": 10 },
+        { "name": "Capacitors", "count": 5 },
+        { "name": "Power cord", "count": 5 }
+      ]
+    }
+  },
+  "発電機": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 1 },
+        { "name": "Spark Plug", "count": 1 },
+        { "name": "Roubles", "count": 100000 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 2 },
+        { "type": "pre_facility", "name": "通気口", "level": 2 },
+        { "name": "Bulbex Cable Cutter", "count": 1, "fir": true },
+        { "name": "Phase Control Relay", "count": 10 },
+        { "name": "Electric Motor", "count": 1, "fir": true },
+        { "name": "Wires", "count": 15 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 3 },
+        { "type": "pre_facility", "name": "通気口", "level": 3 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 3 },
+        { "name": "Power Supply Unit", "count": 5, "fir": true },
+        { "name": "Phase Control Relay", "count": 12 },
+        { "name": "Electric Motor", "count": 3, "fir": true },
+        { "name": "Spark Plug", "count": 16 },
+        { "name": "Metal Spare Parts", "count": 10 }
+      ]
+    }
+  },
+  "ギアラック": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "欠陥のある壁", "level": 6 },
+        { "type": "pre_facility", "name": "照明", "level": 2 },
+        { "type": "pre_trader", "name": "Ragman", "level": 2 },
+        { "name": "Electric Drill", "count": 1, "fir": true },
+        { "name": "Sewing Kit", "count": 1 },
+        { "name": "Awl", "count": 1 },
+        { "name": "Leatherman Multitool", "count": 1 },
+        { "name": "Bolts", "count": 15 },
+        { "name": "Fleece Fabric", "count": 10 },
+        { "name": "Energy-Saving Lamp", "count": 8 },
+        { "name": "Roubles", "count": 300000 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "コレクション", "level": 1 },
+        { "type": "pre_trader", "name": "Ragman", "level": 3 },
+        { "name": "Electric Drill", "count": 1, "fir": true },
+        { "name": "Duct Tape", "count": 5 },
+        { "name": "Shustrilo Sealing Foam", "count": 5 },
+        { "name": "Pack of Nails", "count": 8 },
+        { "name": "Energy-Saving Lamp", "count": 12 },
+        { "name": "Aramid Fabric", "count": 10 },
+        { "name": "Wrench", "count": 1, "fir": true },
+        { "name": "Roubles", "count": 800000 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "コレクション", "level": 2 },
+        { "type": "pre_trader", "name": "Ragman", "level": 4 },
+        { "name": "Body Armor Repair Kit", "count": 1, "fir": true },
+        { "name": "Cordura Fabric", "count": 10 },
+        { "name": "Metal Spare Parts", "count": 15 },
+        { "name": "KEKTAPE", "count": 10 },
+        { "name": "Energy-Saving Lamp", "count": 15 },
+        { "name": "Set of Files Master", "count": 1, "fir": true },
+        { "name": "Ratchet Wrench", "count": 1, "fir": true },
+        { "name": "Roubles", "count": 1200000 }
+      ]
+    }
+  },
+"Weapon Rack": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "name": "Pack of nails", "count": 5 },
+        { "name": "Energy-saving lamp", "count": 5 },
+        { "name": "Insulating tape", "count": 5 },
+        { "name": "Hand drill", "count": 1, "fir": true },
+        { "name": "Bolts", "count": 15 },
+        { "name": "Metal cutting scissors", "count": 1, "fir": true },
+        { "name": "Xenomorph sealing foam", "count": 5 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "通気口", "level": 2 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 2 },
+        { "name": "Metal spare parts", "count": 10 },
+        { "name": "Pack of screws", "count": 10 },
+        { "name": "Electric drill", "count": 1, "fir": true },
+        { "name": "Bundle of wires", "count": 10 },
+        { "name": "Set of files \"Master\"", "count": 1, "fir": true },
+        { "name": "Tube of Poxeram cold welding", "count": 3 },
+        { "name": "Energy-saving lamp", "count": 10 },
+        { "name": "Duct tape", "count": 10 },
+        { "name": "Weapon parts", "count": 5 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "通気口", "level": 3 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 3 },
+        { "name": "Electric drill", "count": 1, "fir": true },
+        { "name": "Energy-saving lamp", "count": 15 },
+        { "name": "Metal spare parts", "count": 10 },
+        { "name": "KEKTAPE duct tape", "count": 5, "fir": true },
+        { "name": "Bundle of wires", "count": 15 },
+        { "name": "Shustrilo sealing foam", "count": 5 },
+        { "name": "Tech manual", "count": 1, "fir": true },
+        { "name": "#FireKlean gun lube", "count": 1, "fir": true }
+      ]
+    }
+  },
+  "通気口": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "name": "Roubles", "count": 25000 }
+      ],
+      "2": [
+        { "name": "Metal spare parts", "count": 5 },
+        { "name": "CPU fan", "count": 5 },
+        { "name": "Car battery", "count": 1, "fir": true },
+        { "name": "Electric motor", "count": 1, "fir": true }
+      ],
+      "3": [
+        { "type": "pre_skill", "name": "筋力", "level": 2 },
+        { "type": "pre_facility", "name": "発電機", "level": 2 },
+        { "name": "Printed circuit board", "count": 5 },
+        { "name": "Electric motor", "count": 4, "fir": true },
+        { "name": "Metal spare parts", "count": 10 },
+        { "name": "Bundle of wires", "count": 14 },
+        { "name": "Car battery", "count": 4, "fir": true }
+      ]
+    }
+  },
+  "洗面所": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "name": "Toilet Paper", "count": 1 },
+        { "name": "Toothpaste", "count": 1 },
+        { "name": "Soap", "count": 1 },
+        { "name": "Awl", "count": 1 },
+        { "name": "Roubles", "count": 2000 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "集水器", "level": 1 },
+        { "type": "pre_facility", "name": "通気口", "level": 1 },
+        { "name": "Corrugated Hose", "count": 3 },
+        { "name": "Electric Drill", "count": 1 },
+        { "name": "Awl", "count": 1 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "集水器", "level": 2 },
+        { "type": "pre_facility", "name": "通気口", "level": 2 },
+        { "name": "Corrugated Hose", "count": 6 },
+        { "name": "Pressure Gauge", "count": 2 },
+        { "name": "Shaving Cream", "count": 1 },
+        { "name": "Xenomorph Sealing Foam", "count": 1 }
+      ]
+    }
+  },
+  "医療ステーション": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "name": "Disposable Syringe", "count": 1 },
+        { "name": "Pile of Meds", "count": 1 },
+        { "name": "Aseptic Bandage", "count": 2 },
+        { "name": "OLOLO Multivitamins", "count": 1 },
+        { "name": "Roubles", "count": 50000 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "発電機", "level": 1 },
+        { "type": "pre_trader", "name": "Therapist", "level": 2 },
+        { "type": "pre_skill", "name": "体力", "level": 2 },
+        { "name": "Saline Solution", "count": 6 },
+        { "name": "Medical Tools", "count": 3, "fir": true },
+        { "name": "Bloodset", "count": 2, "fir": true },
+        { "name": "Esmarch Tourniquet", "count": 10 },
+        { "name": "Roubles", "count": 150000 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "発電機", "level": 2 },
+        { "type": "pre_facility", "name": "洗面所", "level": 2 },
+        { "type": "pre_trader", "name": "Therapist", "level": 3 },
+        { "type": "pre_trader", "name": "Skier", "level": 2 },
+        { "type": "pre_skill", "name": "生命力", "level": 3 },
+        { "name": "Ophthalmoscope", "count": 1, "fir": true },
+        { "name": "Saline Solution", "count": 10 },
+        { "name": "LEDX Skin Transilluminator", "count": 1 },
+        { "name": "Roubles", "count": 500000 }
+      ]
+    }
+  },
+  "キッチン": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "発電機", "level": 1 },
+        { "name": "White Salt", "count": 1 },
+        { "name": "Power Cord", "count": 1 },
+        { "name": "Phase Control Relay", "count": 2 },
+        { "name": "Roubles", "count": 25000 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "洗面所", "level": 2 },
+        { "name": "Wrench", "count": 4 },
+        { "name": "Corrugated Hose", "count": 2 },
+        { "name": "Heat-exchange Surface", "count": 2 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "発電機", "level": 2 },
+        { "type": "pre_facility", "name": "洗面所", "level": 3 },
+        { "type": "pre_facility", "name": "スタッシュ", "level": 2 },
+        { "type": "pre_skill", "name": "代謝", "level": 3 },
+        { "name": "Coffee MULE", "count": 3 },
+        { "name": "Silicone Tube", "count": 2 },
+        { "name": "Pressure Gauge", "count": 2 },
+        { "name": "Roubles", "count": 125000 }
+      ]
+    }
+  },
+  "集水器": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 1 },
+        { "name": "Corrugated Hose", "count": 4 },
+        { "name": "Bolts", "count": 5 },
+        { "name": "Screw Nut", "count": 5 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 2 },
+        { "type": "pre_trader", "name": "Jaeger", "level": 2 },
+        { "type": "pre_skill", "name": "注意力", "level": 3 },
+        { "name": "Corrugated Hose", "count": 6 },
+        { "name": "Electric Motor", "count": 2 },
+        { "name": "Water Filter", "count": 2 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "発電機", "level": 3 },
+        { "type": "pre_facility", "name": "暖房", "level": 3 },
+        { "type": "pre_trader", "name": "Jaeger", "level": 3 },
+        { "name": "Corrugated Hose", "count": 8 },
+        { "name": "Pressure Gauge", "count": 2 },
+        { "name": "Shaving Cream", "count": 2 },
+        { "name": "Roubles", "count": 125000 }
+      ]
+    }
+  },
+"ワークベンチ": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "照明", "level": 1 },
+        { "name": "Roubles", "count": 10000 },
+        { "name": "Toolset", "count": 1 },
+        { "name": "Leatherman Multitool", "count": 1 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "照明", "level": 2 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 2 },
+        { "name": "Electric drill", "count": 1, "fir": true },
+        { "name": "Bolts", "count": 6 },
+        { "name": "Screw nuts", "count": 6 },
+        { "name": "Toolset", "count": 1, "fir": true }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "照明", "level": 3 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 3 },
+        { "name": "Electric drill", "count": 1, "fir": true },
+        { "name": "Elite pliers", "count": 2, "fir": true },
+        { "name": "Firesteel", "count": 1, "fir": true },
+        { "name": "Xenomorph sealing foam", "count": 1 }
+      ]
+    }
+  },
+  "インテリジェンスセンター": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 2 },
+        { "type": "pre_facility", "name": "通気口", "level": 1 },
+        { "type": "pre_facility", "name": "発電機", "level": 1 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 1 },
+        { "name": "Power Cord", "count": 1 },
+        { "name": "Intelligence Folder", "count": 1 },
+        { "name": "Topographic Survey Maps", "count": 1 },
+        { "name": "Factory Plan Map", "count": 1 },
+        { "name": "Working LCD", "count": 1 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 3 },
+        { "type": "pre_facility", "name": "医療ステーション", "level": 3 },
+        { "type": "pre_facility", "name": "キッチン", "level": 3 },
+        { "type": "pre_trader", "name": "Mechanic", "level": 2 },
+        { "type": "pre_skill", "name": "注意力", "level": 3 },
+        { "name": "Intelligence Folder", "count": 3, "fir": true },
+        { "name": "Secure Flash Drive", "count": 3 },
+        { "name": "Power Cord", "count": 7 },
+        { "name": "Damaged Hard Drive", "count": 8 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "発電機", "level": 3 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 3 },
+        { "type": "pre_trader", "name": "Prapor", "level": 3 },
+        { "name": "Military Cable", "count": 8 },
+        { "name": "COFDM Wireless Signal Transmitter", "count": 2, "fir": true },
+        { "name": "Far-forward GPS Signal Amplifier", "count": 1 },
+        { "name": "VPX Flash Storage Module", "count": 2 },
+        { "name": "Military Flash Drive", "count": 8 },
+        { "name": "Secure Magnetic Tape Cassette", "count": 2 }
+      ]
+    }
+  },
+  "射撃場": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "照明", "level": 1 },
+        { "name": "Roubles", "count": 20000 },
+        { "name": "Metal spare parts", "count": 1 },
+        { "name": "Bolts", "count": 1 },
+        { "name": "Screw nuts", "count": 1 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "照明", "level": 3 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 2 },
+        { "name": "Electric motor", "count": 3, "fir": true },
+        { "name": "Construction measuring tape", "count": 1, "fir": true },
+        { "name": "Tube of Poxeram cold welding", "count": 3 },
+        { "name": "Toolset", "count": 1, "fir": true },
+        { "name": "Pack of screws", "count": 3 },
+        { "name": "Electric drill", "count": 1, "fir": true },
+        { "name": "Metal spare parts", "count": 8 },
+        { "name": "WI-FI Camera", "count": 3 },
+        { "name": "Bundle of wires", "count": 6 },
+        { "name": "Energy-saving lamp", "count": 6 }
+      ],
+      "3": [
+        { "name": "Set of files \"Master\"", "count": 1, "fir": true },
+        { "name": "Printed circuit board", "count": 5 },
+        { "name": "Bundle of wires", "count": 10 },
+        { "name": "Metal spare parts", "count": 5 },
+        { "name": "Capacitors", "count": 5 },
+        { "name": "Phase control relay", "count": 5 },
+        { "name": "Power cord", "count": 5 },
+        { "name": "Leatherman Multitool", "count": 1 },
+        { "name": "Tech manual", "count": 1, "fir": true }
+      ]
+    }
+  },
+  "本棚": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "休憩スペース", "level": 3 },
+        { "type": "pre_skill", "name": "ハイドアウト管理", "level": 5 },
+        { "name": "BakeEzy Cook Book", "count": 1, "fir": true },
+        { "name": "Slim Diary", "count": 5 },
+        { "name": "Diary", "count": 5 },
+        { "name": "Tech Manual", "count": 8 },
+        { "name": "Chainlet", "count": 2, "fir": true },
+        { "name": "Horse Figurine", "count": 1, "fir": true },
+        { "name": "Roubles", "count": 400000 }
+      ]
+    }
+  },
+  "SCAVケース": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "インテリジェンスセンター", "level": 2 },
+        { "name": "Bronze Lion", "count": 2 },
+        { "name": "Gold Skull Ring", "count": 2 },
+        { "name": "Golden Neck Chain", "count": 4 },
+        { "name": "Roller", "count": 2 }
+      ]
+    }
+  },
+  "ビットコインファーム": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "インテリジェンスセンター", "level": 2 },
+        { "name": "T-Shaped Plug", "count": 10 },
+        { "name": "VPX Flash Storage Module", "count": 2 },
+        { "name": "Power Cord", "count": 15 },
+        { "name": "Power Supply Unit", "count": 10, "fir": true },
+        { "name": "CPU Fan", "count": 15 }
+      ],
+      "2": [
+        { "type": "pre_facility", "name": "発電機", "level": 3 },
+        { "name": "CPU Fan", "count": 15 },
+        { "name": "Power Supply Unit", "count": 10 },
+        { "name": "Printed Circuit Board", "count": 15, "fir": true },
+        { "name": "Phase Control Relay", "count": 10 },
+        { "name": "Military Power Filter", "count": 5 }
+      ],
+      "3": [
+        { "type": "pre_facility", "name": "ソーラーパネル", "level": 1 },
+        { "type": "pre_facility", "name": "集水器", "level": 3 },
+        { "name": "CPU Fan", "count": 25, "fir": true },
+        { "name": "Silicone Tube", "count": 15 },
+        { "name": "Electric Motor", "count": 10 },
+        { "name": "Pressure Gauge", "count": 10 },
+        { "name": "6-STEN-140-M Military Battery", "count": 2 }
+      ]
+    }
+  },
+"ソーラーパネル": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "発電機", "level": 3 },
+        { "type": "pre_facility", "name": "ワークベンチ", "level": 3 },
+        { "type": "pre_trader", "name": "Peacekeeper", "level": 4 },
+        { "name": "Euros", "count": 25000 },
+        { "name": "Phased array element", "count": 6 },
+        { "name": "Advanced current converter", "count": 1 },
+        { "name": "Working LCD", "count": 3, "fir": true },
+        { "name": "Military cable", "count": 10 },
+        { "name": "Military power filter", "count": 10 }
+      ]
+    }
+  },
+  "醸造器": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "集水器", "level": 3 },
+        { "type": "pre_facility", "name": "キッチン", "level": 3 },
+        { "name": "Metal Spare Parts", "count": 5 },
+        { "name": "Pressure Gauge", "count": 2, "fir": true },
+        { "name": "Radiator Helix", "count": 5 },
+        { "name": "Silicone Tube", "count": 10 },
+        { "name": "Pipe Grip Wrench", "count": 1, "fir": true },
+        { "name": "Analog Thermometer", "count": 2, "fir": true },
+        { "name": "Corrugated Hose", "count": 10 }
+      ]
+    }
+  },
+  "フィルターユニット": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_trader", "name": "Skier", "level": 3 },
+        { "type": "pre_facility", "name": "発電機", "level": 3 },
+        { "type": "pre_facility", "name": "通気口", "level": 3 },
+        { "name": "Dollars", "count": 25000 },
+        { "name": "Gas Mask Air Filter", "count": 5, "fir": true },
+        { "name": "Military Power Filter", "count": 5 },
+        { "name": "Military Corrugated Tube", "count": 10 }
+      ]
+    }
+  },
+  "欠陥のある壁": {
+    "max": 6,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "医療ステーション", "level": 1 },
+        { "type": "pre_facility", "name": "集水器", "level": 1 }
+      ],
+      "2": [{ "name": "Fleece Fabric", "count": 1 }],
+      "3": [{ "name": "Fleece Fabric", "count": 1 }],
+      "4": [{ "name": "Fierce Blow Sledgehammer", "count": 1, "fir": true }],
+      "5": [
+        { "name": "Metal Cutting Scissors", "count": 1, "fir": true },
+        { "name": "Toolset", "count": 1, "fir": true }
+      ],
+      "6": [
+        { "name": "Corrugated Hose", "count": 2 },
+        { "name": "Duct Tape", "count": 1 },
+        { "name": "Toolset", "count": 1, "fir": true },
+        { "name": "Elite Pliers", "count": 1, "fir": true },
+        { "name": "Metal Spare Parts", "count": 5 },
+        { "name": "Xenomorph Sealing Foam", "count": 1 },
+        { "name": "Wires", "count": 2 },
+        { "name": "Light Bulb", "count": 2 }
+      ]
+    }
+  },
+  "ジム": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "欠陥のある壁", "level": 6 },
+        { "type": "pre_facility", "name": "照明", "level": 2 },
+        { "type": "pre_facility", "name": "通気口", "level": 2 },
+        { "name": "Insulating Tape", "count": 5 },
+        { "name": "Metal Cutting Scissors", "count": 1, "fir": true },
+        { "name": "WD-40 100ml", "count": 1 },
+        { "name": "Toolset", "count": 1, "fir": true },
+        { "name": "Screw Nut", "count": 5 },
+        { "name": "Electric Drill", "count": 1, "fir": true },
+        { "name": "Bolts", "count": 5 }
+      ]
+    }
+  },
+  "コレクション": {
+    "max": 3,
+    "requirements": {
+      "1": [
+        { "type": "pre_trader", "name": "Mechanic", "level": 2 },
+        { "name": "Insulating Tape", "count": 5 },
+        { "name": "Pack of Nails", "count": 5 },
+        { "name": "Light Bulb", "count": 5 },
+        { "name": "Cat Figurine", "count": 1, "fir": true },
+        { "name": "Fleece Fabric", "count": 5 },
+        { "name": "Round Pliers", "count": 1, "fir": true }
+      ],
+      "2": [
+        { "name": "Tech Manual", "count": 1, "fir": true },
+        { "name": "Elite Pliers", "count": 1, "fir": true },
+        { "name": "Toolset", "count": 1, "fir": true },
+        { "name": "Golden Rooster", "count": 1, "fir": true },
+        { "name": "Energy-Saving Lamp", "count": 10 },
+        { "name": "Pack of Screws", "count": 6 },
+        { "name": "Duct Tape", "count": 3 },
+        { "name": "Xenomorph Sealing Foam", "count": 5 },
+        { "name": "Poxeram", "count": 2 }
+      ],
+      "3": [
+        { "name": "Set of Files Master", "count": 1, "fir": true },
+        { "name": "Electric Drill", "count": 1, "fir": true },
+        { "name": "Bronze Lion", "count": 1, "fir": true },
+        { "name": "Energy-Saving Lamp", "count": 15 },
+        { "name": "KEKTAPE", "count": 3, "fir": true },
+        { "name": "T-Shaped Plug", "count": 6 },
+        { "name": "Metal Spare Parts", "count": 15 },
+        { "name": "Power Cord", "count": 5 }
+      ]
+    }
+  },
+  "カルティストサークル": {
+    "max": 1,
+    "requirements": {
+      "1": [
+        { "type": "pre_facility", "name": "セキュリティ", "level": 3 },
+        { "name": "AntiRoach Spray", "count": 1, "fir": true },
+        { "name": "Light Bulb", "count": 5, "fir": true },
+        { "name": "White Salt", "count": 3, "fir": true },
+        { "name": "SurvL Lighter", "count": 1, "fir": true },
+        { "name": "Measuring Tape", "count": 1, "fir": true },
+        { "name": "WI-FI Camera", "count": 1 }
+      ]
+    }
+  }
+}
