@@ -261,13 +261,20 @@ function renderTasks() {
             <img src="${imagePath}" alt="${task.trader}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <span style="display:none;">${task.trader.charAt(0)}</span>
           </div>
-          <div>
+          
+          <div class="task-title-group">
             <div class="trader-name-label">${task.trader.toUpperCase()}</div>
-            <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
+            <div class="task-name">
+              <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
+            </div>
           </div>
         </div>
-        <div class="task-items">${(task.requiredItems || []).map(i => `<div>・${i.name} x${i.count}${i.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`).join("")}</div>
+
+        <div class="task-items">
+          ${(task.requiredItems || []).map(i => `<div>・${i.name} x${i.count}${i.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</div>`).join("")}
+        </div>
       </div>
+      
       <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
         ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
       </button>`;

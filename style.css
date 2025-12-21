@@ -835,6 +835,35 @@ input:checked + .slider:before {
   font-size: 1rem;
 }
 
+/* アイコンとテキストを横並びにするコンテナ */
+.task-header-flex {
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 15px;           /* アイコンとテキストの間の距離 */
+  margin-bottom: 10px;
+}
+
+/* テキスト部分（トレーダー名とタスク名）を縦に並べる */
+.task-title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* トレーダー名のラベル（少し小さくしてタスク名を目立たせる） */
+.trader-name-label {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+/* タスク名のスタイル */
+.task-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }
