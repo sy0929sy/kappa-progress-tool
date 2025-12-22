@@ -838,18 +838,15 @@ input:checked + .slider:before {
 /* アイコンとテキストを横並びにするコンテナ */
 .task-header-flex {
   display: flex;
-  align-items: center; /* 垂直方向の中央揃え */
-  gap: 15px;           /* アイコンとテキストの間の距離 */
-  margin-bottom: 10px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 
 /* テキスト部分（トレーダー名とタスク名）を縦に並べる */
 .task-title-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 2px;
-  flex: 1; /* 親のスペースを埋める */
+  flex: 1;
+  min-width: 0; /* 文字溢れ防止 */
 }
 
 .task-requirements-container {
@@ -857,6 +854,14 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.task-requirements-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 右揃え */
+  gap: 4px;
+  min-width: 120px; /* 位置を揃えるための最低幅（お好みで調整） */
 }
 
 /* トレーダー名のラベル（少し小さくしてタスク名を目立たせる） */
@@ -1002,13 +1007,17 @@ input:checked + .slider:before {
   min-height: 1.2rem; /* バッジが表示されてもされなくても行の高さを一定にする */
 }
 
+.req-row {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 18px; /* 行の高さを維持 */
+}
+
 /* バッジの基本スタイル */
 .badge {
-  font-size: 0.7rem;
-  padding: 1px 8px;
-  border-radius: 3px;
-  font-weight: 600;
-  display: inline-block;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 4px;
   white-space: nowrap;
 }
 
@@ -1021,11 +1030,10 @@ input:checked + .slider:before {
 
 /* 前提タスクバッジ：落ち着いたグレー */
 .pre-badge {
-  background-color: #2a2a2a;
-  color: #bbb;
-  border: 1px solid #444;
-  /* 前提タスクが長い場合に備えて */
-  max-width: 100%;
+  background-color: #f0f0f0;
+  color: #666;
+  border: 1px solid #ddd;
+  max-width: 180px; /* 長くなりすぎないよう制限 */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -1048,12 +1056,15 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .task-header-flex {
-    gap: 10px;
+    flex-wrap: wrap; /* 狭い画面では折り返し許可 */
   }
-  .badge {
-    font-size: 0.65rem;
+  .task-requirements-aside {
+    align-items: flex-start;
+    min-width: 100%;
+    margin-top: 5px;
+    padding-left: 52px; /* アイコンの幅分ずらす */
   }
 }
 

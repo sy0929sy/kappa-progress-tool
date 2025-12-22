@@ -268,21 +268,29 @@ function renderTasks() {
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
     
-    // 前提タスク名の取得
-    const preTaskNames = (task.preRequisites || [])
-      .map(preId => {
-        const found = TASKS.find(t => t.id === preId);
-        return found ? found.name : null;
-      })
-      .filter(name => name !== null);
+    // --- 前提タスクの省略ロジック ---
+    const preTaskIds = task.preRequisites || [];
+    const preTaskNames = preTaskIds
+      .map(preId => TASKS.find(t => t.id === preId)?.name)
+      .filter(Boolean);
 
-    // バッジ用HTML（データがない場合は空文字ではなく、高さを維持するための空のdivを返す設計にするとより安定します）
-    const levelHtml = task.requiredLevel 
+    let preTasksDisplay = "";
+    if (preTaskNames.length > 0) {
+      if (preTaskNames.length > 2) {
+        // 2つ目まで表示し、残りを個数で省略
+        preTasksDisplay = `前提: ${preTaskNames.slice(0, 2).join(", ")} ...他${preTaskNames.length - 2}件`;
+      } else {
+        preTasksDisplay = `前提: ${preTaskNames.join(", ")}`;
+      }
+    }
+
+    // --- 各行のHTML生成 (Lv 0 は非表示) ---
+    const levelHtml = (task.requiredLevel && task.requiredLevel > 0)
       ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>` 
       : "";
     
-    const preTasksHtml = preTaskNames.length > 0 
-      ? `<span class="badge pre-badge">前提: ${preTaskNames.join(", ")}</span>` 
+    const preHtml = preTasksDisplay 
+      ? `<span class="badge pre-badge">${preTasksDisplay}</span>` 
       : "";
 
     const card = document.createElement("div");
@@ -302,15 +310,17 @@ function renderTasks() {
             <img src="${imagePath}" alt="${task.trader}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <span style="display:none;">${task.trader.charAt(0)}</span>
           </div>
+          
           <div class="task-title-group">
             <div class="trader-name-label">${task.trader.toUpperCase()}</div>
             <div class="task-name">
               <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
             </div>
-            <div class="task-requirements-container">
-              <div class="req-line level-line">${levelHtml}</div>
-              <div class="req-line pre-line">${preTasksHtml}</div>
-            </div>
+          </div>
+
+          <div class="task-requirements-aside">
+            <div class="req-row">${levelHtml}</div>
+            <div class="req-row">${preHtml}</div>
           </div>
         </div>
       </div>
