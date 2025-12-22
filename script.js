@@ -291,18 +291,18 @@ function renderTasks() {
 }
 
 // 前提タスクをすべて（先祖代々）取得する関数
-function getAllPreRequisites(taskId, allPreReqs = new Set()) {
+function getRecursivePreRequisites(taskId, allPreIds = new Set()) {
   const task = TASKS.find(t => t.id === taskId);
-  if (!task || !task.preRequisites) return allPreReqs;
+  if (!task || !task.preRequisites) return Array.from(allPreIds);
 
-  task.preRequisites.forEach(preId => {
-    if (!allPreReqs.has(preId)) {
-      allPreReqs.add(preId);
-      // さらにその前のタスクを再帰的に取得
-      getAllPreRequisites(preId, allPreReqs);
+  for (const preId of task.preRequisites) {
+    if (!allPreIds.has(preId)) {
+      allPreIds.add(preId);
+      // さらにそのタスクの前提も探しに行く
+      getRecursivePreRequisites(preId, allPreIds);
     }
-  });
-  return allPreReqs;
+  }
+  return Array.from(allPreIds);
 }
 
 function showConfirmModal(targetTasks) {
@@ -312,11 +312,11 @@ function showConfirmModal(targetTasks) {
     const confirmBtn = document.getElementById('modalConfirm');
     const cancelBtn = document.getElementById('modalCancel');
 
-    // リストをクリアして追加
+    // リストを生成
     taskList.innerHTML = '';
     targetTasks.forEach(task => {
       const li = document.createElement('li');
-      li.textContent = `[${task.trader}] ${task.name}`;
+      li.innerHTML = `<span style="color:var(--secondary-yellow)">[${task.trader}]</span> ${task.name}`;
       taskList.appendChild(li);
     });
 
@@ -347,25 +347,32 @@ function showConfirmModal(targetTasks) {
 // 既存の toggleTask を更新
 window.toggleTask = async (taskId) => {
   const task = TASKS.find(t => t.id === taskId);
+  if (!task) return;
+
   const isNowCompleted = !userData.tasks[taskId];
 
   if (isNowCompleted) {
+    // 未完了の前提タスクを再帰的に取得
     const preIds = getRecursivePreRequisites(taskId);
     const incompletePres = preIds.filter(id => !userData.tasks[id]);
 
     if (incompletePres.length > 0) {
-      // 未完了の前提タスクオブジェクトを取得
-      const targetTasks = incompletePres.map(id => TASKS.find(t => t.id === id)).filter(Boolean);
+      // タスク名を表示するためにオブジェクトのリストを作成
+      const targetTaskObjects = incompletePres
+        .map(id => TASKS.find(t => t.id === id))
+        .filter(Boolean);
       
       // カスタムモーダルを表示
-      const confirmed = await showConfirmModal(targetTasks);
+      const confirmed = await showConfirmModal(targetTaskObjects);
       
       if (confirmed) {
+        // すべて完了にする
         incompletePres.forEach(id => {
           userData.tasks[id] = true;
         });
       } else {
-        return; // キャンセルされたら何もしない
+        // キャンセル時は何もしない
+        return;
       }
     }
   }
