@@ -39,6 +39,20 @@ async function init() {
     ]);
     TASKS = await resTasks.json();
     HIDEOUT_DATA = await resHideout.json();
+    
+	// 全タスクIDから 'collector' 自身を除いたリストを作成
+	const allTaskIds = TASKS
+	  .map(t => t.id)
+	  .filter(id => id !== 'collector');
+	
+	// Collectorタスクを見つけて上書き
+	const collectorTask = TASKS.find(t => t.id === 'collector');
+	if (collectorTask) {
+	  collectorTask.preRequisites = allTaskIds;
+	}
+	
+	// コンソールにJSON形式で出力して確認する場合
+	console.log(JSON.stringify(allTaskIds));
 
     onAuthStateChanged(auth, async (user) => {
       if (user) {
