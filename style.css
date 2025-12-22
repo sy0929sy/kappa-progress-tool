@@ -414,23 +414,17 @@ input:checked + .slider:before {
 
 /* タスク名の位置調整（必要に応じて） */
 .task-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; /* タスク名が長すぎる場合は「...」にする */
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;      /* 改行させない */
+  overflow: hidden;         /* はみ出しを隠す */
+  text-overflow: ellipsis;  /* 長すぎたら「...」にする */
 }
 
 .task-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.trader-name-label {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #888;
-  text-transform: uppercase;
-  margin-bottom: 2px;
 }
 
 .wiki-link {
@@ -808,16 +802,9 @@ input:checked + .slider:before {
 
 /* トレーダーアイコンのコンテナ */
 .trader-icon-badge {
-  width: 40px; /* 少し大きくすると画像が見やすい */
-  height: 40px;
-  border-radius: 8px; /* 丸より四角に近い方がタルコフっぽい */
-  overflow: hidden; /* 画像がはみ出さないように */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #333; /* 画像読み込み前の背景色 */
   flex-shrink: 0;
-  border: 1px solid var(--card-border);
+  width: 40px;
+  height: 40px;
 }
 
 /* アイコン画像自体のスタイル */
@@ -840,14 +827,16 @@ input:checked + .slider:before {
   align-items: center;
   gap: 15px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* テキスト部分（トレーダー名とタスク名）を縦に並べる */
 .task-title-group {
-  flex: 1;
-  min-width: 0; /* flexアイテム内のテキスト溢れを防ぐマジックコード */
+  flex: 1;          /* 残りのスペースをすべて使う */
+  min-width: 0;     /* テキストがはみ出した時に枠を押し広げないおまじない */
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .task-requirements-container {
@@ -858,13 +847,15 @@ input:checked + .slider:before {
 }
 
 .task-requirements-aside {
-  width: 160px;             /* 横幅を完全に固定（ここがズレ防止の肝） */
-  flex-shrink: 0;           /* 親が狭くなってもこの幅を維持 */
+  width: 180px;             /* 縦線の位置をここ（右端から180px戻った所）で固定 */
+  flex-shrink: 0;           /* 絶対に潰さない */
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-left: 1px solid #eee; /* 境界線を入れると揃っているのが分かりやすくなります */
-  padding-left: 10px;
+  border-left: 2px solid #ddd; /* これが「縦線」 */
+  padding-left: 12px;
+  margin-left: 10px;
+  box-sizing: border-box;
 }
 
 /* トレーダー名のラベル（少し小さくしてタスク名を目立たせる） */
@@ -1016,7 +1007,6 @@ input:checked + .slider:before {
   height: 20px;
   display: flex;
   align-items: center;
-  overflow: hidden;
 }
 
 /* バッジの基本スタイル */
@@ -1036,9 +1026,13 @@ input:checked + .slider:before {
 
 /* 前提タスクバッジ：落ち着いたグレー */
 .pre-badge {
-  max-width: 150px;
+  background-color: #eee;
+  color: #555;
+  border: 1px solid #ddd;
+  max-width: 100%;          /* 180pxの枠内に収める */
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* リンクのスタイル微調整 */
@@ -1059,14 +1053,17 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .task-header-flex {
     flex-wrap: wrap;
   }
   .task-requirements-aside {
     width: 100%;
-    margin-top: 5px;
-    padding-left: 55px; /* アイコンの右側に合わせる */
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    padding-top: 5px;
+    margin-left: 55px; /* アイコンの幅分右に寄せる */
   }
 }
 

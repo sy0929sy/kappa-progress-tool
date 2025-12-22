@@ -268,22 +268,21 @@ function renderTasks() {
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
     
-    // 前提タスクの取得と省略ロジック (1つ表示、2つ以上は省略)
+    // 前提タスクの取得と「1つだけ表示」のロジック
     const preTaskIds = task.preRequisites || [];
     const preTaskNames = preTaskIds
       .map(preId => TASKS.find(t => t.id === preId)?.name)
       .filter(Boolean);
-
+  
     let preTasksDisplay = "";
     if (preTaskNames.length > 0) {
       if (preTaskNames.length > 1) {
-        preTasksDisplay = `前提: ${preTaskNames[0]} ...他${preTaskNames.length - 1}件`;
+        preTasksDisplay = `前提: ${preTaskNames[0]}...他${preTaskNames.length - 1}件`;
       } else {
         preTasksDisplay = `前提: ${preTaskNames[0]}`;
       }
     }
-
-    // Lv 0 は非表示
+  
     const levelHtml = (task.requiredLevel && task.requiredLevel > 0)
       ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>` 
       : "";
@@ -291,7 +290,7 @@ function renderTasks() {
     const preHtml = preTasksDisplay 
       ? `<span class="badge pre-badge">${preTasksDisplay}</span>` 
       : "";
-
+  
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
     
@@ -301,7 +300,7 @@ function renderTasks() {
     let wikiUrl = wikiLang === "en" 
       ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` 
       : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
-
+  
     card.innerHTML = `
       <div class="task-info">
         <div class="task-header-flex">
@@ -316,7 +315,7 @@ function renderTasks() {
               <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
             </div>
           </div>
-    
+  
           <div class="task-requirements-aside">
             <div class="req-row">${levelHtml}</div>
             <div class="req-row">${preHtml}</div>
