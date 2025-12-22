@@ -256,15 +256,42 @@ function renderTasks() {
   const container = document.getElementById("taskList");
   if (!container) return;
   container.innerHTML = "";
+  
   const searchText = document.getElementById("searchBox")?.value.toLowerCase() || "";
-  const filtered = TASKS.filter(t => activeTraders.includes(t.trader) && t.name.toLowerCase().includes(searchText) && (!hideCompleted || !userData.tasks[t.id]));
+  
+  // フィルタリング
+  const filtered = TASKS.filter(t => 
+    activeTraders.includes(t.trader) && 
+    t.name.toLowerCase().includes(searchText) && 
+    (!hideCompleted || !userData.tasks[t.id])
+  );
 
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
+    
+    // --- 追加ロジック: 前提条件の取得 ---
+    const preTaskNames = (task.preRequisites || [])
+      .map(preId => {
+        const found = TASKS.find(t => t.id === preId);
+        return found ? found.name : null;
+      })
+      .filter(name => name !== null);
+
+    const levelHtml = task.requiredLevel 
+      ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>` 
+      : "";
+    
+    const preTasksHtml = preTaskNames.length > 0 
+      ? `<span class="badge pre-badge">前提: ${preTaskNames.join(", ")}</span>` 
+      : "";
+    // ----------------------------------
+
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
+    
     const traderLower = task.trader.toLowerCase();
     const imagePath = `assets/traders/${traderLower}.png`; 
+    
     let wikiUrl = wikiLang === "en" 
       ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` 
       : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
@@ -278,15 +305,25 @@ function renderTasks() {
           </div>
           <div class="task-title-group">
             <div class="trader-name-label">${task.trader.toUpperCase()}</div>
-            <div class="task-name"><a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a></div>
+            <div class="task-name-container">
+              <div class="task-name">
+                <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
+              </div>
+              <div class="requirement-badges">
+                ${levelHtml}
+                ${preTasksHtml}
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
         ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
       </button>`;
+      
     container.appendChild(card);
   });
+  
   updateProgress();
 }
 

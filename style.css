@@ -974,6 +974,60 @@ input:checked + .slider:before {
   transform: translateY(-1px);
 }
 
+/* タスク名とバッジを横並びにする */
+.task-name-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.requirement-badges {
+  display: flex;
+  gap: 5px;
+}
+
+/* バッジの基本スタイル */
+.badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* レベルバッジ：少し茶色っぽい色（タルコフのレベル表記風） */
+.level-badge {
+  background-color: #5d4037;
+  color: #f9d977;
+  border: 1px solid #795548;
+}
+
+/* 前提タスクバッジ：落ち着いたグレー */
+.pre-badge {
+  background-color: #333;
+  color: #bbb;
+  border: 1px solid #444;
+}
+
+/* リンクのスタイル微調整 */
+.wiki-link {
+  text-decoration: none;
+  color: inherit;
+}
+.wiki-link:hover {
+  text-decoration: underline;
+}
+
+/* モバイル表示などでバッジが多すぎる場合に折り返す設定 */
+@media (max-width: 600px) {
+  .task-name-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
 .column { flex: 1; }
 .side-border { border-left: 2px solid #eee; padding-left: 20px; }
 .status-text { font-size: 12px; color: #666; margin-top: 15px; }
