@@ -847,7 +847,16 @@ input:checked + .slider:before {
 .task-title-group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 2px;
+  flex: 1; /* 親のスペースを埋める */
+}
+
+.task-requirements-container {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 /* トレーダー名のラベル（少し小さくしてタスク名を目立たせる） */
@@ -987,12 +996,19 @@ input:checked + .slider:before {
   gap: 5px;
 }
 
+.req-line {
+  display: flex;
+  align-items: center;
+  min-height: 1.2rem; /* バッジが表示されてもされなくても行の高さを一定にする */
+}
+
 /* バッジの基本スタイル */
 .badge {
   font-size: 0.7rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+  display: inline-block;
   white-space: nowrap;
 }
 
@@ -1005,9 +1021,13 @@ input:checked + .slider:before {
 
 /* 前提タスクバッジ：落ち着いたグレー */
 .pre-badge {
-  background-color: #333;
+  background-color: #2a2a2a;
   color: #bbb;
   border: 1px solid #444;
+  /* 前提タスクが長い場合に備えて */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* リンクのスタイル微調整 */
@@ -1025,6 +1045,15 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-header-flex {
+    gap: 10px;
+  }
+  .badge {
+    font-size: 0.65rem;
   }
 }
 

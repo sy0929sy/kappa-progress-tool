@@ -259,7 +259,6 @@ function renderTasks() {
   
   const searchText = document.getElementById("searchBox")?.value.toLowerCase() || "";
   
-  // フィルタリング
   const filtered = TASKS.filter(t => 
     activeTraders.includes(t.trader) && 
     t.name.toLowerCase().includes(searchText) && 
@@ -269,7 +268,7 @@ function renderTasks() {
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
     
-    // --- 追加ロジック: 前提条件の取得 ---
+    // 前提タスク名の取得
     const preTaskNames = (task.preRequisites || [])
       .map(preId => {
         const found = TASKS.find(t => t.id === preId);
@@ -277,6 +276,7 @@ function renderTasks() {
       })
       .filter(name => name !== null);
 
+    // バッジ用HTML（データがない場合は空文字ではなく、高さを維持するための空のdivを返す設計にするとより安定します）
     const levelHtml = task.requiredLevel 
       ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>` 
       : "";
@@ -284,7 +284,6 @@ function renderTasks() {
     const preTasksHtml = preTaskNames.length > 0 
       ? `<span class="badge pre-badge">前提: ${preTaskNames.join(", ")}</span>` 
       : "";
-    // ----------------------------------
 
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
@@ -305,14 +304,12 @@ function renderTasks() {
           </div>
           <div class="task-title-group">
             <div class="trader-name-label">${task.trader.toUpperCase()}</div>
-            <div class="task-name-container">
-              <div class="task-name">
-                <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
-              </div>
-              <div class="requirement-badges">
-                ${levelHtml}
-                ${preTasksHtml}
-              </div>
+            <div class="task-name">
+              <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
+            </div>
+            <div class="task-requirements-container">
+              <div class="req-line level-line">${levelHtml}</div>
+              <div class="req-line pre-line">${preTasksHtml}</div>
             </div>
           </div>
         </div>
