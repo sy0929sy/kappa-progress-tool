@@ -268,7 +268,7 @@ function renderTasks() {
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
     
-    // --- 前提タスクの省略ロジック ---
+    // 前提タスクの取得と省略ロジック (1つ表示、2つ以上は省略)
     const preTaskIds = task.preRequisites || [];
     const preTaskNames = preTaskIds
       .map(preId => TASKS.find(t => t.id === preId)?.name)
@@ -276,15 +276,14 @@ function renderTasks() {
 
     let preTasksDisplay = "";
     if (preTaskNames.length > 0) {
-      if (preTaskNames.length > 2) {
-        // 2つ目まで表示し、残りを個数で省略
-        preTasksDisplay = `前提: ${preTaskNames.slice(0, 2).join(", ")} ...他${preTaskNames.length - 2}件`;
+      if (preTaskNames.length > 1) {
+        preTasksDisplay = `前提: ${preTaskNames[0]} ...他${preTaskNames.length - 1}件`;
       } else {
-        preTasksDisplay = `前提: ${preTaskNames.join(", ")}`;
+        preTasksDisplay = `前提: ${preTaskNames[0]}`;
       }
     }
 
-    // --- 各行のHTML生成 (Lv 0 は非表示) ---
+    // Lv 0 は非表示
     const levelHtml = (task.requiredLevel && task.requiredLevel > 0)
       ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>` 
       : "";
