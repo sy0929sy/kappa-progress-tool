@@ -231,7 +231,7 @@ function renderHideoutTotal(totalCounts) {
         <div style="display:flex; align-items:center;">
           <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
           <div class="item-info">
-            <span>${name} ${data.fir ? '<span class="fir-badge">★要インレイド</span>' : ''}</span>
+            <span>${name} ${data.fir ? '<span class="fir-badge">FIR</span>' : ''}</span>
             <div class="item-target">必要: ${data.count}</div>
           </div>
         </div>
