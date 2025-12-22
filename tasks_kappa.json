@@ -412,24 +412,6 @@
 		]
 	},
 	{
-		"id": "operation_aquarius_part_1",
-		"name": "Operation Aquarius - Part 1",
-		"trader": "Therapist",
-		"preRequisites": [
-			"sanitary_standards_part_1"
-		],
-		"kappaRequired": true
-	},
-	{
-		"id": "operation_aquarius_part_2",
-		"name": "Operation Aquarius - Part 2",
-		"trader": "Therapist",
-		"preRequisites": [
-			"operation_aquarius_part_1"
-		],
-		"kappaRequired": true
-	},
-	{
 		"id": "health_care_privacy_part_1",
 		"name": "Health Care Privacy - Part 1",
 		"trader": "Therapist",
