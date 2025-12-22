@@ -825,18 +825,19 @@ input:checked + .slider:before {
 .task-header-flex {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* 左詰めに固定 */
   gap: 15px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 /* テキスト部分（トレーダー名とタスク名）を縦に並べる */
 .task-title-group {
-  flex: 1;          /* 残りのスペースをすべて使う */
-  min-width: 0;     /* テキストがはみ出した時に枠を押し広げないおまじない */
+  width: 300px;      /* ★ここを固定にする（環境に合わせて250px〜350pxで調整してください） */
+  flex-shrink: 0;    /* ★幅が勝手に縮まないように固定 */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
 }
 
 .task-requirements-container {
@@ -847,15 +848,14 @@ input:checked + .slider:before {
 }
 
 .task-requirements-aside {
-  width: 180px;             /* 縦線の位置をここ（右端から180px戻った所）で固定 */
-  flex-shrink: 0;           /* 絶対に潰さない */
+  width: 180px;      /* 情報エリアの幅 */
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-left: 2px solid #ddd; /* これが「縦線」 */
+  border-left: 2px solid #ddd; /* 縦線 */
   padding-left: 12px;
   margin-left: 10px;
-  box-sizing: border-box;
 }
 
 /* トレーダー名のラベル（少し小さくしてタスク名を目立たせる） */
@@ -869,9 +869,9 @@ input:checked + .slider:before {
 .task-name {
   font-size: 1rem;
   font-weight: bold;
-  white-space: nowrap;      /* 改行禁止 */
-  overflow: hidden;         /* はみ出しを隠す */
-  text-overflow: ellipsis;  /* 長すぎたら「...」にする */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 幅300pxを超えた名前は自動で「...」になります */
 }
 
 /* お気に入りボタンのスタイル */
