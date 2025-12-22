@@ -293,12 +293,15 @@ function renderTasks() {
 // 前提タスクをすべて（先祖代々）取得する関数
 function getRecursivePreRequisites(taskId, allPreIds = new Set()) {
   const task = TASKS.find(t => t.id === taskId);
-  if (!task || !task.preRequisites) return Array.from(allPreIds);
+  // taskがない、または前提条件が空の場合は現在のSetを返す
+  if (!task || !task.preRequisites || task.preRequisites.length === 0) {
+    return Array.from(allPreIds);
+  }
 
   for (const preId of task.preRequisites) {
     if (!allPreIds.has(preId)) {
       allPreIds.add(preId);
-      // さらにそのタスクの前提も探しに行く
+      // さらに深く掘り下げる
       getRecursivePreRequisites(preId, allPreIds);
     }
   }
@@ -351,36 +354,40 @@ window.toggleTask = async (taskId) => {
 
   const isNowCompleted = !userData.tasks[taskId];
 
+  // 完了にする場合のみ一括チェックロジックを走らせる
   if (isNowCompleted) {
-    // 未完了の前提タスクを再帰的に取得
     const preIds = getRecursivePreRequisites(taskId);
+    // 未完了の前提タスクのみを抽出
     const incompletePres = preIds.filter(id => !userData.tasks[id]);
 
     if (incompletePres.length > 0) {
-      // タスク名を表示するためにオブジェクトのリストを作成
       const targetTaskObjects = incompletePres
         .map(id => TASKS.find(t => t.id === id))
         .filter(Boolean);
       
-      // カスタムモーダルを表示
+      // カスタムモーダルを表示（モダンな確認画面）
       const confirmed = await showConfirmModal(targetTaskObjects);
       
       if (confirmed) {
-        // すべて完了にする
         incompletePres.forEach(id => {
           userData.tasks[id] = true;
         });
       } else {
-        // キャンセル時は何もしない
+        // ユーザーが「キャンセル」を押した場合は、チェックを入れずに終了
+        renderTasks(); // 念のため再描画して状態を維持
         return;
       }
     }
   }
 
+  // 本体の状態を更新
   userData.tasks[taskId] = isNowCompleted;
-  saveData();
-  renderTasks();
-  updateProgress();
+
+  // 保存と描画（同じscript.js内にある関数を呼ぶ）
+  // もしこれらが別ファイルなら、window.saveData などで公開されている必要があります。
+  if (typeof saveData === "function") saveData();
+  if (typeof renderTasks === "function") renderTasks();
+  if (typeof updateProgress === "function") updateProgress();
 };
 
 window.updateStationLevel = async (station, level) => {
