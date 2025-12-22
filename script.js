@@ -305,33 +305,75 @@ function getAllPreRequisites(taskId, allPreReqs = new Set()) {
   return allPreReqs;
 }
 
+function showConfirmModal(targetTasks) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('customModal');
+    const taskList = document.getElementById('modalTaskList');
+    const confirmBtn = document.getElementById('modalConfirm');
+    const cancelBtn = document.getElementById('modalCancel');
+
+    // リストをクリアして追加
+    taskList.innerHTML = '';
+    targetTasks.forEach(task => {
+      const li = document.createElement('li');
+      li.textContent = `[${task.trader}] ${task.name}`;
+      taskList.appendChild(li);
+    });
+
+    modal.style.display = 'flex';
+
+    const handleConfirm = () => {
+      modal.style.display = 'none';
+      cleanup();
+      resolve(true);
+    };
+
+    const handleCancel = () => {
+      modal.style.display = 'none';
+      cleanup();
+      resolve(false);
+    };
+
+    const cleanup = () => {
+      confirmBtn.removeEventListener('click', handleConfirm);
+      cancelBtn.removeEventListener('click', handleCancel);
+    };
+
+    confirmBtn.addEventListener('click', handleConfirm);
+    cancelBtn.addEventListener('click', handleCancel);
+  });
+}
+
 // 既存の toggleTask を更新
 window.toggleTask = async (taskId) => {
-  const isCompleting = !userData.tasks[taskId];
-  
-  if (isCompleting) {
-    const preReqIds = getAllPreRequisites(taskId);
-    const uncompletedPreReqs = Array.from(preReqIds).filter(id => !userData.tasks[id]);
+  const task = TASKS.find(t => t.id === taskId);
+  const isNowCompleted = !userData.tasks[taskId];
 
-    if (uncompletedPreReqs.length > 0) {
-      // 未完了の前提タスクがある場合のみ確認
-      const confirmMsg = `このタスクの前提条件となる ${uncompletedPreReqs.length} 件のタスクも一括で完了にしますか？\n\n[OK]: すべて完了\n[キャンセル]: このタスクのみ完了`;
+  if (isNowCompleted) {
+    const preIds = getRecursivePreRequisites(taskId);
+    const incompletePres = preIds.filter(id => !userData.tasks[id]);
+
+    if (incompletePres.length > 0) {
+      // 未完了の前提タスクオブジェクトを取得
+      const targetTasks = incompletePres.map(id => TASKS.find(t => t.id === id)).filter(Boolean);
       
-      if (confirm(confirmMsg)) {
-        uncompletedPreReqs.forEach(id => {
+      // カスタムモーダルを表示
+      const confirmed = await showConfirmModal(targetTasks);
+      
+      if (confirmed) {
+        incompletePres.forEach(id => {
           userData.tasks[id] = true;
         });
+      } else {
+        return; // キャンセルされたら何もしない
       }
     }
   }
 
-  userData.tasks[taskId] = isCompleting;
-  
-  // Firebaseへ保存
-  const userRef = doc(db, "users", uid);
-  await updateDoc(userRef, { tasks: userData.tasks });
-  renderTasks(); // UI再描画
-  updateOverallProgress(); // プログレスバー更新
+  userData.tasks[taskId] = isNowCompleted;
+  saveData();
+  renderTasks();
+  updateProgress();
 };
 
 window.updateStationLevel = async (station, level) => {
