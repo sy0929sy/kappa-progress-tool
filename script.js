@@ -316,7 +316,7 @@ function renderTasks() {
               <a href="${wikiUrl}" target="_blank" class="wiki-link">${task.name}</a>
             </div>
           </div>
-
+    
           <div class="task-requirements-aside">
             <div class="req-row">${levelHtml}</div>
             <div class="req-row">${preHtml}</div>

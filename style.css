@@ -844,9 +844,10 @@ input:checked + .slider:before {
 
 /* テキスト部分（トレーダー名とタスク名）を縦に並べる */
 .task-title-group {
-  flex: 1; /* 残りのスペースをすべて使う */
-  min-width: 0;
-  overflow: hidden;
+  flex: 1;
+  min-width: 0; /* flexアイテム内のテキスト溢れを防ぐマジックコード */
+  display: flex;
+  flex-direction: column;
 }
 
 .task-requirements-container {
@@ -857,12 +858,13 @@ input:checked + .slider:before {
 }
 
 .task-requirements-aside {
-  width: 180px;      /* ここで横幅を固定（お好みで150px〜200pxに調整） */
-  flex-shrink: 0;    /* 潰れないようにする */
+  width: 160px;             /* 横幅を完全に固定（ここがズレ防止の肝） */
+  flex-shrink: 0;           /* 親が狭くなってもこの幅を維持 */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 左揃えにして縦のラインを通す */
   gap: 2px;
+  border-left: 1px solid #eee; /* 境界線を入れると揃っているのが分かりやすくなります */
+  padding-left: 10px;
 }
 
 /* トレーダー名のラベル（少し小さくしてタスク名を目立たせる） */
@@ -876,7 +878,9 @@ input:checked + .slider:before {
 .task-name {
   font-size: 1rem;
   font-weight: bold;
-  margin: 0;
+  white-space: nowrap;      /* 改行禁止 */
+  overflow: hidden;         /* はみ出しを隠す */
+  text-overflow: ellipsis;  /* 長すぎたら「...」にする */
 }
 
 /* お気に入りボタンのスタイル */
@@ -1009,17 +1013,18 @@ input:checked + .slider:before {
 }
 
 .req-row {
-  height: 20px; /* 行の高さを固定して、Lvがない時も位置をキープ */
+  height: 20px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 /* バッジの基本スタイル */
 .badge {
   font-size: 0.65rem;
-  padding: 1px 6px;
+  padding: 2px 6px;
   border-radius: 3px;
-  display: inline-block;
+  white-space: nowrap;
 }
 
 /* レベルバッジ：少し茶色っぽい色（タルコフのレベル表記風） */
@@ -1031,14 +1036,11 @@ input:checked + .slider:before {
 
 /* 前提タスクバッジ：落ち着いたグレー */
 .pre-badge {
-  background-color: #eee;
-  color: #555;
-  border: 1px solid #ddd;
-  /* 前提が長くなりすぎないように幅を制限 */
-  max-width: 180px;
+  max-width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 /* リンクのスタイル微調整 */
 .wiki-link {
   text-decoration: none;
