@@ -129,7 +129,9 @@
   { "id": "the_cult_part_2", "name": "The Cult - Part 2", "trader": "Peacekeeper", "kappaRequired": true },
   { "id": "spa_tour_part_1", "name": "Spa Tour - Part 1", "trader": "Peacekeeper", "kappaRequired": true },
   { "id": "spa_tour_part_2", "name": "Spa Tour - Part 2", "trader": "Peacekeeper", "kappaRequired": true },
-  { "id": "spa_tour_part_3", "name": "Spa Tour - Part 3", "trader": "Peacekeeper", "kappaRequired": true },
+  { "id": "spa_tour_part_3", "name": "Spa Tour - Part 3", "trader": "Peacekeeper", "kappaRequired": true , "requiredItems": [
+    { "name": "WD-40", "count": 1, "fir": true }, { "name": "Clin window cleaner", "count": 2, "fir": true }, { "name": "Ox bleach", "count": 2, "fir": true }, { "name": "Corrugated hose", "count": 2, "fir": true }
+  ]},
   { "id": "spa_tour_part_4", "name": "Spa Tour - Part 4", "trader": "Peacekeeper", "kappaRequired": true },
   { "id": "spa_tour_part_5", "name": "Spa Tour - Part 5", "trader": "Peacekeeper", "kappaRequired": true },
   { "id": "spa_tour_part_6", "name": "Spa Tour - Part 6", "trader": "Peacekeeper", "kappaRequired": true },

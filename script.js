@@ -98,14 +98,25 @@ function updateAuthUI(user) {
 window.updateItemCount = async (name, delta) => {
   let current = itemProgress[name] || 0;
   if (delta === null) {
-    const input = document.querySelector(`input[data-item-name="${name}"]`);
+    // セレクタにシングルクォートが含まれても動くように修正
+    const input = document.querySelector(`input[data-item-name="${name.replace(/"/g, '\\"')}"]`);
     current = Math.max(0, parseInt(input.value) || 0);
   } else {
     current = Math.max(0, current + delta);
   }
+  
   itemProgress[name] = current;
-  await updateDoc(doc(db, "users", uid), { itemProgress: itemProgress });
-  refreshUI();
+
+  // updateDoc でオブジェクト全体を渡す（ドット記法エラーを回避）
+  try {
+    const userRef = doc(db, "users", uid);
+    await updateDoc(userRef, { 
+      itemProgress: { ...itemProgress } 
+    });
+    refreshUI();
+  } catch (error) {
+    console.error("Save error:", error);
+  }
 };
 
 function renderRequiredItems() {
@@ -136,6 +147,7 @@ function renderRequiredItems() {
     const isDone = current >= target;
     const isFav = userData.favorites[name];
     const card = document.createElement("div");
+    const escapedName = name.replace(/'/g, "\\'");
     card.className = `task-card ${isDone ? 'item-done' : ''}`;
     card.innerHTML = `
       <div style="display:flex; align-items:center;">
@@ -143,11 +155,11 @@ function renderRequiredItems() {
         <div class="item-info"><span>${name}</span><div class="item-target">必要: ${target}</div></div>
       </div>
       <div class="counter-group">
-        <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
+        <button class="count-btn minus" onclick="window.updateItemCount('${escapedName}', -1)">-</button>
         <input type="text" class="count-input" data-item-name="${name}" value="${current}" 
           oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
           onchange="window.updateItemCount('${name}', null)">
-        <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
+        <button class="count-btn plus" onclick="window.updateItemCount('${escapedName}', 1)">+</button>
       </div>`;
     container.appendChild(card);
   });
@@ -213,6 +225,7 @@ function renderHideoutTotal(totalCounts) {
     const current = itemProgress[name] || 0;
     const isDone = current >= data.count;
     const isFav = userData.favorites[name];
+    const escapedName = name.replace(/'/g, "\\'");
     return `
       <div class="task-card ${isDone ? 'item-done' : ''} ${data.fir ? 'fir-item-highlight' : ''}">
         <div style="display:flex; align-items:center;">
@@ -223,11 +236,11 @@ function renderHideoutTotal(totalCounts) {
           </div>
         </div>
         <div class="counter-group">
-          <button class="count-btn minus" onclick="window.updateItemCount('${name}', -1)">-</button>
+          <button class="count-btn minus" onclick="window.updateItemCount('${escapedName}', -1)">-</button>
           <input type="text" class="count-input" data-item-name="${name}" value="${current}" 
             oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
             onchange="window.updateItemCount('${name}', null)">
-          <button class="count-btn plus" onclick="window.updateItemCount('${name}', 1)">+</button>
+          <button class="count-btn" onclick="window.updateItemCount('${escapedName}', 1)">+</button>
         </div>
       </div>`;
   }).join("");
@@ -277,10 +290,48 @@ function renderTasks() {
   updateProgress();
 }
 
+// 前提タスクをすべて（先祖代々）取得する関数
+function getAllPreRequisites(taskId, allPreReqs = new Set()) {
+  const task = TASKS.find(t => t.id === taskId);
+  if (!task || !task.preRequisites) return allPreReqs;
+
+  task.preRequisites.forEach(preId => {
+    if (!allPreReqs.has(preId)) {
+      allPreReqs.add(preId);
+      // さらにその前のタスクを再帰的に取得
+      getAllPreRequisites(preId, allPreReqs);
+    }
+  });
+  return allPreReqs;
+}
+
+// 既存の toggleTask を更新
 window.toggleTask = async (taskId) => {
-  userData.tasks[taskId] = !userData.tasks[taskId];
-  await updateDoc(doc(db, "users", uid), { [`tasks.${taskId}`]: userData.tasks[taskId] });
-  refreshUI();
+  const isCompleting = !userData.tasks[taskId];
+  
+  if (isCompleting) {
+    const preReqIds = getAllPreRequisites(taskId);
+    const uncompletedPreReqs = Array.from(preReqIds).filter(id => !userData.tasks[id]);
+
+    if (uncompletedPreReqs.length > 0) {
+      // 未完了の前提タスクがある場合のみ確認
+      const confirmMsg = `このタスクの前提条件となる ${uncompletedPreReqs.length} 件のタスクも一括で完了にしますか？\n\n[OK]: すべて完了\n[キャンセル]: このタスクのみ完了`;
+      
+      if (confirm(confirmMsg)) {
+        uncompletedPreReqs.forEach(id => {
+          userData.tasks[id] = true;
+        });
+      }
+    }
+  }
+
+  userData.tasks[taskId] = isCompleting;
+  
+  // Firebaseへ保存
+  const userRef = doc(db, "users", uid);
+  await updateDoc(userRef, { tasks: userData.tasks });
+  renderTasks(); // UI再描画
+  updateOverallProgress(); // プログレスバー更新
 };
 
 window.updateStationLevel = async (station, level) => {
