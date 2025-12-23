@@ -3,7 +3,6 @@
 		"id": "shooting_cans",
 		"name": "Shooting Cans",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -11,7 +10,7 @@
 		"id": "debut",
 		"name": "Debut",
 		"trader": "Prapor",
-		"requiredLevel": 0,
+		"requiredLevel": 1,
 		"preRequisites": [
 			"shooting_cans"
 		],
@@ -28,7 +27,6 @@
 		"id": "luxurious_life",
 		"name": "Luxurious Life",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"debut"
 		],
@@ -145,7 +143,7 @@
 		"id": "documents",
 		"name": "Documents",
 		"trader": "Prapor",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"no_place_for_renegades"
 		],
@@ -166,7 +164,6 @@
 		"id": "shaking_up_the_teller",
 		"name": "Shaking Up the Teller",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"ice_cream_cones"
 		],
@@ -340,7 +337,6 @@
 		"id": "belka_and_strelka",
 		"name": "Belka and Strelka",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"bp_depot"
 		],
@@ -350,7 +346,7 @@
 		"id": "polikhim_hobo",
 		"name": "Polikhim Hobo",
 		"trader": "Prapor",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -390,7 +386,6 @@
 		"id": "easy_job_part_1",
 		"name": "Easy Job - Part 1",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"the_punisher_part_2"
 		],
@@ -400,7 +395,6 @@
 		"id": "easy_job_part_2",
 		"name": "Easy Job - Part 2",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"easy_job_part_1"
 		],
@@ -410,7 +404,6 @@
 		"id": "reconnaissance",
 		"name": "Reconnaissance",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"easy_job_part_1"
 		],
@@ -420,7 +413,6 @@
 		"id": "possessor",
 		"name": "Possessor",
 		"trader": "Prapor",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"postman_pat_part_2"
 		],
@@ -430,7 +422,6 @@
 		"id": "first_in_line",
 		"name": "First in Line",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -438,7 +429,7 @@
 		"id": "shortage",
 		"name": "Shortage",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 1,
 		"preRequisites": [
 			"first_in_line"
 		],
@@ -455,7 +446,7 @@
 		"id": "sanitary_standards_part_1",
 		"name": "Sanitary Standards - Part 1",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 4,
 		"preRequisites": [
 			"shortage"
 		],
@@ -472,7 +463,7 @@
 		"id": "sanitary_standards_part_2",
 		"name": "Sanitary Standards - Part 2",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 8,
 		"preRequisites": [
 			"sanitary_standards_part_1"
 		],
@@ -489,7 +480,7 @@
 		"id": "painkiller",
 		"name": "Painkiller",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 8,
 		"preRequisites": [
 			"sanitary_standards_part_2"
 		],
@@ -506,7 +497,7 @@
 		"id": "pharmacist",
 		"name": "Pharmacist",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"sanitary_standards_part_2"
 		],
@@ -516,7 +507,7 @@
 		"id": "car_repair",
 		"name": "Car Repair",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"sanitary_standards_part_2"
 		],
@@ -533,7 +524,7 @@
 		"id": "health_care_privacy_part_1",
 		"name": "Health Care Privacy - Part 1",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"pharmacist"
 		],
@@ -543,7 +534,7 @@
 		"id": "health_care_privacy_part_2",
 		"name": "Health Care Privacy - Part 2",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"health_care_privacy_part_1"
 		],
@@ -553,7 +544,7 @@
 		"id": "health_care_privacy_part_3",
 		"name": "Health Care Privacy - Part 3",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"health_care_privacy_part_2"
 		],
@@ -570,7 +561,7 @@
 		"id": "health_care_privacy_part_4",
 		"name": "Health Care Privacy - Part 4",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"health_care_privacy_part_3"
 		],
@@ -580,7 +571,7 @@
 		"id": "health_care_privacy_part_5",
 		"name": "Health Care Privacy - Part 5",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"health_care_privacy_part_4"
 		],
@@ -590,7 +581,6 @@
 		"id": "health_care_privacy_part_6",
 		"name": "Health Care Privacy - Part 6",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"health_care_privacy_part_5"
 		],
@@ -600,7 +590,7 @@
 		"id": "disease_history",
 		"name": "Disease History",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"pharmacist"
 		],
@@ -610,7 +600,7 @@
 		"id": "postman_pat_part_2",
 		"name": "Postman Pat - Part 2",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"postman_pat_part_1"
 		],
@@ -620,7 +610,7 @@
 		"id": "colleagues_part_1",
 		"name": "Colleagues - Part 1",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"sanitary_standards_part_2"
 		],
@@ -630,7 +620,7 @@
 		"id": "colleagues_part_2",
 		"name": "Colleagues - Part 2",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"colleagues_part_1"
 		],
@@ -652,7 +642,7 @@
 		"id": "colleagues_part_3",
 		"name": "Colleagues - Part 3",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"colleagues_part_2",
 			"huntsman_sadist"
@@ -663,7 +653,7 @@
 		"id": "out_of_curiosity",
 		"name": "Out of Curiosity",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"chemical_part_3"
 		],
@@ -673,7 +663,6 @@
 		"id": "a_healthy_alternative",
 		"name": "A Healthy Alternative",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"an_apple_a_day_keeps_the_doctor_away",
 			"one_less_loose_end"
@@ -684,7 +673,7 @@
 		"id": "private_clinic",
 		"name": "Private Clinic",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 35,
 		"preRequisites": [
 			"health_care_privacy_part_4"
 		],
@@ -706,7 +695,7 @@
 		"id": "decontamination_service",
 		"name": "Decontamination Service",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"private_clinic"
 		],
@@ -716,7 +705,7 @@
 		"id": "general_wares",
 		"name": "General Wares",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"shortage"
 		],
@@ -733,7 +722,7 @@
 		"id": "athlete",
 		"name": "Athlete",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"health_care_privacy_part_4"
 		],
@@ -743,7 +732,7 @@
 		"id": "crisis",
 		"name": "Crisis",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 48,
 		"preRequisites": [
 			"private_clinic"
 		],
@@ -780,7 +769,7 @@
 		"id": "seaside_vacation",
 		"name": "Seaside Vacation",
 		"trader": "Therapist",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"sanitary_standards_part_2"
 		],
@@ -790,7 +779,6 @@
 		"id": "lost_contact",
 		"name": "Lost Contact",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"seaside_vacation"
 		],
@@ -800,7 +788,6 @@
 		"id": "drug_trafficking",
 		"name": "Drug Trafficking",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"lost_contact"
 		],
@@ -810,7 +797,6 @@
 		"id": "shipment_tracking",
 		"name": "Shipment Tracking",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"drug_trafficking"
 		],
@@ -820,7 +806,6 @@
 		"id": "closer_to_the_people",
 		"name": "Closer to the People",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"shipment_tracking"
 		],
@@ -830,7 +815,6 @@
 		"id": "abandoned_cargo",
 		"name": "Abandoned Cargo",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"closer_to_the_people"
 		],
@@ -840,7 +824,6 @@
 		"id": "all_is_revealed",
 		"name": "All Is Revealed",
 		"trader": "Therapist",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"abandoned_cargo"
 		],
@@ -850,7 +833,7 @@
 		"id": "collector",
 		"name": "Collector",
 		"trader": "Fence",
-		"requiredLevel": 0,
+		"requiredLevel": 40,
 		"preRequisites": [
 			"shooting_cans",
 			"debut",
@@ -1300,7 +1283,6 @@
 		"id": "burning_rubber",
 		"name": "Burning Rubber",
 		"trader": "Skier",
-		"requiredLevel": 0,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -1308,7 +1290,7 @@
 		"id": "supplier",
 		"name": "Supplier",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 5,
 		"preRequisites": [
 			"burning_rubber"
 		],
@@ -1330,7 +1312,7 @@
 		"id": "the_extortionist",
 		"name": "The Extortionist",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 7,
 		"preRequisites": [
 			"supplier"
 		],
@@ -1340,7 +1322,7 @@
 		"id": "stirrup",
 		"name": "Stirrup",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 8,
 		"preRequisites": [
 			"burning_rubber"
 		],
@@ -1350,7 +1332,7 @@
 		"id": "whats_on_the_flash_drive",
 		"name": "What's on the Flash Drive?",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 8,
 		"preRequisites": [
 			"the_extortionist"
 		],
@@ -1367,7 +1349,7 @@
 		"id": "golden_swag",
 		"name": "Golden Swag",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 8,
 		"preRequisites": [
 			"whats_on_the_flash_drive"
 		],
@@ -1377,7 +1359,7 @@
 		"id": "chemical_part_1",
 		"name": "Chemical - Part 1",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"golden_swag"
 		],
@@ -1387,7 +1369,7 @@
 		"id": "chemical_part_2",
 		"name": "Chemical - Part 2",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"chemical_part_1"
 		],
@@ -1397,7 +1379,7 @@
 		"id": "chemical_part_3",
 		"name": "Chemical - Part 3",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"chemical_part_2"
 		],
@@ -1407,7 +1389,7 @@
 		"id": "chemical_part_4",
 		"name": "Chemical - Part 4",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"chemical_part_3"
 		],
@@ -1417,7 +1399,7 @@
 		"id": "vitamins_part_1",
 		"name": "Vitamins - Part 1",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 22,
 		"preRequisites": [
 			"chemical_part_4"
 		],
@@ -1427,7 +1409,7 @@
 		"id": "vitamins_part_2",
 		"name": "Vitamins - Part 2",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 22,
 		"preRequisites": [
 			"vitamins_part_1"
 		],
@@ -1437,7 +1419,7 @@
 		"id": "friend_from_the_west_part_1",
 		"name": "Friend From the West - Part 1",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 9,
 		"preRequisites": [
 			"golden_swag"
 		],
@@ -1447,7 +1429,7 @@
 		"id": "friend_from_the_west_part_2",
 		"name": "Friend From the West - Part 2",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 9,
 		"preRequisites": [
 			"friend_from_the_west_part_1"
 		],
@@ -1457,7 +1439,7 @@
 		"id": "informed_means_armed",
 		"name": "Informed Means Armed",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 24,
 		"preRequisites": [
 			"friend_from_the_west_part_2"
 		],
@@ -1467,7 +1449,7 @@
 		"id": "chumming",
 		"name": "Chumming",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 27,
 		"preRequisites": [
 			"informed_means_armed"
 		],
@@ -1484,7 +1466,7 @@
 		"id": "setup",
 		"name": "Setup",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 27,
 		"preRequisites": [
 			"friend_from_the_west_part_2"
 		],
@@ -1494,7 +1476,7 @@
 		"id": "flint",
 		"name": "Flint",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 35,
 		"preRequisites": [
 			"chumming"
 		],
@@ -1504,7 +1486,6 @@
 		"id": "lend_lease_part_1",
 		"name": "Lend-Lease - Part 1",
 		"trader": "Skier",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"friend_from_the_west_part_2"
 		],
@@ -1514,7 +1495,7 @@
 		"id": "rigged_game",
 		"name": "Rigged Game",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"anesthesia"
 		],
@@ -1524,7 +1505,7 @@
 		"id": "safe_corridor",
 		"name": "Safe Corridor",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -1532,7 +1513,6 @@
 		"id": "private_club",
 		"name": "Private Club",
 		"trader": "Skier",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"chumming"
 		],
@@ -1542,7 +1522,7 @@
 		"id": "long_road",
 		"name": "Long Road",
 		"trader": "Skier",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"friend_from_the_west_part_2"
 		],
@@ -1552,7 +1532,6 @@
 		"id": "missing_cargo",
 		"name": "Missing Cargo",
 		"trader": "Skier",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"long_road"
 		],
@@ -1562,7 +1541,6 @@
 		"id": "exit_here",
 		"name": "Exit Here",
 		"trader": "Skier",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"scout"
 		],
@@ -1572,7 +1550,6 @@
 		"id": "the_walls_have_eyes",
 		"name": "The Walls Have Eyes",
 		"trader": "Skier",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"exit_here"
 		],
@@ -1582,7 +1559,7 @@
 		"id": "fishing_gear",
 		"name": "Fishing Gear",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"friend_from_the_west_part_2"
 		],
@@ -1592,7 +1569,7 @@
 		"id": "tigr_safari",
 		"name": "Tigr Safari",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"fishing_gear"
 		],
@@ -1602,7 +1579,7 @@
 		"id": "scrap_metal",
 		"name": "Scrap Metal",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"tigr_safari"
 		],
@@ -1612,7 +1589,7 @@
 		"id": "eagle_eye",
 		"name": "Eagle Eye",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"scrap_metal"
 		],
@@ -1622,7 +1599,7 @@
 		"id": "humanitarian_supplies",
 		"name": "Humanitarian Supplies",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"eagle_eye"
 		],
@@ -1639,7 +1616,7 @@
 		"id": "the_cult_part_1",
 		"name": "The Cult - Part 1",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"humanitarian_supplies"
 		],
@@ -1649,7 +1626,7 @@
 		"id": "the_cult_part_2",
 		"name": "The Cult - Part 2",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"the_cult_part_1"
 		],
@@ -1659,7 +1636,7 @@
 		"id": "spa_tour_part_1",
 		"name": "Spa Tour - Part 1",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"humanitarian_supplies"
 		],
@@ -1669,7 +1646,7 @@
 		"id": "spa_tour_part_2",
 		"name": "Spa Tour - Part 2",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_1"
 		],
@@ -1679,7 +1656,7 @@
 		"id": "spa_tour_part_3",
 		"name": "Spa Tour - Part 3",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_2"
 		],
@@ -1711,7 +1688,7 @@
 		"id": "spa_tour_part_4",
 		"name": "Spa Tour - Part 4",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_3"
 		],
@@ -1721,7 +1698,7 @@
 		"id": "spa_tour_part_5",
 		"name": "Spa Tour - Part 5",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_4"
 		],
@@ -1731,7 +1708,7 @@
 		"id": "spa_tour_part_6",
 		"name": "Spa Tour - Part 6",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_5"
 		],
@@ -1741,7 +1718,7 @@
 		"id": "spa_tour_part_7",
 		"name": "Spa Tour - Part 7",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_6"
 		],
@@ -1768,7 +1745,7 @@
 		"id": "cargo_x_part_1",
 		"name": "Cargo X - Part 1",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"spa_tour_part_7"
 		],
@@ -1778,7 +1755,7 @@
 		"id": "cargo_x_part_2",
 		"name": "Cargo X - Part 2",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"cargo_x_part_1"
 		],
@@ -1788,7 +1765,7 @@
 		"id": "cargo_x_part_3",
 		"name": "Cargo X - Part 3",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"cargo_x_part_2"
 		],
@@ -1798,7 +1775,7 @@
 		"id": "wet_job_part_1",
 		"name": "Wet Job - Part 1",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"spa_tour_part_7"
 		],
@@ -1808,7 +1785,7 @@
 		"id": "wet_job_part_2",
 		"name": "Wet Job - Part 2",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"wet_job_part_1"
 		],
@@ -1818,7 +1795,7 @@
 		"id": "wet_job_part_3",
 		"name": "Wet Job - Part 3",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"wet_job_part_2"
 		],
@@ -1828,7 +1805,7 @@
 		"id": "wet_job_part_4",
 		"name": "Wet Job - Part 4",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"wet_job_part_3"
 		],
@@ -1838,7 +1815,7 @@
 		"id": "wet_job_part_5",
 		"name": "Wet Job - Part 5",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"wet_job_part_4"
 		],
@@ -1848,7 +1825,7 @@
 		"id": "wet_job_part_6",
 		"name": "Wet Job - Part 6",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"wet_job_part_5"
 		],
@@ -1858,7 +1835,7 @@
 		"id": "the_guide",
 		"name": "The Guide",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 40,
 		"preRequisites": [
 			"wet_job_part_6"
 		],
@@ -1868,7 +1845,7 @@
 		"id": "samples",
 		"name": "Samples",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"anesthesia"
 		],
@@ -1915,7 +1892,7 @@
 		"id": "terragroup_employee",
 		"name": "TerraGroup Employee",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"samples",
 			"huntsman_sadist"
@@ -1926,7 +1903,6 @@
 		"id": "lend_lease_part_2",
 		"name": "Lend-Lease - Part 2",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"lend_lease_part_1"
 		],
@@ -1936,7 +1912,7 @@
 		"id": "peacekeeping_mission",
 		"name": "Peacekeeping Mission",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"lend_lease_part_2"
 		],
@@ -1946,7 +1922,7 @@
 		"id": "classified_technologies",
 		"name": "Classified Technologies",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"revision_reserve"
 		],
@@ -1956,7 +1932,6 @@
 		"id": "revision_reserve",
 		"name": "Revision - Reserve",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"humanitarian_supplies"
 		],
@@ -1966,7 +1941,6 @@
 		"id": "cargo_x_part_4",
 		"name": "Cargo X - Part 4",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"cargo_x_part_3"
 		],
@@ -1976,7 +1950,7 @@
 		"id": "insomnia",
 		"name": "Insomnia",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"cargo_x_part_4"
 		],
@@ -1986,7 +1960,6 @@
 		"id": "overpopulation",
 		"name": "Overpopulation",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"spa_tour_part_1"
 		],
@@ -1996,7 +1969,6 @@
 		"id": "revision_lighthouse",
 		"name": "Revision - Lighthouse",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"humanitarian_supplies"
 		],
@@ -2006,7 +1978,6 @@
 		"id": "one_less_loose_end",
 		"name": "One Less Loose End",
 		"trader": "Peacekeeper",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"overpopulation",
 			"a_healthy_alternative"
@@ -2017,7 +1988,6 @@
 		"id": "saving_the_mole",
 		"name": "Saving the Mole",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -2025,7 +1995,7 @@
 		"id": "introduction",
 		"name": "Introduction",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"saving_the_mole"
 		],
@@ -2035,7 +2005,7 @@
 		"id": "gunsmith_part_1",
 		"name": "Gunsmith - Part 1",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"saving_the_mole"
 		],
@@ -2045,7 +2015,7 @@
 		"id": "gunsmith_part_2",
 		"name": "Gunsmith - Part 2",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 11,
 		"preRequisites": [
 			"gunsmith_part_1"
 		],
@@ -2055,7 +2025,7 @@
 		"id": "gunsmith_part_3",
 		"name": "Gunsmith - Part 3",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"gunsmith_part_2"
 		],
@@ -2065,7 +2035,7 @@
 		"id": "gunsmith_part_4",
 		"name": "Gunsmith - Part 4",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"gunsmith_part_3"
 		],
@@ -2075,7 +2045,7 @@
 		"id": "gunsmith_part_5",
 		"name": "Gunsmith - Part 5",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"gunsmith_part_4"
 		],
@@ -2085,7 +2055,7 @@
 		"id": "gunsmith_part_6",
 		"name": "Gunsmith - Part 6",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 18,
 		"preRequisites": [
 			"gunsmith_part_5"
 		],
@@ -2095,7 +2065,7 @@
 		"id": "gunsmith_part_7",
 		"name": "Gunsmith - Part 7",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 19,
 		"preRequisites": [
 			"gunsmith_part_6"
 		],
@@ -2105,7 +2075,7 @@
 		"id": "gunsmith_part_8",
 		"name": "Gunsmith - Part 8",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 19,
 		"preRequisites": [
 			"gunsmith_part_7"
 		],
@@ -2115,7 +2085,7 @@
 		"id": "gunsmith_part_9",
 		"name": "Gunsmith - Part 9",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"gunsmith_part_8"
 		],
@@ -2125,7 +2095,7 @@
 		"id": "gunsmith_part_10",
 		"name": "Gunsmith - Part 10",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"gunsmith_part_9"
 		],
@@ -2135,7 +2105,7 @@
 		"id": "gunsmith_part_11",
 		"name": "Gunsmith - Part 11",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"gunsmith_part_10"
 		],
@@ -2145,7 +2115,7 @@
 		"id": "gunsmith_part_12",
 		"name": "Gunsmith - Part 12",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 23,
 		"preRequisites": [
 			"gunsmith_part_11"
 		],
@@ -2155,7 +2125,7 @@
 		"id": "gunsmith_part_13",
 		"name": "Gunsmith - Part 13",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"gunsmith_part_12"
 		],
@@ -2165,7 +2135,7 @@
 		"id": "gunsmith_part_14",
 		"name": "Gunsmith - Part 14",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 27,
 		"preRequisites": [
 			"gunsmith_part_13"
 		],
@@ -2175,7 +2145,7 @@
 		"id": "gunsmith_part_15",
 		"name": "Gunsmith - Part 15",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 29,
 		"preRequisites": [
 			"gunsmith_part_14"
 		],
@@ -2185,7 +2155,7 @@
 		"id": "gunsmith_part_16",
 		"name": "Gunsmith - Part 16",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 35,
 		"preRequisites": [
 			"gunsmith_part_15"
 		],
@@ -2195,7 +2165,6 @@
 		"id": "gunsmith_part_17",
 		"name": "Gunsmith - Part 17",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"gunsmith_part_16"
 		],
@@ -2205,7 +2174,6 @@
 		"id": "gunsmith_part_18",
 		"name": "Gunsmith - Part 18",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"gunsmith_part_17"
 		],
@@ -2215,7 +2183,6 @@
 		"id": "gunsmith_part_19",
 		"name": "Gunsmith - Part 19",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"gunsmith_part_18"
 		],
@@ -2225,7 +2192,6 @@
 		"id": "gunsmith_part_20",
 		"name": "Gunsmith - Part 20",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"gunsmith_part_19"
 		],
@@ -2235,7 +2201,6 @@
 		"id": "gunsmith_part_21",
 		"name": "Gunsmith - Part 21",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"gunsmith_part_20"
 		],
@@ -2245,7 +2210,6 @@
 		"id": "gunsmith_part_22",
 		"name": "Gunsmith - Part 22",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"gunsmith_part_21"
 		],
@@ -2255,7 +2219,7 @@
 		"id": "signal_part_1",
 		"name": "Signal - Part 1",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"gunsmith_part_2"
 		],
@@ -2265,7 +2229,7 @@
 		"id": "insider",
 		"name": "Insider",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"signal_part_1"
 		],
@@ -2275,7 +2239,7 @@
 		"id": "signal_part_2",
 		"name": "Signal - Part 2",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"signal_part_1"
 		],
@@ -2307,7 +2271,7 @@
 		"id": "scout",
 		"name": "Scout",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"signal_part_2"
 		],
@@ -2317,7 +2281,6 @@
 		"id": "capacity_check",
 		"name": "Capacity Check",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"forklift_certified",
 			"farming_part_1"
@@ -2328,7 +2291,6 @@
 		"id": "black_swan",
 		"name": "Black Swan",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"scout"
 		],
@@ -2338,7 +2300,6 @@
 		"id": "forklift_certified",
 		"name": "Forklift Certified",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"black_swan"
 		],
@@ -2348,7 +2309,7 @@
 		"id": "surplus_goods",
 		"name": "Surplus Goods",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"back_door"
 		],
@@ -2358,7 +2319,7 @@
 		"id": "back_door",
 		"name": "Back Door",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"scout"
 		],
@@ -2368,7 +2329,7 @@
 		"id": "signal_part_3",
 		"name": "Signal - Part 3",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"signal_part_2"
 		],
@@ -2378,7 +2339,7 @@
 		"id": "signal_part_4",
 		"name": "Signal - Part 4",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"signal_part_3"
 		],
@@ -2388,7 +2349,7 @@
 		"id": "farming_part_1",
 		"name": "Farming - Part 1",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"gunsmith_part_1"
 		],
@@ -2398,7 +2359,7 @@
 		"id": "farming_part_2",
 		"name": "Farming - Part 2",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"farming_part_1"
 		],
@@ -2408,7 +2369,7 @@
 		"id": "bad_habit",
 		"name": "Bad Habit",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 12,
 		"preRequisites": [
 			"farming_part_2"
 		],
@@ -2435,7 +2396,7 @@
 		"id": "farming_part_3",
 		"name": "Farming - Part 3",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"farming_part_2"
 		],
@@ -2445,7 +2406,7 @@
 		"id": "farming_part_4",
 		"name": "Farming - Part 4",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"farming_part_3"
 		],
@@ -2467,7 +2428,7 @@
 		"id": "psycho_sniper",
 		"name": "Psycho Sniper",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 40,
 		"preRequisites": [
 			"wet_job_part_6"
 		],
@@ -2477,7 +2438,7 @@
 		"id": "a_shooter_born_in_heaven",
 		"name": "A Shooter Born in Heaven",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 14,
 		"preRequisites": [
 			"farming_part_3"
 		],
@@ -2487,7 +2448,7 @@
 		"id": "fertilizers",
 		"name": "Fertilizers",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"farming_part_4"
 		],
@@ -2509,7 +2470,7 @@
 		"id": "import",
 		"name": "Import",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 35,
 		"preRequisites": [
 			"farming_part_4"
 		],
@@ -2531,7 +2492,6 @@
 		"id": "passion_for_ergonomics",
 		"name": "Passion for Ergonomics",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"farming_part_2"
 		],
@@ -2541,7 +2501,7 @@
 		"id": "chemistry_closet",
 		"name": "Chemistry Closet",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"colleagues_part_1",
 			"anesthesia"
@@ -2552,7 +2512,7 @@
 		"id": "corporate_secrets",
 		"name": "Corporate Secrets",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"farming_part_3"
 		],
@@ -2562,7 +2522,7 @@
 		"id": "energy_crisis",
 		"name": "Energy Crisis",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"farming_part_3"
 		],
@@ -2572,7 +2532,6 @@
 		"id": "broadcast_part_1",
 		"name": "Broadcast - Part 1",
 		"trader": "Mechanic",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"farming_part_2"
 		],
@@ -2582,7 +2541,7 @@
 		"id": "only_business",
 		"name": "Only Business",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [],
 		"kappaRequired": true
 	},
@@ -2590,7 +2549,7 @@
 		"id": "make_ultra_great_again",
 		"name": "Make ULTRA Great Again",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"only_business"
 		],
@@ -2600,7 +2559,7 @@
 		"id": "big_sale",
 		"name": "Big Sale",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"only_business"
 		],
@@ -2610,7 +2569,7 @@
 		"id": "a_fuel_matter",
 		"name": "A Fuel Matter",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"the_blood_of_war_part_1"
 		],
@@ -2620,7 +2579,7 @@
 		"id": "inventory_check",
 		"name": "Inventory Check",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"a_fuel_matter"
 		],
@@ -2630,7 +2589,7 @@
 		"id": "the_blood_of_war_part_1",
 		"name": "The Blood of War - Part 1",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"big_sale",
 			"make_ultra_great_again"
@@ -2648,7 +2607,7 @@
 		"id": "dressed_to_kill",
 		"name": "Dressed to Kill",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"the_blood_of_war_part_1"
 		],
@@ -2670,7 +2629,7 @@
 		"id": "gratitude",
 		"name": "Gratitude",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"dressed_to_kill",
 			"database_part_2"
@@ -2681,7 +2640,7 @@
 		"id": "hot_delivery",
 		"name": "Hot Delivery",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 29,
 		"preRequisites": [
 			"gratitude"
 		],
@@ -2691,7 +2650,7 @@
 		"id": "scavenger",
 		"name": "Scavenger",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 29,
 		"preRequisites": [
 			"hot_delivery"
 		],
@@ -2701,7 +2660,7 @@
 		"id": "sales_night",
 		"name": "Sales Night",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"gratitude"
 		],
@@ -2711,7 +2670,7 @@
 		"id": "database_part_1",
 		"name": "Database - Part 1",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"big_sale",
 			"make_ultra_great_again"
@@ -2722,7 +2681,7 @@
 		"id": "database_part_2",
 		"name": "Database - Part 2",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"database_part_1"
 		],
@@ -2732,7 +2691,7 @@
 		"id": "minibus",
 		"name": "Minibus",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 24,
 		"preRequisites": [
 			"database_part_2"
 		],
@@ -2742,7 +2701,7 @@
 		"id": "sew_it_good_part_1",
 		"name": "Sew it Good - Part 1",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"database_part_2"
 		],
@@ -2759,7 +2718,7 @@
 		"id": "the_blood_of_war_part_2",
 		"name": "The Blood of War - Part 2",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 23,
 		"preRequisites": [
 			"the_blood_of_war_part_1",
 			"sew_it_good_part_1"
@@ -2770,7 +2729,7 @@
 		"id": "the_blood_of_war_part_3",
 		"name": "The Blood of War - Part 3",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 30,
 		"preRequisites": [
 			"the_blood_of_war_part_2"
 		],
@@ -2780,7 +2739,7 @@
 		"id": "sew_it_good_part_2",
 		"name": "Sew it Good - Part 2",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"sew_it_good_part_1"
 		],
@@ -2797,7 +2756,7 @@
 		"id": "sew_it_good_part_3",
 		"name": "Sew it Good - Part 3",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"sew_it_good_part_2"
 		],
@@ -2814,7 +2773,7 @@
 		"id": "the_key_to_success",
 		"name": "The Key to Success",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 26,
 		"preRequisites": [
 			"sew_it_good_part_2"
 		],
@@ -2831,7 +2790,7 @@
 		"id": "no_fuss_needed",
 		"name": "No Fuss Needed",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"the_key_to_success"
 		],
@@ -2841,7 +2800,7 @@
 		"id": "supervisor",
 		"name": "Supervisor",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 40,
 		"preRequisites": [
 			"sales_night",
 			"the_key_to_success"
@@ -2852,7 +2811,7 @@
 		"id": "living_high_part_1",
 		"name": "Living High is Not a Crime - Part 1",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 27,
 		"preRequisites": [
 			"the_blood_of_war_part_1",
 			"sew_it_good_part_3"
@@ -2880,7 +2839,7 @@
 		"id": "living_high_part_2",
 		"name": "Living High is Not a Crime - Part 2",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 27,
 		"preRequisites": [
 			"the_blood_of_war_part_3",
 			"living_high_part_1"
@@ -2903,7 +2862,7 @@
 		"id": "sew_it_good_part_4",
 		"name": "Sew it Good - Part 4",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"sew_it_good_part_3"
 		],
@@ -2913,7 +2872,7 @@
 		"id": "charisma_brings_success",
 		"name": "Charisma Brings Success",
 		"trader": "Ragman",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"the_blood_of_war_part_1",
 			"sew_it_good_part_4"
@@ -2924,7 +2883,6 @@
 		"id": "break_the_deal",
 		"name": "Break the Deal",
 		"trader": "Ragman",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"make_ultra_great_again"
 		],
@@ -2934,7 +2892,7 @@
 		"id": "acquaintance",
 		"name": "Acquaintance",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"introduction"
 		],
@@ -2961,7 +2919,6 @@
 		"id": "survivalist_unprotected_but_dangerous",
 		"name": "The Survivalist Path - Unprotected but Dangerous",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"acquaintance"
 		],
@@ -2971,7 +2928,7 @@
 		"id": "survivalist_thrifty",
 		"name": "The Survivalist Path - Thrifty",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"survivalist_unprotected_but_dangerous"
 		],
@@ -2981,7 +2938,7 @@
 		"id": "survivalist_zhivchik",
 		"name": "The Survivalist Path - Zhivchik",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 9,
 		"preRequisites": [
 			"survivalist_thrifty"
 		],
@@ -2991,7 +2948,7 @@
 		"id": "survivalist_wounded_beast",
 		"name": "The Survivalist Path - Wounded Beast",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"survivalist_zhivchik"
 		],
@@ -3001,7 +2958,7 @@
 		"id": "survivalist_tough_guy",
 		"name": "The Survivalist Path - Tough Guy",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 10,
 		"preRequisites": [
 			"survivalist_wounded_beast"
 		],
@@ -3011,7 +2968,7 @@
 		"id": "courtesy_visit",
 		"name": "Courtesy Visit",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"survivalist_tough_guy"
 		],
@@ -3021,7 +2978,7 @@
 		"id": "nostalgia",
 		"name": "Nostalgia",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 28,
 		"preRequisites": [
 			"courtesy_visit"
 		],
@@ -3031,7 +2988,6 @@
 		"id": "survivalist_junkie",
 		"name": "The Survivalist Path - Junkie",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"survivalist_combat_medic"
 		],
@@ -3041,7 +2997,6 @@
 		"id": "survivalist_eagle_owl",
 		"name": "The Survivalist Path - Eagle-Owl",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"survivalist_tough_guy"
 		],
@@ -3051,7 +3006,7 @@
 		"id": "survivalist_combat_medic",
 		"name": "The Survivalist Path - Combat Medic",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"survivalist_eagle_owl"
 		],
@@ -3061,7 +3016,7 @@
 		"id": "ambulance",
 		"name": "Ambulance",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"shady_business"
 		],
@@ -3083,7 +3038,7 @@
 		"id": "huntsman_secured_perimeter",
 		"name": "The Huntsman Path - Secured Perimeter",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 15,
 		"preRequisites": [
 			"survivalist_tough_guy",
 			"tarkov_shooter_part_3"
@@ -3094,7 +3049,7 @@
 		"id": "reserve",
 		"name": "Reserve",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"the_delicious_sausage"
 		],
@@ -3104,7 +3059,7 @@
 		"id": "huntsman_forest_cleaning",
 		"name": "The Huntsman Path - Forest Cleaning",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_secured_perimeter"
 		],
@@ -3114,7 +3069,7 @@
 		"id": "huntsman_controller",
 		"name": "The Huntsman Path - Controller",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_forest_cleaning"
 		],
@@ -3124,7 +3079,7 @@
 		"id": "huntsman_evil_watchman",
 		"name": "The Huntsman Path - Evil Watchman",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_forest_cleaning"
 		],
@@ -3134,7 +3089,7 @@
 		"id": "fishing_place",
 		"name": "Fishing Place",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 25,
 		"preRequisites": [
 			"nostalgia"
 		],
@@ -3144,7 +3099,7 @@
 		"id": "huntsman_trophy",
 		"name": "The Huntsman Path - Trophy",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_secured_perimeter"
 		],
@@ -3154,7 +3109,7 @@
 		"id": "huntsman_justice",
 		"name": "The Huntsman Path - Justice",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_secured_perimeter"
 		],
@@ -3164,7 +3119,7 @@
 		"id": "huntsman_sellout",
 		"name": "The Huntsman Path - Sellout",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"sales_night",
 			"huntsman_forest_cleaning"
@@ -3175,7 +3130,7 @@
 		"id": "huntsman_woods_keeper",
 		"name": "The Huntsman Path - Woods Keeper",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_secured_perimeter"
 		],
@@ -3185,7 +3140,7 @@
 		"id": "hunting_trip",
 		"name": "Hunting Trip",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_woods_keeper"
 		],
@@ -3195,7 +3150,7 @@
 		"id": "huntsman_factory_chief",
 		"name": "The Huntsman Path - Factory Chief",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"scout",
 			"huntsman_forest_cleaning"
@@ -3206,7 +3161,7 @@
 		"id": "huntsman_eraser_part_1",
 		"name": "The Huntsman Path - Eraser - Part 1",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"pest_control"
 		],
@@ -3216,7 +3171,7 @@
 		"id": "huntsman_eraser_part_2",
 		"name": "The Huntsman Path - Eraser - Part 2",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"huntsman_eraser_part_1"
 		],
@@ -3226,7 +3181,7 @@
 		"id": "tarkov_shooter_part_1",
 		"name": "The Tarkov Shooter - Part 1",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"acquaintance"
 		],
@@ -3236,7 +3191,7 @@
 		"id": "tarkov_shooter_part_2",
 		"name": "The Tarkov Shooter - Part 2",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_1"
 		],
@@ -3246,7 +3201,7 @@
 		"id": "tarkov_shooter_part_3",
 		"name": "The Tarkov Shooter - Part 3",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_2"
 		],
@@ -3256,7 +3211,7 @@
 		"id": "tarkov_shooter_part_4",
 		"name": "The Tarkov Shooter - Part 4",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_3"
 		],
@@ -3266,7 +3221,7 @@
 		"id": "tarkov_shooter_part_5",
 		"name": "The Tarkov Shooter - Part 5",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_4"
 		],
@@ -3276,7 +3231,7 @@
 		"id": "tarkov_shooter_part_6",
 		"name": "The Tarkov Shooter - Part 6",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_5"
 		],
@@ -3286,7 +3241,7 @@
 		"id": "tarkov_shooter_part_7",
 		"name": "The Tarkov Shooter - Part 7",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_6"
 		],
@@ -3296,7 +3251,7 @@
 		"id": "tarkov_shooter_part_8",
 		"name": "The Tarkov Shooter - Part 8",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 2,
 		"preRequisites": [
 			"tarkov_shooter_part_7"
 		],
@@ -3306,7 +3261,7 @@
 		"id": "shady_business",
 		"name": "Shady Business",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 20,
 		"preRequisites": [
 			"whats_on_the_flash_drive"
 		],
@@ -3323,7 +3278,7 @@
 		"id": "pest_control",
 		"name": "Pest Control",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 17,
 		"preRequisites": [
 			"reserve"
 		],
@@ -3333,7 +3288,6 @@
 		"id": "the_hermit",
 		"name": "The Hermit",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"survivalist_tough_guy"
 		],
@@ -3343,7 +3297,6 @@
 		"id": "huntsman_outcasts",
 		"name": "The Huntsman Path - Outcasts",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"huntsman_forest_cleaning"
 		],
@@ -3353,7 +3306,6 @@
 		"id": "stray_dogs",
 		"name": "Stray Dogs",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"huntsman_trophy",
 			"huntsman_sellout",
@@ -3365,7 +3317,6 @@
 		"id": "the_delicious_sausage",
 		"name": "The Delicious Sausage",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"survivalist_thrifty"
 		],
@@ -3375,7 +3326,6 @@
 		"id": "every_hunter_knows_this",
 		"name": "Every Hunter Knows This",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"rough_tarkov"
 		],
@@ -3385,7 +3335,6 @@
 		"id": "rough_tarkov",
 		"name": "Rough Tarkov",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"acquaintance"
 		],
@@ -3395,7 +3344,6 @@
 		"id": "dragnet",
 		"name": "Dragnet",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"a_healthy_alternative",
 			"one_less_loose_end"
@@ -3406,7 +3354,6 @@
 		"id": "claustrophobia",
 		"name": "Claustrophobia",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"huntsman_forest_cleaning"
 		],
@@ -3416,7 +3363,6 @@
 		"id": "work_smarter",
 		"name": "Work Smarter",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"acquaintance"
 		],
@@ -3426,7 +3372,6 @@
 		"id": "rite_of_passage",
 		"name": "Rite of Passage",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
 		"preRequisites": [
 			"work_smarter"
 		],
@@ -3436,7 +3381,7 @@
 		"id": "huntsman_sadist",
 		"name": "The Huntsman Path - Sadist",
 		"trader": "Jaeger",
-		"requiredLevel": 0,
+		"requiredLevel": 21,
 		"preRequisites": [
 			"colleagues_part_2",
 			"rigged_game",
