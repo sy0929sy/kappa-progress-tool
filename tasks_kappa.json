@@ -130,6 +130,16 @@
 		]
 	},
 	{
+		"id": "shaking_up_teller",
+		"name": "Shaking up teller",
+		"trader": "Prapor",
+		"requiredLevel": 10,
+		"preRequisites": [
+			"ice_cream_cones"
+		],
+		"kappaRequired": true
+	},
+	{
 		"id": "no_place_for_renegades",
 		"name": "No Place for Renegades",
 		"trader": "Prapor",
@@ -3387,16 +3397,6 @@
 			"rigged_game",
 			"chemistry_closet",
 			"colleagues_part_3"
-		],
-		"kappaRequired": true
-	},
-	{
-		"id": "shaking_up_teller",
-		"name": "Shaking up teller",
-		"trader": "Prapor",
-		"requiredLevel": 10,
-		"preRequisites": [
-			"ice_cream_cones"
 		],
 		"kappaRequired": true
 	}
