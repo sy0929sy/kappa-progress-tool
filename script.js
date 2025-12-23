@@ -16,6 +16,17 @@ const firebaseConfig = {
   projectId: "tarkovmanagementtool-b9b53",
 };
 
+// Helper to generate Wiki URL for items
+function getItemWikiUrl(itemName) {
+  if (wikiLang === "en") {
+    // English: Direct link to Fandom Wiki
+    return `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(itemName.replace(/\s+/g, '_'))}`;
+  } else {
+    // Japanese: Search on Wikiwiki (safest for items)
+    return `https://wikiwiki.jp/eft/?cmd=search&word=${encodeURIComponent(itemName)}`;
+  }
+}
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -152,7 +163,10 @@ function renderRequiredItems() {
     card.innerHTML = `
       <div style="display:flex; align-items:center;">
         <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
-        <div class="item-info"><span>${name}</span><div class="item-target">必要: ${target}</div></div>
+        <div class="item-info">
+          <span><a href="${getItemWikiUrl(name)}" target="_blank" class="wiki-link">${name}</a></span>
+          <div class="item-target">必要: ${target}</div>
+        </div>
       </div>
       <div class="counter-group">
         <button class="count-btn minus" onclick="window.updateItemCount('${escapedName}', -1)">-</button>
@@ -181,7 +195,8 @@ function renderHideout() {
           const lbl = r.type === "pre_facility" ? "前提" : r.type === "pre_trader" ? "信頼" : "スキル";
           reqContent += `<li>・【${lbl}】${r.name} Lv.${r.level}</li>`;
         } else {
-          reqContent += `<li>・${r.name} x${r.count.toLocaleString()}${r.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</li>`;
+          // Item requirement
+          reqContent += `<li>・<a href="${getItemWikiUrl(r.name)}" target="_blank" class="wiki-link">${r.name}</a> x${r.count.toLocaleString()}${r.fir ? ' <span class="fir-badge">(FIR)</span>' : ''}</li>`;
         }
       });
       reqContent += `</ul>`;
@@ -231,7 +246,7 @@ function renderHideoutTotal(totalCounts) {
         <div style="display:flex; align-items:center;">
           <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
           <div class="item-info">
-            <span>${name} ${data.fir ? '<span class="fir-badge">FIR</span>' : ''}</span>
+            <span><a href="${getItemWikiUrl(name)}" target="_blank" class="wiki-link">${name}</a> ${data.fir ? '<span class="fir-badge">FIR</span>' : ''}</span>
             <div class="item-target">必要: ${data.count}</div>
           </div>
         </div>
@@ -471,7 +486,7 @@ window.showRequiredItems = (taskId) => {
     const firBadge = item.fir ? '<span class="fir-badge">FIR</span>' : '';
 
     const li = document.createElement('li');
-    li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <b>${item.name}</b> x${item.count}${firBadge} (所持: ${current})`;
+    li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <b><a href="${getItemWikiUrl(item.name)}" target="_blank" class="wiki-link">${item.name}</a></b> x${item.count}${firBadge} (所持: ${current})`;
     taskList.appendChild(li);
   });
 

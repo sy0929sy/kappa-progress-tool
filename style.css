@@ -1391,3 +1391,33 @@ input:checked+.slider:before {
   color: white;
   margin-right: 5px;
 }
+
+/* Wiki Link Styles - Context Aware */
+
+/* Default: Light Backgrounds (Tasks, Hideout Cards) -> Blue */
+a.wiki-link {
+  color: var(--bg-blue);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px dotted var(--bg-blue);
+  transition: all 0.2s ease;
+}
+
+a.wiki-link:hover {
+  color: var(--primary-pink);
+  border-bottom: 1px solid var(--primary-pink);
+}
+
+/* Dark Backgrounds (Modals) -> Yellow */
+.modal-content a.wiki-link,
+.modal-task-list a.wiki-link {
+  color: var(--secondary-yellow);
+  border-bottom-color: var(--secondary-yellow);
+}
+
+.modal-content a.wiki-link:hover,
+.modal-task-list a.wiki-link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
