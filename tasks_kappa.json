@@ -1463,14 +1463,7 @@
 		"preRequisites": [
 			"informed_means_armed"
 		],
-		"kappaRequired": true,
-		"requiredItems": [
-			{
-				"name": "Golden neck chain",
-				"count": 3,
-				"fir": true
-			}
-		]
+		"kappaRequired": true
 	},
 	{
 		"id": "setup",
