@@ -143,34 +143,53 @@ function renderRequiredItems() {
   TASKS.forEach(task => {
     if (!userData.tasks[task.id] && task.requiredItems) {
       task.requiredItems.forEach(item => {
-        itemSummary[item.name] = (itemSummary[item.name] || 0) + item.count;
+        if (!itemSummary[item.name]) {
+          itemSummary[item.name] = { total: 0, tasks: [] };
+        }
+        itemSummary[item.name].total += item.count;
+        itemSummary[item.name].tasks.push({
+          taskName: task.name,
+          trader: task.trader,
+          count: item.count
+        });
       });
     }
   });
 
   // お気に入り(最優先) > 完了状況(次点) でソート
-  const sorted = Object.entries(itemSummary).sort(([nA, tA], [nB, tB]) => {
+  const sorted = Object.entries(itemSummary).sort(([nA, dA], [nB, dB]) => {
     const favA = userData.favorites[nA] ? 1 : 0;
     const favB = userData.favorites[nB] ? 1 : 0;
     if (favA !== favB) return favB - favA;
-    const doneA = (itemProgress[nA] || 0) >= tA;
-    const doneB = (itemProgress[nB] || 0) >= tB;
+    const doneA = (itemProgress[nA] || 0) >= dA.total;
+    const doneB = (itemProgress[nB] || 0) >= dB.total;
     return doneA === doneB ? 0 : doneA ? 1 : -1;
   });
 
-  sorted.forEach(([name, target]) => {
+  sorted.forEach(([name, data]) => {
     const current = itemProgress[name] || 0;
-    const isDone = current >= target;
+    const isDone = current >= data.total;
     const isFav = userData.favorites[name];
     const card = document.createElement("div");
     const escapedName = name.replace(/'/g, "\\'");
     card.className = `task-card ${isDone ? 'item-done' : ''}`;
+
+    // タスク詳細リストを生成
+    const taskDetailsHtml = data.tasks.map(t =>
+      `<div class="task-detail-item"><span class="trader-label">[${t.trader}]</span> ${t.taskName}: ${t.count}個</div>`
+    ).join('');
+
     card.innerHTML = `
-      <div style="display:flex; align-items:center;">
+      <div style="display:flex; align-items:flex-start; gap: 10px;">
         <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
-        <div class="item-info">
-          <span><a href="${getItemWikiUrl(name)}" target="_blank" class="wiki-link">${name}</a></span>
-          <div class="item-target">必要: ${target}</div>
+        <div class="item-info" style="flex: 1; min-width: 0;">
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+            <span><a href="${getItemWikiUrl(name)}" target="_blank" class="wiki-link">${name}</a></span>
+            <div class="item-target">必要: ${data.total}</div>
+          </div>
+          <div class="task-details-list">
+            ${taskDetailsHtml}
+          </div>
         </div>
       </div>
       <div class="counter-group">

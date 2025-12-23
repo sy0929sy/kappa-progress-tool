@@ -737,6 +737,28 @@ input:checked+.slider:before {
   margin-top: 2px;
 }
 
+/* タスク詳細リストのスタイル */
+.task-details-list {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.task-detail-item {
+  padding: 2px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.trader-label {
+  color: var(--secondary-yellow);
+  font-weight: bold;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
 /* 施設カード内のレイアウト整理 */
 .hideout-card {
   display: flex;
