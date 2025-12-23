@@ -562,6 +562,7 @@ window.toggleTask = async (taskId) => {
 
   // UI更新
   renderTasks();
+  renderRequiredItems();
   updateProgress();
 };
 
