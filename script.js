@@ -599,8 +599,13 @@ function applyTheme(theme) {
   document.body.setAttribute("data-theme", theme);
   const btn = document.getElementById("themeToggleBtn");
   if (btn) {
-    btn.textContent = theme === "light" ? "🌙" : "☀️";
-    btn.title = theme === "light" ? "ダークモード切替" : "ライトモード切替";
+    if (theme === "light") {
+      btn.innerHTML = '<span>☀️</span> ライトモード';
+      btn.title = "ダークモードに切り替え";
+    } else {
+      btn.innerHTML = '<span>🌙</span> ダークモード';
+      btn.title = "ライトモードに切り替え";
+    }
   }
 }
 

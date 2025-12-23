@@ -111,7 +111,7 @@ body {
 }
 
 .search-bar input {
-  width: 100%;
+  width: 95%;
   padding: 12px;
   border: 2px solid #ddd;
   border-radius: 8px;
@@ -578,6 +578,30 @@ input:checked+.slider:before {
   border-radius: 4px;
   transition: 0.2s;
   color: var(--text-muted);
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  margin-left: 15px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px var(--shadow-card);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--bg-trader-btn-active);
+  color: var(--bg-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px var(--shadow-card);
 }
 
 .lang-switch-btn.active {
