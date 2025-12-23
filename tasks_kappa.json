@@ -3389,5 +3389,15 @@
 			"colleagues_part_3"
 		],
 		"kappaRequired": true
+	},
+	{
+		"id": "shaking_up_teller",
+		"name": "Shaking up teller",
+		"trader": "Prapor",
+		"requiredLevel": 10,
+		"preRequisites": [
+			"ice_cream_cones"
+		],
+		"kappaRequired": true
 	}
 ]
