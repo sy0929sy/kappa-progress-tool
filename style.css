@@ -1384,3 +1384,9 @@ input:checked+.slider:before {
   color: #666;
   margin-top: 15px;
 }
+
+.item-badge {
+  background-color: #9b59b6;
+  color: white;
+  margin-right: 5px;
+}

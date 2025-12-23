@@ -277,9 +277,9 @@ function renderTasks() {
     let preTasksDisplay = "";
     if (preTaskNames.length > 0) {
       if (preTaskNames.length > 1) {
-        preTasksDisplay = `前提: ${preTaskNames[0]}...他${preTaskNames.length - 1}件`;
+        preTasksDisplay = `関連: ${preTaskNames[0]}...他${preTaskNames.length - 1}件`;
       } else {
-        preTasksDisplay = `前提: ${preTaskNames[0]}`;
+        preTasksDisplay = `関連: ${preTaskNames[0]}`;
       }
     }
 
@@ -289,6 +289,10 @@ function renderTasks() {
 
     const preHtml = preTasksDisplay
       ? `<span class="badge pre-badge clickable-badge" onclick="window.showPrerequisites('${task.id}')">${preTasksDisplay}</span>`
+      : "";
+
+    const itemHtml = (task.requiredItems && task.requiredItems.length > 0)
+      ? `<span class="badge item-badge clickable-badge" onclick="window.showRequiredItems('${task.id}')">納品アイテム</span>`
       : "";
 
     const card = document.createElement("div");
@@ -319,6 +323,7 @@ function renderTasks() {
           <div class="task-requirements-aside">
             <div class="req-row">${levelHtml}</div>
             <div class="req-row">${preHtml}</div>
+            <div class="req-row">${itemHtml}</div>
           </div>
         </div>
       </div>
@@ -402,8 +407,8 @@ window.showPrerequisites = (taskId) => {
   const cancelBtn = document.getElementById('modalCancel');
 
   // モーダルの内容設定
-  title.textContent = "前提タスク";
-  message.textContent = "このタスクを開放するための条件：";
+  title.textContent = "関連タスク";
+  message.textContent = "このタスクに関連するタスク：";
 
   taskList.innerHTML = '';
   // 直近の前提タスクを表示
@@ -428,6 +433,54 @@ window.showPrerequisites = (taskId) => {
   const cleanup = () => {
     cancelBtn.removeEventListener('click', handleClose);
     // 状態を戻す
+    confirmBtn.style.display = '';
+    cancelBtn.textContent = 'キャンセル';
+    title.textContent = '確認';
+    message.textContent = '以下のタスクも一括で完了になります：';
+  };
+
+  const handleClose = () => {
+    modal.style.display = 'none';
+    cleanup();
+  };
+
+  cancelBtn.addEventListener('click', handleClose);
+};
+
+// 必要アイテム一覧表示用のモーダル
+window.showRequiredItems = (taskId) => {
+  const task = TASKS.find(t => t.id === taskId);
+  if (!task || !task.requiredItems || task.requiredItems.length === 0) return;
+
+  const modal = document.getElementById('customModal');
+  const title = document.getElementById('modalTitle');
+  const message = document.getElementById('modalMessage');
+  const taskList = document.getElementById('modalTaskList');
+  const confirmBtn = document.getElementById('modalConfirm');
+  const cancelBtn = document.getElementById('modalCancel');
+
+  title.textContent = "納品アイテム";
+  message.textContent = "タスク完了に必要な納品アイテム：";
+  taskList.innerHTML = '';
+
+  task.requiredItems.forEach(item => {
+    const current = itemProgress[item.name] || 0;
+    const isDone = current >= item.count;
+    const statusIcon = isDone ? '✓' : '未';
+    const statusColor = isDone ? 'var(--done-green)' : 'gray';
+    const firBadge = item.fir ? '<span class="fir-badge">FIR</span>' : '';
+
+    const li = document.createElement('li');
+    li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <b>${item.name}</b> x${item.count}${firBadge} (所持: ${current})`;
+    taskList.appendChild(li);
+  });
+
+  confirmBtn.style.display = 'none';
+  cancelBtn.textContent = '閉じる';
+  modal.style.display = 'flex';
+
+  const cleanup = () => {
+    cancelBtn.removeEventListener('click', handleClose);
     confirmBtn.style.display = '';
     cancelBtn.textContent = 'キャンセル';
     title.textContent = '確認';
