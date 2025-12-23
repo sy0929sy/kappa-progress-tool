@@ -551,11 +551,18 @@ window.toggleTask = async (taskId) => {
   // 本体の状態を更新
   userData.tasks[taskId] = isNowCompleted;
 
-  // 保存と描画（同じscript.js内にある関数を呼ぶ）
-  // もしこれらが別ファイルなら、window.saveData などで公開されている必要があります。
-  if (typeof saveData === "function") saveData();
-  if (typeof renderTasks === "function") renderTasks();
-  if (typeof updateProgress === "function") updateProgress();
+  // Firestoreに保存
+  try {
+    await updateDoc(doc(db, "users", uid), {
+      tasks: { ...userData.tasks }
+    });
+  } catch (error) {
+    console.error("Save error:", error);
+  }
+
+  // UI更新
+  renderTasks();
+  updateProgress();
 };
 
 window.updateStationLevel = async (station, level) => {
