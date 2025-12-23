@@ -17,7 +17,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "MP-133 12ga shotgun",
+				"name": "MP-133 12ga ショットガン",
 				"count": 2,
 				"fir": false
 			}
@@ -123,7 +123,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "60-round mag for 5.45x39 AK",
+				"name": "AK-74 5.45x39 6L31 60連マガジン",
 				"count": 3,
 				"fir": true
 			}
@@ -200,7 +200,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Lower half-mask",
+				"name": "ハーフマスク",
 				"count": 7,
 				"fir": true
 			}
@@ -247,7 +247,7 @@
 				"fir": true
 			},
 			{
-				"name": "PM pistol",
+				"name": "PM ピストル",
 				"count": 2,
 				"fir": true
 			}
@@ -371,12 +371,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "6-STE-M2 military battery",
+				"name": "6-STE-M2 軍用バッテリー",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "OFZ 30x160mm shell",
+				"name": "OFZ 30x160mm 砲弾",
 				"count": 5,
 				"fir": true
 			}
@@ -446,7 +446,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Salewa first aid kit",
+				"name": "Salewa ファーストエイドキット",
 				"count": 3,
 				"fir": true
 			}
@@ -463,7 +463,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Gas analyzer",
+				"name": "ガスアナライザー",
 				"count": 1,
 				"fir": true
 			}
@@ -480,7 +480,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Gas analyzer",
+				"name": "ガスアナライザー",
 				"count": 2,
 				"fir": true
 			}
@@ -497,7 +497,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Morphine injector",
+				"name": "モルヒネの注射器",
 				"count": 4,
 				"fir": true
 			}
@@ -524,7 +524,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Car battery",
+				"name": "カーバッテリー",
 				"count": 4,
 				"fir": true
 			}
@@ -561,7 +561,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Morphine injector",
+				"name": "モルヒネの注射器",
 				"count": 1,
 				"fir": true
 			}
@@ -634,19 +634,7 @@
 		"preRequisites": [
 			"colleagues_part_1"
 		],
-		"kappaRequired": true,
-		"requiredItems": [
-			{
-				"name": "Ophthalmoscope",
-				"count": 1,
-				"fir": true
-			},
-			{
-				"name": "Surgery kit Sanitar",
-				"count": 1,
-				"fir": true
-			}
-		]
+		"kappaRequired": true
 	},
 	{
 		"id": "colleagues_part_3",
@@ -690,12 +678,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Ophthalmoscope",
+				"name": "検眼鏡",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "LEDX Skin Transilluminator",
+				"name": "LEDX 静脈発見器",
 				"count": 1,
 				"fir": true
 			}
@@ -722,7 +710,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Can of beef stew (Small)",
+				"name": "ビーフシチューの缶詰 (小)",
 				"count": 15,
 				"fir": true
 			}
@@ -749,27 +737,27 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "LEDX Skin Transilluminator",
+				"name": "LEDX 静脈発見器",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Ophthalmoscope",
+				"name": "検眼鏡",
 				"count": 3,
 				"fir": true
 			},
 			{
-				"name": "Portable defibrillator",
+				"name": "除細動器",
 				"count": 3,
 				"fir": true
 			},
 			{
-				"name": "Pile of meds",
+				"name": "医薬品",
 				"count": 20,
 				"fir": true
 			},
 			{
-				"name": "Bottles of OLOLO Multivitamins",
+				"name": "OLOLO マルチビタミン",
 				"count": 10,
 				"fir": true
 			}
@@ -1103,137 +1091,137 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Old firesteel",
+				"name": "古いファイヤースチール",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Antique axe",
+				"name": "アンティークの斧",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Battered antique book",
+				"name": "アンティークの本",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "FireKlean gun lube",
+				"name": "#FireKlean ガンオイル",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Golden rooster figurine",
+				"name": "黄金のニワトリ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Silver Badge",
+				"name": "シルバーバッジ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Deadlyslob's beard oil",
+				"name": "DeadlySlob's ビアードオイル",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Golden 1GPhone",
+				"name": "1GPhone オレンジゴールド",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Jar of DevilDog mayo",
+				"name": "デビルドッグ マヨネーズ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Can of sprats",
+				"name": "キビナゴの缶詰",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Fake mustache",
+				"name": "付け髭",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Kotton beanie",
+				"name": "Kotton ビーニー",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Raven figurine",
+				"name": "カラスの置物",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Pestily plague mask",
+				"name": "Pestily ペストマスク",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Shroud half-mask",
+				"name": "Shroud ハーフマスク",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Can of Dr. Lupo's coffee beans",
+				"name": "Dr. Lupo's コーヒー豆",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "42 Signature Blend English Tea",
+				"name": "42 シグニチャーブレンド 英国紅茶",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Veritas guitar pick",
+				"name": "Veritas ギターピック",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Evasion Armband",
+				"name": "Evasion アームバンド",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Can of RatCola soda",
+				"name": "ラットコーラ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Loot Lord plushie",
+				"name": "ルートロードのぬいぐるみ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "WZ Wallet",
+				"name": "WZ ウォレット",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "LVNDMARK's rat poison",
+				"name": "LVNDMARK's 殺鼠剤",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Smoke balaclava",
+				"name": "Smoke バラクラバ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Missam forklift key",
+				"name": "Missamのフォークリフトの鍵",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Video cassette Cyborg Killer",
+				"name": "映画 サイボーグ・キラー のビデオ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "BakeEzy cook book",
+				"name": "BakeEzy レシピ本",
 				"count": 1,
 				"fir": true
 			},
@@ -1243,7 +1231,7 @@
 				"fir": true
 			},
 			{
-				"name": "Glorious E lightweight mask",
+				"name": "Glorious E lightweight armored mask",
 				"count": 1,
 				"fir": true
 			},
@@ -1258,27 +1246,27 @@
 				"fir": true
 			},
 			{
-				"name": "Gingy keychain",
+				"name": "Gingyのキーホルダー",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Golden egg",
+				"name": "ゴールデンエッグ",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Press pass (NoiceGuy)",
+				"name": "NoiceGuy のプレスカード",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Axel parrot figurine",
+				"name": "オウムの Axel の置物",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "BEAR Buddy plush toy",
+				"name": "BEAR バディのぬいぐるみ",
 				"count": 1,
 				"fir": true
 			},
@@ -1307,13 +1295,13 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Module-3M body armor",
-				"count": 4,
+				"name": "Module-3M ボディアーマー",
+				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "TOZ-106 bolt-action shotgun",
-				"count": 4,
+				"name": "TOZ-106 ボルトアクションショットガン",
+				"count": 1,
 				"fir": true
 			}
 		]
@@ -1349,7 +1337,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Secure Flash drive",
+				"name": "暗号化された USB フラッシュドライブ",
 				"count": 2,
 				"fir": true
 			}
@@ -1609,7 +1597,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "MRE ration pack",
+				"name": "MRE レーションパック",
 				"count": 5,
 				"fir": true
 			}
@@ -1671,17 +1659,17 @@
 				"fir": true
 			},
 			{
-				"name": "Clin window cleaner",
+				"name": "クリン ガラスクリーナー",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Ox bleach",
+				"name": "Ox 漂白剤",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Corrugated hose",
+				"name": "コルゲートチューブ",
 				"count": 2,
 				"fir": true
 			}
@@ -1728,17 +1716,17 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Morphine injector",
+				"name": "モルヒネの注射器",
 				"count": 4,
 				"fir": true
 			},
 			{
-				"name": "Heat-exchange alkali",
+				"name": "アルカリクリーナー",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Corrugated hose",
+				"name": "コルゲートチューブ",
 				"count": 2,
 				"fir": true
 			}
@@ -1855,37 +1843,37 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Meldonin",
+				"name": "メルドニンの注射器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Obdolbos",
+				"name": "オブドルボス カクテルの注射器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "AHF1-M",
+				"name": "AHF1-M の注射器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "P22",
+				"name": "P22 (Product 22) の注射器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "L1 (Norepinephrine)",
+				"name": "L1 (ノルエピネフリン)の注射器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "3-(b-TG)",
+				"name": "3-(b-TG) の注射器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "Trimadol",
+				"name": "トリマドールの注射器",
 				"count": 1,
 				"fir": true
 			}
@@ -2249,22 +2237,22 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "PC CPU",
+				"name": "CPU",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Rechargeable battery",
+				"name": "充電式バッテリー",
 				"count": 3,
 				"fir": true
 			},
 			{
-				"name": "Circuit board",
+				"name": "プリント基板",
 				"count": 3,
 				"fir": true
 			},
 			{
-				"name": "Wires",
+				"name": "ビニル絶縁電線",
 				"count": 2,
 				"fir": true
 			}
@@ -2379,17 +2367,17 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Malboro Cigarettes",
+				"name": "マルボロ シガレット",
 				"count": 5,
 				"fir": true
 			},
 			{
-				"name": "Strike Cigarettes",
+				"name": "ストライク シガレット",
 				"count": 5,
 				"fir": true
 			},
 			{
-				"name": "Wilston Cigarettes",
+				"name": "ウィルストン シガレット",
 				"count": 5,
 				"fir": true
 			}
@@ -2416,12 +2404,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Graphics card",
+				"name": "グラフィックボード",
 				"count": 3,
 				"fir": true
 			},
 			{
-				"name": "CPU Fan",
+				"name": "CPUファン",
 				"count": 8,
 				"fir": true
 			}
@@ -2458,12 +2446,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Wrench",
+				"name": "スパナ",
 				"count": 5,
 				"fir": true
 			},
 			{
-				"name": "Corrugated hose",
+				"name": "コルゲートチューブ",
 				"count": 5,
 				"fir": true
 			}
@@ -2480,12 +2468,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "UHF RFID Reader",
+				"name": "UHF RFID リーダー",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "VPX Flash Storage Module",
+				"name": "VPX フラッシュストレージモジュール",
 				"count": 1,
 				"fir": true
 			}
@@ -2600,7 +2588,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Fuel conditioner",
+				"name": "フューエルコンディショナー",
 				"count": 4,
 				"fir": true
 			}
@@ -2617,12 +2605,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Ushanka ear flap cap",
+				"name": "Ushanka ear flap hat",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Cowboy hat",
+				"name": "カウボーイハット",
 				"count": 2,
 				"fir": true
 			}
@@ -2711,7 +2699,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Pilgrim tourist backpack",
+				"name": "Pilgrim ツーリストバックパック",
 				"count": 2,
 				"fir": true
 			}
@@ -2749,8 +2737,13 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Gzhel-K body armor (0-50%)",
-				"count": 2,
+				"name": "Gzhel-K ボディアーマー (0-50%)",
+				"count": 1,
+				"fir": true
+			},
+			{
+				"name": "Gzhel-K ボディアーマー (50-100%)",
+				"count": 1,
 				"fir": true
 			}
 		]
@@ -2766,8 +2759,13 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "6B43 Zabralo-Sh 6B43 (0-50%)",
-				"count": 2,
+				"name": "6B43 Zabralo-Sh ボディアーマー (0-50%)",
+				"count": 1,
+				"fir": true
+			},
+			{
+				"name": "6B43 Zabralo-Sh ボディアーマー (50-100%)",
+				"count": 1,
 				"fir": true
 			}
 		]
@@ -2780,14 +2778,7 @@
 		"preRequisites": [
 			"sew_it_good_part_2"
 		],
-		"kappaRequired": true,
-		"requiredItems": [
-			{
-				"name": "Cloth service manual",
-				"count": 2,
-				"fir": true
-			}
-		]
+		"kappaRequired": true
 	},
 	{
 		"id": "no_fuss_needed",
@@ -2822,17 +2813,17 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Bronze lion figurine",
+				"name": "青銅のライオン",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Horse figurine",
+				"name": "ウマの置物",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Cat figurine",
+				"name": "ネコの置物",
 				"count": 1,
 				"fir": true
 			}
@@ -2850,12 +2841,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Antique teapot",
+				"name": "アンティークのティーポット",
 				"count": 3,
 				"fir": true
 			},
 			{
-				"name": "Antique vase",
+				"name": "アンティークの花瓶",
 				"count": 2,
 				"fir": true
 			}
@@ -2902,17 +2893,17 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Emelya rye croutons",
-				"count": 3,
-				"fir": true
-			},
-			{
-				"name": "Can of beef stew (Large)",
+				"name": "Pack of instant noodles",
 				"count": 2,
 				"fir": true
 			},
 			{
-				"name": "Iskra ration pack",
+				"name": "ビーフシチューの缶詰 (大)",
+				"count": 2,
+				"fir": true
+			},
+			{
+				"name": "イスクラ レーションパック",
 				"count": 3,
 				"fir": true
 			}
@@ -3026,12 +3017,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Portable defibrillator",
+				"name": "除細動器",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "CMS surgery kit",
+				"name": "CMS サージカルキット",
 				"count": 2,
 				"fir": true
 			}
@@ -3271,7 +3262,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "Secure Flash drive",
+				"name": "暗号化された USB フラッシュドライブ",
 				"count": 3,
 				"fir": true
 			}
