@@ -600,10 +600,10 @@ function applyTheme(theme) {
   const btn = document.getElementById("themeToggleBtn");
   if (btn) {
     if (theme === "light") {
-      btn.innerHTML = '<span>☀️</span> ライトモード';
+      btn.innerHTML = '<span>🌙</span> ダークモード';
       btn.title = "ダークモードに切り替え";
     } else {
-      btn.innerHTML = '<span>🌙</span> ダークモード';
+      btn.innerHTML = '<span>☀️</span> ライトモード';
       btn.title = "ライトモードに切り替え";
     }
   }
