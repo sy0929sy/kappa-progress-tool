@@ -40,6 +40,7 @@ let wikiLang = "jp";
 let currentTheme = "light";
 let hideCompleted = true;
 let hideoutFirOnly = false;
+let hideoutNextOnly = false; // 次レベルのみ表示するかどうか
 const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
 let activeTraders = [...TRADERS];
 
@@ -235,7 +236,12 @@ function renderHideout() {
       </div>
       <div class="req-area">${reqContent}</div>`;
     container.appendChild(card);
-    for (let lv = nextLevel; lv <= data.max; lv++) {
+
+    // hideoutNextOnlyがtrueの場合は次レベルのみ、falseの場合は全レベル
+    const startLevel = nextLevel;
+    const endLevel = hideoutNextOnly ? nextLevel : data.max;
+
+    for (let lv = startLevel; lv <= endLevel; lv++) {
       (data.requirements[lv] || []).forEach(r => {
         if (!r.type && (!hideoutFirOnly || r.fir)) {
           if (!totalCounts[r.name]) totalCounts[r.name] = { count: 0, fir: r.fir };
@@ -672,6 +678,10 @@ function setupEventListeners() {
   document.getElementById("searchBox")?.addEventListener("input", renderTasks);
   document.getElementById("hideoutFirOnly")?.addEventListener("change", (e) => {
     hideoutFirOnly = e.target.checked;
+    renderHideout();
+  });
+  document.getElementById("hideoutNextOnly")?.addEventListener("change", (e) => {
+    hideoutNextOnly = e.target.checked;
     renderHideout();
   });
   document.getElementById("wikiLangJP").onclick = () => { wikiLang = "jp"; updateWikiLangUI(); renderTasks(); };
