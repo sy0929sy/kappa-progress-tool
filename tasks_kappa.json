@@ -12,13 +12,15 @@
 		"name": "Debut",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["shooting_cans"],
+		"preRequisites": [
+			"shooting_cans"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
 				"name": "MP-133 12ga shotgun",
 				"count": 2,
-				"fir": true
+				"fir": false
 			}
 		]
 	},
@@ -27,7 +29,9 @@
 		"name": "Luxurious Life",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["debut"],
+		"preRequisites": [
+			"debut"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -35,7 +39,9 @@
 		"name": "Search Mission",
 		"trader": "Prapor",
 		"requiredLevel": 5,
-		"preRequisites": ["debut"],
+		"preRequisites": [
+			"debut"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -43,7 +49,9 @@
 		"name": "Background Check",
 		"trader": "Prapor",
 		"requiredLevel": 2,
-		"preRequisites": ["luxurious_life"],
+		"preRequisites": [
+			"luxurious_life"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -51,7 +59,9 @@
 		"name": "Shootout Picnic",
 		"trader": "Prapor",
 		"requiredLevel": 3,
-		"preRequisites": ["background_check"],
+		"preRequisites": [
+			"background_check"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -59,7 +69,9 @@
 		"name": "Delivery From the Past",
 		"trader": "Prapor",
 		"requiredLevel": 5,
-		"preRequisites": ["background_check"],
+		"preRequisites": [
+			"background_check"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -67,7 +79,9 @@
 		"name": "BP Depot",
 		"trader": "Prapor",
 		"requiredLevel": 5,
-		"preRequisites": ["delivery_from_the_past"],
+		"preRequisites": [
+			"delivery_from_the_past"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -75,7 +89,9 @@
 		"name": "The Bunker - Part 1",
 		"trader": "Prapor",
 		"requiredLevel": 10,
-		"preRequisites": ["bp_depot"],
+		"preRequisites": [
+			"bp_depot"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -83,7 +99,9 @@
 		"name": "The Bunker - Part 2",
 		"trader": "Prapor",
 		"requiredLevel": 15,
-		"preRequisites": ["the_bunker_part_1"],
+		"preRequisites": [
+			"the_bunker_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -91,7 +109,9 @@
 		"name": "Bad Rep Evidence",
 		"trader": "Prapor",
 		"requiredLevel": 6,
-		"preRequisites": ["bp_depot"],
+		"preRequisites": [
+			"bp_depot"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -99,7 +119,9 @@
 		"name": "Ice Cream Cones",
 		"trader": "Prapor",
 		"requiredLevel": 9,
-		"preRequisites": ["bad_rep_evidence"],
+		"preRequisites": [
+			"bad_rep_evidence"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -114,7 +136,9 @@
 		"name": "No Place for Renegades",
 		"trader": "Prapor",
 		"requiredLevel": 17,
-		"preRequisites": ["the_bunker_part_2"],
+		"preRequisites": [
+			"the_bunker_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -122,7 +146,9 @@
 		"name": "Documents",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["no_place_for_renegades"],
+		"preRequisites": [
+			"no_place_for_renegades"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -130,7 +156,10 @@
 		"name": "Postman Pat - Part 1",
 		"trader": "Prapor",
 		"requiredLevel": 10,
-		"preRequisites": ["ice_cream_cones", "postman_pat_part_2"],
+		"preRequisites": [
+			"ice_cream_cones",
+			"postman_pat_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -138,7 +167,9 @@
 		"name": "Shaking Up the Teller",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["ice_cream_cones"],
+		"preRequisites": [
+			"ice_cream_cones"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -146,7 +177,9 @@
 		"name": "The Punisher - Part 1",
 		"trader": "Prapor",
 		"requiredLevel": 17,
-		"preRequisites": ["shaking_up_the_teller"],
+		"preRequisites": [
+			"shaking_up_the_teller"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -154,7 +187,9 @@
 		"name": "The Punisher - Part 2",
 		"trader": "Prapor",
 		"requiredLevel": 18,
-		"preRequisites": ["the_punisher_part_1"],
+		"preRequisites": [
+			"the_punisher_part_1"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -169,7 +204,9 @@
 		"name": "The Punisher - Part 3",
 		"trader": "Prapor",
 		"requiredLevel": 19,
-		"preRequisites": ["the_punisher_part_2"],
+		"preRequisites": [
+			"the_punisher_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -177,7 +214,9 @@
 		"name": "The Punisher - Part 4",
 		"trader": "Prapor",
 		"requiredLevel": 20,
-		"preRequisites": ["the_punisher_part_3"],
+		"preRequisites": [
+			"the_punisher_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -185,7 +224,9 @@
 		"name": "The Punisher - Part 5",
 		"trader": "Prapor",
 		"requiredLevel": 20,
-		"preRequisites": ["the_punisher_part_4"],
+		"preRequisites": [
+			"the_punisher_part_4"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -210,7 +251,9 @@
 		"name": "The Punisher - Part 6",
 		"trader": "Prapor",
 		"requiredLevel": 21,
-		"preRequisites": ["the_punisher_part_5"],
+		"preRequisites": [
+			"the_punisher_part_5"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -218,7 +261,9 @@
 		"name": "Anesthesia",
 		"trader": "Prapor",
 		"requiredLevel": 21,
-		"preRequisites": ["shaking_up_the_teller"],
+		"preRequisites": [
+			"shaking_up_the_teller"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -226,7 +271,9 @@
 		"name": "Test Drive - Part 1",
 		"trader": "Prapor",
 		"requiredLevel": 18,
-		"preRequisites": ["shooting_cans"],
+		"preRequisites": [
+			"shooting_cans"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -234,7 +281,9 @@
 		"name": "Test Drive - Part 2",
 		"trader": "Prapor",
 		"requiredLevel": 22,
-		"preRequisites": ["test_drive_part_1"],
+		"preRequisites": [
+			"test_drive_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -242,7 +291,9 @@
 		"name": "Test Drive - Part 3",
 		"trader": "Prapor",
 		"requiredLevel": 25,
-		"preRequisites": ["test_drive_part_2"],
+		"preRequisites": [
+			"test_drive_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -250,7 +301,9 @@
 		"name": "Test Drive - Part 4",
 		"trader": "Prapor",
 		"requiredLevel": 28,
-		"preRequisites": ["test_drive_part_3"],
+		"preRequisites": [
+			"test_drive_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -258,7 +311,9 @@
 		"name": "Test Drive - Part 5",
 		"trader": "Prapor",
 		"requiredLevel": 32,
-		"preRequisites": ["test_drive_part_4"],
+		"preRequisites": [
+			"test_drive_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -266,7 +321,9 @@
 		"name": "Test Drive - Part 6",
 		"trader": "Prapor",
 		"requiredLevel": 35,
-		"preRequisites": ["test_drive_part_5"],
+		"preRequisites": [
+			"test_drive_part_5"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -274,7 +331,9 @@
 		"name": "Perfect Mediator",
 		"trader": "Prapor",
 		"requiredLevel": 35,
-		"preRequisites": ["shaking_up_the_teller"],
+		"preRequisites": [
+			"shaking_up_the_teller"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -282,7 +341,9 @@
 		"name": "Belka and Strelka",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["bp_depot"],
+		"preRequisites": [
+			"bp_depot"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -298,7 +359,9 @@
 		"name": "Regulated Materials",
 		"trader": "Prapor",
 		"requiredLevel": 25,
-		"preRequisites": ["polikhim_hobo"],
+		"preRequisites": [
+			"polikhim_hobo"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -318,7 +381,9 @@
 		"name": "Intimidator",
 		"trader": "Prapor",
 		"requiredLevel": 45,
-		"preRequisites": ["the_punisher_part_6"],
+		"preRequisites": [
+			"the_punisher_part_6"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -326,7 +391,9 @@
 		"name": "Easy Job - Part 1",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["the_punisher_part_2"],
+		"preRequisites": [
+			"the_punisher_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -334,7 +401,9 @@
 		"name": "Easy Job - Part 2",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["easy_job_part_1"],
+		"preRequisites": [
+			"easy_job_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -342,7 +411,9 @@
 		"name": "Reconnaissance",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["easy_job_part_1"],
+		"preRequisites": [
+			"easy_job_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -350,7 +421,9 @@
 		"name": "Possessor",
 		"trader": "Prapor",
 		"requiredLevel": 0,
-		"preRequisites": ["postman_pat_part_2"],
+		"preRequisites": [
+			"postman_pat_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -581,7 +654,8 @@
 		"trader": "Therapist",
 		"requiredLevel": 0,
 		"preRequisites": [
-			"colleagues_part_2", "huntsman_sadist"
+			"colleagues_part_2",
+			"huntsman_sadist"
 		],
 		"kappaRequired": true
 	},
@@ -601,7 +675,8 @@
 		"trader": "Therapist",
 		"requiredLevel": 0,
 		"preRequisites": [
-			"an_apple_a_day_keeps_the_doctor_away", "one_less_loose_end"
+			"an_apple_a_day_keeps_the_doctor_away",
+			"one_less_loose_end"
 		],
 		"kappaRequired": true
 	},
@@ -1508,7 +1583,9 @@
 		"name": "Fishing Gear",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["friend_from_the_west_part_2"],
+		"preRequisites": [
+			"friend_from_the_west_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1516,7 +1593,9 @@
 		"name": "Tigr Safari",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["fishing_gear"],
+		"preRequisites": [
+			"fishing_gear"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1524,7 +1603,9 @@
 		"name": "Scrap Metal",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["tigr_safari"],
+		"preRequisites": [
+			"tigr_safari"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1532,7 +1613,9 @@
 		"name": "Eagle Eye",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["scrap_metal"],
+		"preRequisites": [
+			"scrap_metal"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1540,7 +1623,9 @@
 		"name": "Humanitarian Supplies",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["eagle_eye"],
+		"preRequisites": [
+			"eagle_eye"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -1555,7 +1640,9 @@
 		"name": "The Cult - Part 1",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["humanitarian_supplies"],
+		"preRequisites": [
+			"humanitarian_supplies"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1563,7 +1650,9 @@
 		"name": "The Cult - Part 2",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["the_cult_part_1"],
+		"preRequisites": [
+			"the_cult_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1571,7 +1660,9 @@
 		"name": "Spa Tour - Part 1",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["humanitarian_supplies"],
+		"preRequisites": [
+			"humanitarian_supplies"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1579,7 +1670,9 @@
 		"name": "Spa Tour - Part 2",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_1"],
+		"preRequisites": [
+			"spa_tour_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1587,7 +1680,9 @@
 		"name": "Spa Tour - Part 3",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_2"],
+		"preRequisites": [
+			"spa_tour_part_2"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -1617,7 +1712,9 @@
 		"name": "Spa Tour - Part 4",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_3"],
+		"preRequisites": [
+			"spa_tour_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1625,7 +1722,9 @@
 		"name": "Spa Tour - Part 5",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_4"],
+		"preRequisites": [
+			"spa_tour_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1633,7 +1732,9 @@
 		"name": "Spa Tour - Part 6",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_5"],
+		"preRequisites": [
+			"spa_tour_part_5"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1641,7 +1742,9 @@
 		"name": "Spa Tour - Part 7",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_6"],
+		"preRequisites": [
+			"spa_tour_part_6"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -1666,7 +1769,9 @@
 		"name": "Cargo X - Part 1",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_7"],
+		"preRequisites": [
+			"spa_tour_part_7"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1674,7 +1779,9 @@
 		"name": "Cargo X - Part 2",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["cargo_x_part_1"],
+		"preRequisites": [
+			"cargo_x_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1682,7 +1789,9 @@
 		"name": "Cargo X - Part 3",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["cargo_x_part_2"],
+		"preRequisites": [
+			"cargo_x_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1690,7 +1799,9 @@
 		"name": "Wet Job - Part 1",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_7"],
+		"preRequisites": [
+			"spa_tour_part_7"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1698,7 +1809,9 @@
 		"name": "Wet Job - Part 2",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_1"],
+		"preRequisites": [
+			"wet_job_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1706,7 +1819,9 @@
 		"name": "Wet Job - Part 3",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_2"],
+		"preRequisites": [
+			"wet_job_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1714,7 +1829,9 @@
 		"name": "Wet Job - Part 4",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_3"],
+		"preRequisites": [
+			"wet_job_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1722,7 +1839,9 @@
 		"name": "Wet Job - Part 5",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_4"],
+		"preRequisites": [
+			"wet_job_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1730,7 +1849,9 @@
 		"name": "Wet Job - Part 6",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_5"],
+		"preRequisites": [
+			"wet_job_part_5"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1738,7 +1859,9 @@
 		"name": "The Guide",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_6"],
+		"preRequisites": [
+			"wet_job_part_6"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1746,7 +1869,9 @@
 		"name": "Samples",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["anesthesia"],
+		"preRequisites": [
+			"anesthesia"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -1791,7 +1916,10 @@
 		"name": "TerraGroup Employee",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["samples", "huntsman_sadist"],
+		"preRequisites": [
+			"samples",
+			"huntsman_sadist"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1799,7 +1927,9 @@
 		"name": "Lend-Lease - Part 2",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["lend_lease_part_1"],
+		"preRequisites": [
+			"lend_lease_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1807,7 +1937,9 @@
 		"name": "Peacekeeping Mission",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["lend_lease_part_2"],
+		"preRequisites": [
+			"lend_lease_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1815,7 +1947,9 @@
 		"name": "Classified Technologies",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["revision_reserve"],
+		"preRequisites": [
+			"revision_reserve"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1823,7 +1957,9 @@
 		"name": "Revision - Reserve",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["humanitarian_supplies"],
+		"preRequisites": [
+			"humanitarian_supplies"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1831,7 +1967,9 @@
 		"name": "Cargo X - Part 4",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["cargo_x_part_3"],
+		"preRequisites": [
+			"cargo_x_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1839,7 +1977,9 @@
 		"name": "Insomnia",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["cargo_x_part_4"],
+		"preRequisites": [
+			"cargo_x_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1847,7 +1987,9 @@
 		"name": "Overpopulation",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["spa_tour_part_1"],
+		"preRequisites": [
+			"spa_tour_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1855,7 +1997,9 @@
 		"name": "Revision - Lighthouse",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["humanitarian_supplies"],
+		"preRequisites": [
+			"humanitarian_supplies"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1863,7 +2007,10 @@
 		"name": "One Less Loose End",
 		"trader": "Peacekeeper",
 		"requiredLevel": 0,
-		"preRequisites": ["overpopulation", "a_healthy_alternative"],
+		"preRequisites": [
+			"overpopulation",
+			"a_healthy_alternative"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1879,7 +2026,9 @@
 		"name": "Introduction",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["saving_the_mole"],
+		"preRequisites": [
+			"saving_the_mole"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1887,7 +2036,9 @@
 		"name": "Gunsmith - Part 1",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["saving_the_mole"],
+		"preRequisites": [
+			"saving_the_mole"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1895,7 +2046,9 @@
 		"name": "Gunsmith - Part 2",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_1"],
+		"preRequisites": [
+			"gunsmith_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1903,7 +2056,9 @@
 		"name": "Gunsmith - Part 3",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_2"],
+		"preRequisites": [
+			"gunsmith_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1911,7 +2066,9 @@
 		"name": "Gunsmith - Part 4",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_3"],
+		"preRequisites": [
+			"gunsmith_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1919,7 +2076,9 @@
 		"name": "Gunsmith - Part 5",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_4"],
+		"preRequisites": [
+			"gunsmith_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1927,7 +2086,9 @@
 		"name": "Gunsmith - Part 6",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_5"],
+		"preRequisites": [
+			"gunsmith_part_5"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1935,7 +2096,9 @@
 		"name": "Gunsmith - Part 7",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_6"],
+		"preRequisites": [
+			"gunsmith_part_6"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1943,7 +2106,9 @@
 		"name": "Gunsmith - Part 8",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_7"],
+		"preRequisites": [
+			"gunsmith_part_7"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1951,7 +2116,9 @@
 		"name": "Gunsmith - Part 9",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_8"],
+		"preRequisites": [
+			"gunsmith_part_8"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1959,7 +2126,9 @@
 		"name": "Gunsmith - Part 10",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_9"],
+		"preRequisites": [
+			"gunsmith_part_9"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1967,7 +2136,9 @@
 		"name": "Gunsmith - Part 11",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_10"],
+		"preRequisites": [
+			"gunsmith_part_10"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1975,7 +2146,9 @@
 		"name": "Gunsmith - Part 12",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_11"],
+		"preRequisites": [
+			"gunsmith_part_11"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1983,7 +2156,9 @@
 		"name": "Gunsmith - Part 13",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_12"],
+		"preRequisites": [
+			"gunsmith_part_12"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1991,7 +2166,9 @@
 		"name": "Gunsmith - Part 14",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_13"],
+		"preRequisites": [
+			"gunsmith_part_13"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -1999,7 +2176,9 @@
 		"name": "Gunsmith - Part 15",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_14"],
+		"preRequisites": [
+			"gunsmith_part_14"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2007,7 +2186,9 @@
 		"name": "Gunsmith - Part 16",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_15"],
+		"preRequisites": [
+			"gunsmith_part_15"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2015,7 +2196,9 @@
 		"name": "Gunsmith - Part 17",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_16"],
+		"preRequisites": [
+			"gunsmith_part_16"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2023,7 +2206,9 @@
 		"name": "Gunsmith - Part 18",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_17"],
+		"preRequisites": [
+			"gunsmith_part_17"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2031,7 +2216,9 @@
 		"name": "Gunsmith - Part 19",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_18"],
+		"preRequisites": [
+			"gunsmith_part_18"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2039,7 +2226,9 @@
 		"name": "Gunsmith - Part 20",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_19"],
+		"preRequisites": [
+			"gunsmith_part_19"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2047,7 +2236,9 @@
 		"name": "Gunsmith - Part 21",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_20"],
+		"preRequisites": [
+			"gunsmith_part_20"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2055,7 +2246,9 @@
 		"name": "Gunsmith - Part 22",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_21"],
+		"preRequisites": [
+			"gunsmith_part_21"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2063,7 +2256,9 @@
 		"name": "Signal - Part 1",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_2"],
+		"preRequisites": [
+			"gunsmith_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2071,7 +2266,9 @@
 		"name": "Insider",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["signal_part_1"],
+		"preRequisites": [
+			"signal_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2079,7 +2276,9 @@
 		"name": "Signal - Part 2",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["signal_part_1"],
+		"preRequisites": [
+			"signal_part_1"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2109,7 +2308,9 @@
 		"name": "Scout",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["signal_part_2"],
+		"preRequisites": [
+			"signal_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2117,7 +2318,10 @@
 		"name": "Capacity Check",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["forklift_certified", "farming_part_1"],
+		"preRequisites": [
+			"forklift_certified",
+			"farming_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2125,7 +2329,9 @@
 		"name": "Black Swan",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["scout"],
+		"preRequisites": [
+			"scout"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2133,7 +2339,9 @@
 		"name": "Forklift Certified",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["black_swan"],
+		"preRequisites": [
+			"black_swan"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2141,7 +2349,9 @@
 		"name": "Surplus Goods",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["back_door"],
+		"preRequisites": [
+			"back_door"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2149,7 +2359,9 @@
 		"name": "Back Door",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["scout"],
+		"preRequisites": [
+			"scout"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2157,7 +2369,9 @@
 		"name": "Signal - Part 3",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["signal_part_2"],
+		"preRequisites": [
+			"signal_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2165,7 +2379,9 @@
 		"name": "Signal - Part 4",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["signal_part_3"],
+		"preRequisites": [
+			"signal_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2173,7 +2389,9 @@
 		"name": "Farming - Part 1",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["gunsmith_part_1"],
+		"preRequisites": [
+			"gunsmith_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2181,7 +2399,9 @@
 		"name": "Farming - Part 2",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_1"],
+		"preRequisites": [
+			"farming_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2189,7 +2409,9 @@
 		"name": "Bad Habit",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_2"],
+		"preRequisites": [
+			"farming_part_2"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2214,7 +2436,9 @@
 		"name": "Farming - Part 3",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_2"],
+		"preRequisites": [
+			"farming_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2222,7 +2446,9 @@
 		"name": "Farming - Part 4",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_3"],
+		"preRequisites": [
+			"farming_part_3"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2242,7 +2468,9 @@
 		"name": "Psycho Sniper",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["wet_job_part_6"],
+		"preRequisites": [
+			"wet_job_part_6"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2250,7 +2478,9 @@
 		"name": "A Shooter Born in Heaven",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_3"],
+		"preRequisites": [
+			"farming_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2258,7 +2488,9 @@
 		"name": "Fertilizers",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_4"],
+		"preRequisites": [
+			"farming_part_4"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2278,7 +2510,9 @@
 		"name": "Import",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_4"],
+		"preRequisites": [
+			"farming_part_4"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2298,7 +2532,9 @@
 		"name": "Passion for Ergonomics",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_2"],
+		"preRequisites": [
+			"farming_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2306,7 +2542,10 @@
 		"name": "Chemistry Closet",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["colleagues_part_1", "anesthesia"],
+		"preRequisites": [
+			"colleagues_part_1",
+			"anesthesia"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2314,7 +2553,9 @@
 		"name": "Corporate Secrets",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_3"],
+		"preRequisites": [
+			"farming_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2322,7 +2563,9 @@
 		"name": "Energy Crisis",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_3"],
+		"preRequisites": [
+			"farming_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2330,7 +2573,9 @@
 		"name": "Broadcast - Part 1",
 		"trader": "Mechanic",
 		"requiredLevel": 0,
-		"preRequisites": ["farming_part_2"],
+		"preRequisites": [
+			"farming_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2346,7 +2591,9 @@
 		"name": "Make ULTRA Great Again",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["only_business"],
+		"preRequisites": [
+			"only_business"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2354,7 +2601,9 @@
 		"name": "Big Sale",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["only_business"],
+		"preRequisites": [
+			"only_business"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2362,7 +2611,9 @@
 		"name": "A Fuel Matter",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_1"],
+		"preRequisites": [
+			"the_blood_of_war_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2370,7 +2621,9 @@
 		"name": "Inventory Check",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["a_fuel_matter"],
+		"preRequisites": [
+			"a_fuel_matter"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2378,7 +2631,10 @@
 		"name": "The Blood of War - Part 1",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["big_sale", "make_ultra_great_again"],
+		"preRequisites": [
+			"big_sale",
+			"make_ultra_great_again"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2393,7 +2649,9 @@
 		"name": "Dressed to Kill",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_1"],
+		"preRequisites": [
+			"the_blood_of_war_part_1"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2413,7 +2671,10 @@
 		"name": "Gratitude",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["dressed_to_kill", "database_part_2"],
+		"preRequisites": [
+			"dressed_to_kill",
+			"database_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2421,7 +2682,9 @@
 		"name": "Hot Delivery",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["gratitude"],
+		"preRequisites": [
+			"gratitude"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2429,7 +2692,9 @@
 		"name": "Scavenger",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["hot_delivery"],
+		"preRequisites": [
+			"hot_delivery"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2437,7 +2702,9 @@
 		"name": "Sales Night",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["gratitude"],
+		"preRequisites": [
+			"gratitude"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2445,7 +2712,10 @@
 		"name": "Database - Part 1",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["big_sale", "make_ultra_great_again"],
+		"preRequisites": [
+			"big_sale",
+			"make_ultra_great_again"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2453,7 +2723,9 @@
 		"name": "Database - Part 2",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["database_part_1"],
+		"preRequisites": [
+			"database_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2461,7 +2733,9 @@
 		"name": "Minibus",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["database_part_2"],
+		"preRequisites": [
+			"database_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2469,7 +2743,9 @@
 		"name": "Sew it Good - Part 1",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["database_part_2"],
+		"preRequisites": [
+			"database_part_2"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2484,7 +2760,10 @@
 		"name": "The Blood of War - Part 2",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_1", "sew_it_good_part_1"],
+		"preRequisites": [
+			"the_blood_of_war_part_1",
+			"sew_it_good_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2492,7 +2771,9 @@
 		"name": "The Blood of War - Part 3",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_2"],
+		"preRequisites": [
+			"the_blood_of_war_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2500,7 +2781,9 @@
 		"name": "Sew it Good - Part 2",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["sew_it_good_part_1"],
+		"preRequisites": [
+			"sew_it_good_part_1"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2515,7 +2798,9 @@
 		"name": "Sew it Good - Part 3",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["sew_it_good_part_2"],
+		"preRequisites": [
+			"sew_it_good_part_2"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2530,7 +2815,9 @@
 		"name": "The Key to Success",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["sew_it_good_part_2"],
+		"preRequisites": [
+			"sew_it_good_part_2"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2545,7 +2832,9 @@
 		"name": "No Fuss Needed",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_key_to_success"],
+		"preRequisites": [
+			"the_key_to_success"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2553,7 +2842,10 @@
 		"name": "Supervisor",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["sales_night", "the_key_to_success"],
+		"preRequisites": [
+			"sales_night",
+			"the_key_to_success"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2561,7 +2853,10 @@
 		"name": "Living High is Not a Crime - Part 1",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_1", "sew_it_good_part_3"],
+		"preRequisites": [
+			"the_blood_of_war_part_1",
+			"sew_it_good_part_3"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2586,7 +2881,10 @@
 		"name": "Living High is Not a Crime - Part 2",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_3", "living_high_part_1"],
+		"preRequisites": [
+			"the_blood_of_war_part_3",
+			"living_high_part_1"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2606,7 +2904,9 @@
 		"name": "Sew it Good - Part 4",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["sew_it_good_part_3"],
+		"preRequisites": [
+			"sew_it_good_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2614,7 +2914,10 @@
 		"name": "Charisma Brings Success",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["the_blood_of_war_part_1", "sew_it_good_part_4"],
+		"preRequisites": [
+			"the_blood_of_war_part_1",
+			"sew_it_good_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2622,7 +2925,9 @@
 		"name": "Break the Deal",
 		"trader": "Ragman",
 		"requiredLevel": 0,
-		"preRequisites": ["make_ultra_great_again"],
+		"preRequisites": [
+			"make_ultra_great_again"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2630,7 +2935,9 @@
 		"name": "Acquaintance",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["introduction"],
+		"preRequisites": [
+			"introduction"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2655,7 +2962,9 @@
 		"name": "The Survivalist Path - Unprotected but Dangerous",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["acquaintance"],
+		"preRequisites": [
+			"acquaintance"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2663,7 +2972,9 @@
 		"name": "The Survivalist Path - Thrifty",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_unprotected_but_dangerous"],
+		"preRequisites": [
+			"survivalist_unprotected_but_dangerous"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2671,7 +2982,9 @@
 		"name": "The Survivalist Path - Zhivchik",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_thrifty"],
+		"preRequisites": [
+			"survivalist_thrifty"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2679,7 +2992,9 @@
 		"name": "The Survivalist Path - Wounded Beast",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_zhivchik"],
+		"preRequisites": [
+			"survivalist_zhivchik"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2687,7 +3002,9 @@
 		"name": "The Survivalist Path - Tough Guy",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_wounded_beast"],
+		"preRequisites": [
+			"survivalist_wounded_beast"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2695,7 +3012,9 @@
 		"name": "Courtesy Visit",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_tough_guy"],
+		"preRequisites": [
+			"survivalist_tough_guy"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2703,7 +3022,9 @@
 		"name": "Nostalgia",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["courtesy_visit"],
+		"preRequisites": [
+			"courtesy_visit"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2711,7 +3032,9 @@
 		"name": "The Survivalist Path - Junkie",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_combat_medic"],
+		"preRequisites": [
+			"survivalist_combat_medic"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2719,7 +3042,9 @@
 		"name": "The Survivalist Path - Eagle-Owl",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_tough_guy"],
+		"preRequisites": [
+			"survivalist_tough_guy"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2727,7 +3052,9 @@
 		"name": "The Survivalist Path - Combat Medic",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_eagle_owl"],
+		"preRequisites": [
+			"survivalist_eagle_owl"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2735,7 +3062,9 @@
 		"name": "Ambulance",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["shady_business"],
+		"preRequisites": [
+			"shady_business"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2755,7 +3084,10 @@
 		"name": "The Huntsman Path - Secured Perimeter",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_tough_guy", "tarkov_shooter_part_3"],
+		"preRequisites": [
+			"survivalist_tough_guy",
+			"tarkov_shooter_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2763,7 +3095,9 @@
 		"name": "Reserve",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["the_delicious_sausage"],
+		"preRequisites": [
+			"the_delicious_sausage"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2771,7 +3105,9 @@
 		"name": "The Huntsman Path - Forest Cleaning",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_secured_perimeter"],
+		"preRequisites": [
+			"huntsman_secured_perimeter"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2779,7 +3115,9 @@
 		"name": "The Huntsman Path - Controller",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_forest_cleaning"],
+		"preRequisites": [
+			"huntsman_forest_cleaning"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2787,7 +3125,9 @@
 		"name": "The Huntsman Path - Evil Watchman",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_forest_cleaning"],
+		"preRequisites": [
+			"huntsman_forest_cleaning"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2795,7 +3135,9 @@
 		"name": "Fishing Place",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["nostalgia"],
+		"preRequisites": [
+			"nostalgia"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2803,7 +3145,9 @@
 		"name": "The Huntsman Path - Trophy",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_secured_perimeter"],
+		"preRequisites": [
+			"huntsman_secured_perimeter"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2811,7 +3155,9 @@
 		"name": "The Huntsman Path - Justice",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_secured_perimeter"],
+		"preRequisites": [
+			"huntsman_secured_perimeter"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2819,7 +3165,10 @@
 		"name": "The Huntsman Path - Sellout",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["sales_night", "huntsman_forest_cleaning"],
+		"preRequisites": [
+			"sales_night",
+			"huntsman_forest_cleaning"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2827,7 +3176,9 @@
 		"name": "The Huntsman Path - Woods Keeper",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_secured_perimeter"],
+		"preRequisites": [
+			"huntsman_secured_perimeter"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2835,7 +3186,9 @@
 		"name": "Hunting Trip",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_woods_keeper"],
+		"preRequisites": [
+			"huntsman_woods_keeper"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2843,7 +3196,10 @@
 		"name": "The Huntsman Path - Factory Chief",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["scout", "huntsman_forest_cleaning"],
+		"preRequisites": [
+			"scout",
+			"huntsman_forest_cleaning"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2851,7 +3207,9 @@
 		"name": "The Huntsman Path - Eraser - Part 1",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["pest_control"],
+		"preRequisites": [
+			"pest_control"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2859,7 +3217,9 @@
 		"name": "The Huntsman Path - Eraser - Part 2",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_eraser_part_1"],
+		"preRequisites": [
+			"huntsman_eraser_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2867,7 +3227,9 @@
 		"name": "The Tarkov Shooter - Part 1",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["acquaintance"],
+		"preRequisites": [
+			"acquaintance"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2875,7 +3237,9 @@
 		"name": "The Tarkov Shooter - Part 2",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_1"],
+		"preRequisites": [
+			"tarkov_shooter_part_1"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2883,7 +3247,9 @@
 		"name": "The Tarkov Shooter - Part 3",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_2"],
+		"preRequisites": [
+			"tarkov_shooter_part_2"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2891,7 +3257,9 @@
 		"name": "The Tarkov Shooter - Part 4",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_3"],
+		"preRequisites": [
+			"tarkov_shooter_part_3"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2899,7 +3267,9 @@
 		"name": "The Tarkov Shooter - Part 5",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_4"],
+		"preRequisites": [
+			"tarkov_shooter_part_4"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2907,7 +3277,9 @@
 		"name": "The Tarkov Shooter - Part 6",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_5"],
+		"preRequisites": [
+			"tarkov_shooter_part_5"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2915,7 +3287,9 @@
 		"name": "The Tarkov Shooter - Part 7",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_6"],
+		"preRequisites": [
+			"tarkov_shooter_part_6"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2923,7 +3297,9 @@
 		"name": "The Tarkov Shooter - Part 8",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["tarkov_shooter_part_7"],
+		"preRequisites": [
+			"tarkov_shooter_part_7"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2931,7 +3307,9 @@
 		"name": "Shady Business",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["whats_on_the_flash_drive"],
+		"preRequisites": [
+			"whats_on_the_flash_drive"
+		],
 		"kappaRequired": true,
 		"requiredItems": [
 			{
@@ -2946,7 +3324,9 @@
 		"name": "Pest Control",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["reserve"],
+		"preRequisites": [
+			"reserve"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2954,7 +3334,9 @@
 		"name": "The Hermit",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_tough_guy"],
+		"preRequisites": [
+			"survivalist_tough_guy"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2962,7 +3344,9 @@
 		"name": "The Huntsman Path - Outcasts",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_forest_cleaning"],
+		"preRequisites": [
+			"huntsman_forest_cleaning"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2970,7 +3354,11 @@
 		"name": "Stray Dogs",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_trophy", "huntsman_sellout", "huntsman_woods_keeper"],
+		"preRequisites": [
+			"huntsman_trophy",
+			"huntsman_sellout",
+			"huntsman_woods_keeper"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2978,7 +3366,9 @@
 		"name": "The Delicious Sausage",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["survivalist_thrifty"],
+		"preRequisites": [
+			"survivalist_thrifty"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2986,7 +3376,9 @@
 		"name": "Every Hunter Knows This",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["rough_tarkov"],
+		"preRequisites": [
+			"rough_tarkov"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -2994,7 +3386,9 @@
 		"name": "Rough Tarkov",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["acquaintance"],
+		"preRequisites": [
+			"acquaintance"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -3002,7 +3396,10 @@
 		"name": "Dragnet",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["a_healthy_alternative", "one_less_loose_end"],
+		"preRequisites": [
+			"a_healthy_alternative",
+			"one_less_loose_end"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -3010,7 +3407,9 @@
 		"name": "Claustrophobia",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["huntsman_forest_cleaning"],
+		"preRequisites": [
+			"huntsman_forest_cleaning"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -3018,7 +3417,9 @@
 		"name": "Work Smarter",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["acquaintance"],
+		"preRequisites": [
+			"acquaintance"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -3026,7 +3427,9 @@
 		"name": "Rite of Passage",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["work_smarter"],
+		"preRequisites": [
+			"work_smarter"
+		],
 		"kappaRequired": true
 	},
 	{
@@ -3034,7 +3437,12 @@
 		"name": "The Huntsman Path - Sadist",
 		"trader": "Jaeger",
 		"requiredLevel": 0,
-		"preRequisites": ["colleagues_part_2", "rigged_game", "chemistry_closet", "colleagues_part_3"],
+		"preRequisites": [
+			"colleagues_part_2",
+			"rigged_game",
+			"chemistry_closet",
+			"colleagues_part_3"
+		],
 		"kappaRequired": true
 	}
 ]

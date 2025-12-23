@@ -1303,9 +1303,10 @@ input:checked+.slider:before {
 }
 
 .req-row {
-  height: 20px;
   display: flex;
   align-items: center;
+  margin-bottom: 2px;
+  /* 詰めるが、くっつきすぎないように少し隙間 */
 }
 
 /* バッジの基本スタイル */

@@ -321,9 +321,9 @@ function renderTasks() {
           </div>
   
           <div class="task-requirements-aside">
-            <div class="req-row">${levelHtml}</div>
-            <div class="req-row">${preHtml}</div>
-            <div class="req-row">${itemHtml}</div>
+            ${levelHtml ? `<div class="req-row">${levelHtml}</div>` : ''}
+            ${preHtml ? `<div class="req-row">${preHtml}</div>` : ''}
+            ${itemHtml ? `<div class="req-row">${itemHtml}</div>` : ''}
           </div>
         </div>
       </div>
