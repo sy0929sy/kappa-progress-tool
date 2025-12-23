@@ -244,8 +244,15 @@ function renderHideout() {
     for (let lv = startLevel; lv <= endLevel; lv++) {
       (data.requirements[lv] || []).forEach(r => {
         if (!r.type && (!hideoutFirOnly || r.fir)) {
-          if (!totalCounts[r.name]) totalCounts[r.name] = { count: 0, fir: r.fir };
-          totalCounts[r.name].count += r.count;
+          if (!totalCounts[r.name]) {
+            totalCounts[r.name] = { total: 0, fir: r.fir, facilities: [] };
+          }
+          totalCounts[r.name].total += r.count;
+          totalCounts[r.name].facilities.push({
+            station: station,
+            level: lv,
+            count: r.count
+          });
         }
       });
     }
@@ -261,23 +268,34 @@ function renderHideoutTotal(totalCounts) {
     const favA = userData.favorites[nA] ? 1 : 0;
     const favB = userData.favorites[nB] ? 1 : 0;
     if (favA !== favB) return favB - favA;
-    const doneA = (itemProgress[nA] || 0) >= dA.count;
-    const doneB = (itemProgress[nB] || 0) >= dB.count;
+    const doneA = (itemProgress[nA] || 0) >= dA.total;
+    const doneB = (itemProgress[nB] || 0) >= dB.total;
     return doneA === doneB ? 0 : doneA ? 1 : -1;
   });
 
   container.innerHTML = sorted.map(([name, data]) => {
     const current = itemProgress[name] || 0;
-    const isDone = current >= data.count;
+    const isDone = current >= data.total;
     const isFav = userData.favorites[name];
     const escapedName = name.replace(/'/g, "\\'");
+
+    // 施設詳細リストを生成
+    const facilityDetailsHtml = data.facilities.map(f =>
+      `<div class="task-detail-item"><span class="trader-label">[${f.station}]</span> Lv.${f.level}: ${f.count}個</div>`
+    ).join('');
+
     return `
       <div class="task-card ${isDone ? 'item-done' : ''} ${data.fir ? 'fir-item-highlight' : ''}">
-        <div style="display:flex; align-items:center;">
+        <div style="display:flex; align-items:flex-start; gap: 10px;">
           <span class="fav-btn ${isFav ? 'active' : ''}" onclick="window.toggleFavorite('${name}')">${isFav ? '★' : '☆'}</span>
-          <div class="item-info">
-            <span><a href="${getItemWikiUrl(name)}" target="_blank" class="wiki-link">${name}</a> ${data.fir ? '<span class="fir-badge">FIR</span>' : ''}</span>
-            <div class="item-target">必要: ${data.count}</div>
+          <div class="item-info" style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+              <span><a href="${getItemWikiUrl(name)}" target="_blank" class="wiki-link">${name}</a> ${data.fir ? '<span class="fir-badge">FIR</span>' : ''}</span>
+              <div class="item-target">必要: ${data.total}</div>
+            </div>
+            <div class="task-details-list">
+              ${facilityDetailsHtml}
+            </div>
           </div>
         </div>
         <div class="counter-group">
