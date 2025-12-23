@@ -1,12 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { 
-  getAuth, 
-  signInAnonymously, 
-  linkWithCredential, 
-  EmailAuthProvider, 
-  signInWithEmailAndPassword, 
+import {
+  getAuth,
+  signInAnonymously,
+  linkWithCredential,
+  EmailAuthProvider,
+  signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged 
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -23,7 +23,7 @@ const db = getFirestore(app);
 let TASKS = [];
 let HIDEOUT_DATA = {};
 let userData = { tasks: {}, hideout: {}, favorites: {} };
-let itemProgress = {}; 
+let itemProgress = {};
 let uid = "";
 let wikiLang = "jp";
 let hideCompleted = true;
@@ -44,10 +44,10 @@ async function init() {
       if (user) {
         uid = user.uid;
         updateAuthUI(user);
-        
+
         const userRef = doc(db, "users", uid);
         const userDoc = await getDoc(userRef);
-        
+
         if (userDoc.exists()) {
           const data = userDoc.data();
           userData.tasks = data.tasks || {};
@@ -104,14 +104,14 @@ window.updateItemCount = async (name, delta) => {
   } else {
     current = Math.max(0, current + delta);
   }
-  
+
   itemProgress[name] = current;
 
   // updateDoc でオブジェクト全体を渡す（ドット記法エラーを回避）
   try {
     const userRef = doc(db, "users", uid);
-    await updateDoc(userRef, { 
-      itemProgress: { ...itemProgress } 
+    await updateDoc(userRef, {
+      itemProgress: { ...itemProgress }
     });
     refreshUI();
   } catch (error) {
@@ -191,7 +191,7 @@ function renderHideout() {
     card.innerHTML = `
       <div class="hideout-info-main"><h4>${station}</h4>
         <select class="level-select" onchange="window.updateStationLevel('${station}', this.value)">
-          ${Array.from({length: data.max + 1}, (_, i) => `<option value="${i}" ${currentLevel === i ? 'selected' : ''}>Lv.${i}</option>`).join("")}
+          ${Array.from({ length: data.max + 1 }, (_, i) => `<option value="${i}" ${currentLevel === i ? 'selected' : ''}>Lv.${i}</option>`).join("")}
         </select>
       </div>
       <div class="req-area">${reqContent}</div>`;
@@ -211,7 +211,7 @@ function renderHideout() {
 function renderHideoutTotal(totalCounts) {
   const container = document.getElementById("hideoutTotalItems");
   if (!container) return;
-  
+
   const sorted = Object.entries(totalCounts).sort(([nA, dA], [nB, dB]) => {
     const favA = userData.favorites[nA] ? 1 : 0;
     const favB = userData.favorites[nB] ? 1 : 0;
@@ -256,24 +256,24 @@ function renderTasks() {
   const container = document.getElementById("taskList");
   if (!container) return;
   container.innerHTML = "";
-  
+
   const searchText = document.getElementById("searchBox")?.value.toLowerCase() || "";
-  
-  const filtered = TASKS.filter(t => 
-    activeTraders.includes(t.trader) && 
-    t.name.toLowerCase().includes(searchText) && 
+
+  const filtered = TASKS.filter(t =>
+    activeTraders.includes(t.trader) &&
+    t.name.toLowerCase().includes(searchText) &&
     (!hideCompleted || !userData.tasks[t.id])
   );
 
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
-    
+
     // 前提タスクの取得と「1つだけ表示」のロジック
     const preTaskIds = task.preRequisites || [];
     const preTaskNames = preTaskIds
       .map(preId => TASKS.find(t => t.id === preId)?.name)
       .filter(Boolean);
-  
+
     let preTasksDisplay = "";
     if (preTaskNames.length > 0) {
       if (preTaskNames.length > 1) {
@@ -282,25 +282,25 @@ function renderTasks() {
         preTasksDisplay = `前提: ${preTaskNames[0]}`;
       }
     }
-  
+
     const levelHtml = (task.requiredLevel && task.requiredLevel > 0)
-      ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>` 
+      ? `<span class="badge level-badge">Lv.${task.requiredLevel}</span>`
       : "";
-    
-    const preHtml = preTasksDisplay 
-      ? `<span class="badge pre-badge">${preTasksDisplay}</span>` 
+
+    const preHtml = preTasksDisplay
+      ? `<span class="badge pre-badge clickable-badge" onclick="window.showPrerequisites('${task.id}')">${preTasksDisplay}</span>`
       : "";
-  
+
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
-    
+
     const traderLower = task.trader.toLowerCase();
-    const imagePath = `assets/traders/${traderLower}.png`; 
-    
-    let wikiUrl = wikiLang === "en" 
-      ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}` 
+    const imagePath = `assets/traders/${traderLower}.png`;
+
+    let wikiUrl = wikiLang === "en"
+      ? `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(task.name.replace(/\s+/g, '_'))}`
       : `https://wikiwiki.jp/eft/${task.trader}/${encodeURIComponent(task.name)}`;
-  
+
     card.innerHTML = `
       <div class="task-info">
         <div class="task-header-flex">
@@ -325,10 +325,10 @@ function renderTasks() {
       <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
         ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
       </button>`;
-      
+
     container.appendChild(card);
   });
-  
+
   updateProgress();
 }
 
@@ -389,6 +389,59 @@ function showConfirmModal(targetTasks) {
   });
 }
 
+// 前提タスク一覧表示用のモーダル
+window.showPrerequisites = (taskId) => {
+  const task = TASKS.find(t => t.id === taskId);
+  if (!task || !task.preRequisites || task.preRequisites.length === 0) return;
+
+  const modal = document.getElementById('customModal');
+  const title = document.getElementById('modalTitle');
+  const message = document.getElementById('modalMessage');
+  const taskList = document.getElementById('modalTaskList');
+  const confirmBtn = document.getElementById('modalConfirm');
+  const cancelBtn = document.getElementById('modalCancel');
+
+  // モーダルの内容設定
+  title.textContent = "前提タスク";
+  message.textContent = "このタスクを開放するための条件：";
+
+  taskList.innerHTML = '';
+  // 直近の前提タスクを表示
+  task.preRequisites.forEach(preId => {
+    const preTask = TASKS.find(t => t.id === preId);
+    if (preTask) {
+      const isDone = userData.tasks[preId];
+      const statusIcon = isDone ? '✓' : '未';
+      const statusColor = isDone ? 'var(--done-green)' : 'gray';
+      const li = document.createElement('li');
+      li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <span style="color:var(--secondary-yellow)">[${preTask.trader}]</span> ${preTask.name}`;
+      taskList.appendChild(li);
+    }
+  });
+
+  // ボタン設定 (確認ボタンを隠し、キャンセルボタンを「閉じる」にする)
+  confirmBtn.style.display = 'none';
+  cancelBtn.textContent = '閉じる';
+
+  modal.style.display = 'flex';
+
+  const cleanup = () => {
+    cancelBtn.removeEventListener('click', handleClose);
+    // 状態を戻す
+    confirmBtn.style.display = '';
+    cancelBtn.textContent = 'キャンセル';
+    title.textContent = '確認';
+    message.textContent = '以下のタスクも一括で完了になります：';
+  };
+
+  const handleClose = () => {
+    modal.style.display = 'none';
+    cleanup();
+  };
+
+  cancelBtn.addEventListener('click', handleClose);
+};
+
 // 既存の toggleTask を更新
 window.toggleTask = async (taskId) => {
   const task = TASKS.find(t => t.id === taskId);
@@ -406,10 +459,10 @@ window.toggleTask = async (taskId) => {
       const targetTaskObjects = incompletePres
         .map(id => TASKS.find(t => t.id === id))
         .filter(Boolean);
-      
+
       // カスタムモーダルを表示（モダンな確認画面）
       const confirmed = await showConfirmModal(targetTaskObjects);
-      
+
       if (confirmed) {
         incompletePres.forEach(id => {
           userData.tasks[id] = true;
@@ -520,7 +573,7 @@ function setupEventListeners() {
     };
   });
   document.getElementById("resetBtn").onclick = async () => {
-    if(confirm("すべてリセットしますか？")) {
+    if (confirm("すべてリセットしますか？")) {
       userData.tasks = {}; userData.hideout = {}; itemProgress = {};
       await updateDoc(doc(db, "users", uid), { tasks: {}, hideout: {}, itemProgress: {} });
       refreshUI();

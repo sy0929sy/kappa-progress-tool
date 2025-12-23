@@ -23,7 +23,7 @@ body {
   background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* メインコンテンツ */
@@ -89,8 +89,13 @@ body {
   border-bottom: 4px solid var(--bg-blue);
 }
 
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
 
 /* カード */
 .task-card {
@@ -129,7 +134,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* 要素間の均等な隙間 */
+  gap: 20px;
+  /* 要素間の均等な隙間 */
 }
 
 /* 進捗セクションのグループ化 */
@@ -159,7 +165,8 @@ body {
   position: relative;
   width: 160px;
   height: 160px;
-  margin-bottom: 10px; /* 下のカウントとの間隔 */
+  margin-bottom: 10px;
+  /* 下のカウントとの間隔 */
 }
 
 .count-text {
@@ -169,9 +176,21 @@ body {
   margin-top: 5px;
 }
 
-svg { transform: rotate(-90deg); width: 160px; height: 160px; }
-circle { fill: none; stroke-width: 10; }
-circle.bg { stroke: rgba(0,0,0,0.05); }
+svg {
+  transform: rotate(-90deg);
+  width: 160px;
+  height: 160px;
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+circle.bg {
+  stroke: rgba(0, 0, 0, 0.05);
+}
+
 circle.bar {
   stroke: var(--bg-blue);
   stroke-dasharray: 283;
@@ -200,7 +219,8 @@ circle.bar {
   cursor: pointer;
   width: 100%;
   font-weight: bold;
-  margin-top: auto; /* サイドバーの最下部に配置したい場合 */
+  margin-top: auto;
+  /* サイドバーの最下部に配置したい場合 */
 }
 
 .hideout-layout {
@@ -250,7 +270,7 @@ circle.bar {
 .sub-tab-btn.active {
   background: white;
   color: var(--bg-blue);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* サブタブパネルの制御 */
@@ -320,7 +340,10 @@ circle.bar {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #ccc;
   transition: .4s;
 }
@@ -337,16 +360,16 @@ circle.bar {
 }
 
 /* ONの状態の背景色 (Kappaと同じ青系統にする場合) */
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--bg-blue);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--bg-blue);
 }
 
 /* つまみの移動 */
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(20px);
 }
 
@@ -354,6 +377,7 @@ input:checked + .slider:before {
 .slider.round {
   border-radius: 24px;
 }
+
 .slider.round:before {
   border-radius: 50%;
 }
@@ -406,7 +430,8 @@ input:checked + .slider:before {
 .trader-name-label {
   font-size: 0.75rem;
   font-weight: bold;
-  color: #888; /* 少しグレーにしてタスク名と差をつける */
+  color: #888;
+  /* 少しグレーにしてタスク名と差をつける */
   text-transform: uppercase;
   margin-bottom: 2px;
   letter-spacing: 0.5px;
@@ -416,9 +441,12 @@ input:checked + .slider:before {
 .task-name {
   font-size: 1rem;
   font-weight: bold;
-  white-space: nowrap;      /* 改行させない */
-  overflow: hidden;         /* はみ出しを隠す */
-  text-overflow: ellipsis;  /* 長すぎたら「...」にする */
+  white-space: nowrap;
+  /* 改行させない */
+  overflow: hidden;
+  /* はみ出しを隠す */
+  text-overflow: ellipsis;
+  /* 長すぎたら「...」にする */
 }
 
 .task-info {
@@ -468,7 +496,8 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: -10px; /* 検索バーとの距離調整 */
+  margin-top: -10px;
+  /* 検索バーとの距離調整 */
   margin-bottom: 15px;
   padding-left: 5px;
 }
@@ -500,7 +529,7 @@ input:checked + .slider:before {
 .lang-switch-btn.active {
   background: white;
   color: var(--bg-blue);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Wiki言語設定バーのスタイル */
@@ -540,7 +569,7 @@ input:checked + .slider:before {
 .lang-switch-btn.active {
   background: white;
   color: var(--bg-blue);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 既存スタイルの調整 */
@@ -549,10 +578,12 @@ input:checked + .slider:before {
   text-decoration: none;
   border-bottom: 1px dashed var(--bg-blue);
 }
+
 .wiki-link:hover {
   color: var(--primary-pink);
   border-bottom-color: var(--primary-pink);
 }
+
 .task-items {
   font-size: 0.85rem;
   color: #555;
@@ -593,16 +624,21 @@ input:checked + .slider:before {
   font-weight: bold;
 }
 
-.count-btn.minus { background: #999; }
+.count-btn.minus {
+  background: #999;
+}
 
 .count-input {
-  width: 45px;          /* 幅を少し調整 */
+  width: 45px;
+  /* 幅を少し調整 */
   text-align: center;
-  padding: 6px 2px;     /* 上下パディングを微調整 */
+  padding: 6px 2px;
+  /* 上下パディングを微調整 */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 1rem;      /* 入力しやすいサイズに */
+  font-size: 1rem;
+  /* 入力しやすいサイズに */
 }
 
 /* 完了時のスタイル */
@@ -626,14 +662,16 @@ input:checked + .slider:before {
 /* 施設カード内のレイアウト整理 */
 .hideout-card {
   display: flex;
-  flex-direction: row; /* 横並びに変更 */
+  flex-direction: row;
+  /* 横並びに変更 */
   align-items: flex-start;
   gap: 20px;
   padding: 20px;
 }
 
 .hideout-info-main {
-  flex: 0 0 200px; /* 左側の幅を固定 */
+  flex: 0 0 200px;
+  /* 左側の幅を固定 */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -646,12 +684,14 @@ input:checked + .slider:before {
 }
 
 .req-area {
-  flex: 1; /* 右側が残りの幅を占有 */
+  flex: 1;
+  /* 右側が残りの幅を占有 */
   margin-top: 0 !important;
   padding-left: 20px;
   border-left: 2px solid #eee;
   font-size: 0.9rem;
-  line-height: 1.6; /* 行間を広げて読みやすく */
+  line-height: 1.6;
+  /* 行間を広げて読みやすく */
 }
 
 .req-title {
@@ -706,8 +746,15 @@ input:checked + .slider:before {
   font-weight: bold;
 }
 
-.status-badge.anon { background: #ffeaa7; color: #d6a312; }
-.status-badge.linked { background: #55efc4; color: #00b894; }
+.status-badge.anon {
+  background: #ffeaa7;
+  color: #d6a312;
+}
+
+.status-badge.linked {
+  background: #55efc4;
+  color: #00b894;
+}
 
 .auth-msg {
   font-size: 0.7rem;
@@ -743,9 +790,21 @@ input:checked + .slider:before {
   transition: 0.2s;
 }
 
-.auth-btn.link { background: var(--bg-blue); color: white; }
-.auth-btn.login { background: #636e72; color: white; }
-.auth-btn.logout { background: #fab1a0; color: #d63031; width: 100%; }
+.auth-btn.link {
+  background: var(--bg-blue);
+  color: white;
+}
+
+.auth-btn.login {
+  background: #636e72;
+  color: white;
+}
+
+.auth-btn.logout {
+  background: #fab1a0;
+  color: #d63031;
+  width: 100%;
+}
 
 .user-email {
   font-size: 0.8rem;
@@ -757,7 +816,8 @@ input:checked + .slider:before {
 /* --- モダンなステータスボタンのスタイル --- */
 .status-btn {
   padding: 8px 16px;
-  border-radius: 20px; /* 丸みのあるシェイプ */
+  border-radius: 20px;
+  /* 丸みのあるシェイプ */
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
@@ -788,7 +848,221 @@ input:checked + .slider:before {
 }
 
 .status-btn.completed:hover {
-  background-color: #3eb49d; /* 少し濃い緑 */
+  background-color: #3eb49d;
+  /* 少し濃い緑 */
+  border-color: #3eb49d;
+  box-shadow: 0 4px 8px rgba(72, 201, 176, 0.2);
+}
+
+/* 完了時のスタイル */
+.item-done {
+  border-left: 8px solid var(--done-green) !important;
+  background-color: #e8f8f5 !important;
+  opacity: 0.8;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-target {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* 施設カード内のレイアウト整理 */
+.hideout-card {
+  display: flex;
+  flex-direction: row;
+  /* 横並びに変更 */
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.hideout-info-main {
+  flex: 0 0 200px;
+  /* 左側の幅を固定 */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hideout-info-main h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--bg-blue);
+}
+
+.req-area {
+  flex: 1;
+  /* 右側が残りの幅を占有 */
+  margin-top: 0 !important;
+  padding-left: 20px;
+  border-left: 2px solid #eee;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  /* 行間を広げて読みやすく */
+}
+
+.req-title {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+.req-item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.req-item-list li {
+  margin-bottom: 4px;
+  color: #555;
+}
+
+/* 「最大レベルです」の表示をマイルドに */
+.max-level-text {
+  color: #999;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* サイドバー・アカウントセクション */
+.account-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.account-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.auth-status {
+  margin-bottom: 12px;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.status-badge.anon {
+  background: #ffeaa7;
+  color: #d6a312;
+}
+
+.status-badge.linked {
+  background: #55efc4;
+  color: #00b894;
+}
+
+.auth-msg {
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 5px;
+  line-height: 1.2;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.auth-btn {
+  flex: 1;
+  padding: 8px 2px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.auth-btn.link {
+  background: var(--bg-blue);
+  color: white;
+}
+
+.auth-btn.login {
+  background: #636e72;
+  color: white;
+}
+
+.auth-btn.logout {
+  background: #fab1a0;
+  color: #d63031;
+  width: 100%;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: #333;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
+
+/* --- モダンなステータスボタンのスタイル --- */
+.status-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  /* 丸みのあるシェイプ */
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid var(--bg-blue);
+  background-color: transparent;
+  color: var(--bg-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+  justify-content: center;
+}
+
+/* ホバー時の挙動 */
+.status-btn:hover {
+  background-color: var(--bg-blue);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(74, 105, 189, 0.2);
+}
+
+/* 完了状態のスタイル */
+.status-btn.completed {
+  background-color: var(--done-green);
+  border-color: var(--done-green);
+  color: white;
+}
+
+.status-btn.completed:hover {
+  background-color: #3eb49d;
+  /* 少し濃い緑 */
   border-color: #3eb49d;
   box-shadow: 0 4px 8px rgba(72, 201, 176, 0.2);
 }
@@ -798,6 +1072,18 @@ input:checked + .slider:before {
   border-color: var(--done-green);
   background-color: #f0faf8;
   opacity: 0.9;
+}
+
+/* Clickable Prerequisite Badge */
+.clickable-badge {
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: underline dotted;
+}
+
+.clickable-badge:hover {
+  opacity: 0.8;
+  color: var(--secondary-yellow);
 }
 
 /* トレーダーアイコンのコンテナ */
@@ -811,7 +1097,8 @@ input:checked + .slider:before {
 .trader-icon-badge img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 縦横比を維持してフィット */
+  object-fit: cover;
+  /* 縦横比を維持してフィット */
 }
 
 /* 画像がない時の文字スタイル */
@@ -825,15 +1112,18 @@ input:checked + .slider:before {
 .task-header-flex {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 左詰めに固定 */
+  justify-content: flex-start;
+  /* 左詰めに固定 */
   gap: 15px;
   width: 100%;
 }
 
 /* テキスト部分（トレーダー名とタスク名）を縦に並べる */
 .task-title-group {
-  width: 300px;      /* ★ここを固定にする（環境に合わせて250px〜350pxで調整してください） */
-  flex-shrink: 0;    /* ★幅が勝手に縮まないように固定 */
+  width: 300px;
+  /* ★ここを固定にする（環境に合わせて250px〜350pxで調整してください） */
+  flex-shrink: 0;
+  /* ★幅が勝手に縮まないように固定 */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -848,12 +1138,14 @@ input:checked + .slider:before {
 }
 
 .task-requirements-aside {
-  width: 180px;      /* 情報エリアの幅 */
+  width: 180px;
+  /* 情報エリアの幅 */
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-left: 2px solid #ddd; /* 縦線 */
+  border-left: 2px solid #ddd;
+  /* 縦線 */
   padding-left: 12px;
   margin-left: 10px;
 }
@@ -871,7 +1163,8 @@ input:checked + .slider:before {
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* 幅300pxを超えた名前は自動で「...」になります */
+  text-overflow: ellipsis;
+  /* 幅300pxを超えた名前は自動で「...」になります */
 }
 
 /* お気に入りボタンのスタイル */
@@ -879,13 +1172,15 @@ input:checked + .slider:before {
   cursor: pointer;
   font-size: 1.2rem;
   margin-right: 10px;
-  color: #ccc; /* デフォルトはグレー */
+  color: #ccc;
+  /* デフォルトはグレー */
   transition: transform 0.2s ease, color 0.2s ease;
   user-select: none;
 }
 
 .fav-btn.active {
-  color: #f1c40f; /* お気に入り時はゴールド */
+  color: #f1c40f;
+  /* お気に入り時はゴールド */
   text-shadow: 0 0 5px rgba(241, 196, 15, 0.3);
 }
 
@@ -908,10 +1203,13 @@ input:checked + .slider:before {
 
 /* モーダル全体のオーバーレイ */
 .modal-overlay {
-  display: none; /* 初期状態は非表示 */
+  display: none;
+  /* 初期状態は非表示 */
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
   justify-content: center;
@@ -927,7 +1225,7 @@ input:checked + .slider:before {
   border-radius: 12px;
   width: 90%;
   max-width: 450px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 1px solid #333;
 }
 
@@ -1000,7 +1298,8 @@ input:checked + .slider:before {
 .req-line {
   display: flex;
   align-items: center;
-  min-height: 1.2rem; /* バッジが表示されてもされなくても行の高さを一定にする */
+  min-height: 1.2rem;
+  /* バッジが表示されてもされなくても行の高さを一定にする */
 }
 
 .req-row {
@@ -1029,7 +1328,8 @@ input:checked + .slider:before {
   background-color: #eee;
   color: #555;
   border: 1px solid #ddd;
-  max-width: 100%;          /* 180pxの枠内に収める */
+  max-width: 100%;
+  /* 180pxの枠内に収める */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1040,6 +1340,7 @@ input:checked + .slider:before {
   text-decoration: none;
   color: inherit;
 }
+
 .wiki-link:hover {
   text-decoration: underline;
 }
@@ -1057,16 +1358,29 @@ input:checked + .slider:before {
   .task-header-flex {
     flex-wrap: wrap;
   }
+
   .task-requirements-aside {
     width: 100%;
     border-left: none;
     border-top: 1px solid #eee;
     padding-left: 0;
     padding-top: 5px;
-    margin-left: 55px; /* アイコンの幅分右に寄せる */
+    margin-left: 55px;
+    /* アイコンの幅分右に寄せる */
   }
 }
 
-.column { flex: 1; }
-.side-border { border-left: 2px solid #eee; padding-left: 20px; }
-.status-text { font-size: 12px; color: #666; margin-top: 15px; }
+.column {
+  flex: 1;
+}
+
+.side-border {
+  border-left: 2px solid #eee;
+  padding-left: 20px;
+}
+
+.status-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 15px;
+}
