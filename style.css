@@ -1,36 +1,87 @@
 :root {
+  /* Core Palette */
   --primary-pink: #e95470;
   --secondary-yellow: #f9d977;
   --bg-blue: #4a69bd;
   --card-border: #3c56a5;
   --done-green: #48c9b0;
+
+  /* Semantic Variables (Light Theme - Default) */
+  --bg-body: var(--primary-pink);
+  --bg-container: #ffffff;
+  --bg-main: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-sidebar: var(--secondary-yellow);
+  --bg-trader-btn: #ffffff;
+  --bg-trader-btn-active: #fff0f3;
+  --bg-item-done: #e8f8f5;
+
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --text-on-accent: #ffffff;
+
+  --border-color: #eeeeee;
+  --border-strong: #dddddd;
+
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-card: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Overrides */
+  --bg-body: #1a1a2e;
+  --bg-container: #16213e;
+  --bg-main: #0f3460;
+  --bg-card: #1a1a2e;
+  /* Slightly lighter than main */
+  --bg-sidebar: #16213e;
+  --bg-trader-btn: #1a1a2e;
+  --bg-trader-btn-active: #533483;
+  --bg-item-done: #143642;
+
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #888888;
+  --text-on-accent: #ffffff;
+
+  --border-color: #333333;
+  --border-strong: #444444;
+
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-card: rgba(0, 0, 0, 0.3);
+
+  /* Adjust core colors for dark mode visibility if needed */
+  --secondary-yellow: #cba238;
+  /* Dimmer yellow */
 }
 
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  background-color: var(--primary-pink);
+  background-color: var(--bg-body);
   display: flex;
   justify-content: center;
   padding: 20px;
   min-height: 100vh;
+  color: var(--text-primary);
 }
 
 .app-container {
   display: flex;
   width: 100%;
   max-width: 1100px;
-  background-color: white;
+  background-color: var(--bg-container);
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px var(--shadow-color);
 }
 
 /* メインコンテンツ */
 .main-content {
   flex: 3;
   padding: 25px;
-  background-color: #f8f9fa;
+  background-color: var(--bg-main);
   max-height: 90vh;
   overflow-y: auto;
 }
@@ -44,18 +95,18 @@ body {
 
 .trader-btn {
   padding: 12px 5px;
-  border: 2px solid #eee;
-  background: white;
+  border: 2px solid var(--border-color);
+  background: var(--bg-trader-btn);
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  color: #555;
+  color: var(--text-secondary);
   transition: 0.2s;
 }
 
 .trader-btn.active {
   border-color: var(--primary-pink);
-  background-color: #fff0f3;
+  background-color: var(--bg-trader-btn-active);
   color: var(--primary-pink);
 }
 
@@ -99,7 +150,7 @@ body {
 
 /* カード */
 .task-card {
-  background: white;
+  background: var(--bg-card);
   border: 3px solid var(--card-border);
   border-radius: 12px;
   padding: 18px;
@@ -129,7 +180,7 @@ body {
 /* サイドバー */
 .sidebar {
   flex: 1;
-  background-color: var(--secondary-yellow);
+  background-color: var(--bg-sidebar);
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
@@ -149,16 +200,17 @@ body {
 .progress-section h3 {
   margin-bottom: 10px;
   font-size: 1.4em;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .action-btn {
-  background: white;
-  border: 2px solid #333;
+  background: var(--bg-card);
+  border: 2px solid var(--text-primary);
   padding: 8px 15px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
+  color: var(--text-primary);
 }
 
 .circle-progress-container {
@@ -172,7 +224,7 @@ body {
 .count-text {
   font-size: 1.1em;
   font-weight: bold;
-  color: #444;
+  color: var(--text-primary);
   margin-top: 5px;
 }
 
@@ -206,7 +258,7 @@ circle.bar {
   transform: translate(-50%, -50%);
   font-size: 2.2em;
   font-weight: bold;
-  color: #333;
+  color: var(--text-primary);
 }
 
 /* リセットボタンの調整 */
@@ -233,8 +285,9 @@ circle.bar {
   border: 2px solid var(--card-border);
   border-radius: 8px;
   font-weight: bold;
-  background: white;
+  background: var(--bg-card);
   cursor: pointer;
+  color: var(--text-primary);
 }
 
 .fir-badge {
@@ -249,7 +302,7 @@ circle.bar {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-  background: #eee;
+  background: var(--border-color);
   padding: 5px;
   border-radius: 10px;
 }
@@ -262,15 +315,15 @@ circle.bar {
   cursor: pointer;
   font-weight: bold;
   font-size: 0.9em;
-  color: #666;
+  color: var(--text-secondary);
   border-radius: 8px;
   transition: 0.2s;
 }
 
 .sub-tab-btn.active {
-  background: white;
+  background: var(--bg-card);
   color: var(--bg-blue);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px var(--shadow-card);
 }
 
 /* サブタブパネルの制御 */
@@ -291,7 +344,7 @@ circle.bar {
   display: flex;
   align-items: center;
   gap: 5px;
-  background: #f0f0f0;
+  background: var(--bg-main);
   padding: 5px 10px;
   border-radius: 20px;
   user-select: none;
@@ -318,7 +371,7 @@ circle.bar {
 .toggle-label {
   font-size: 0.85em;
   font-weight: bold;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 /* スイッチの土台 */
@@ -344,7 +397,7 @@ circle.bar {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--border-strong);
   transition: .4s;
 }
 
@@ -386,7 +439,7 @@ input:checked+.slider:before {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #f8f9fa;
+  background: var(--bg-main);
   padding: 5px;
   border-radius: 8px;
 }
@@ -430,7 +483,7 @@ input:checked+.slider:before {
 .trader-name-label {
   font-size: 0.75rem;
   font-weight: bold;
-  color: #888;
+  color: var(--text-muted);
   /* 少しグレーにしてタスク名と差をつける */
   text-transform: uppercase;
   margin-bottom: 2px;
@@ -504,13 +557,13 @@ input:checked+.slider:before {
 
 .setting-label {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: bold;
 }
 
 .lang-switch-group {
   display: flex;
-  background: #eee;
+  background: var(--border-color);
   padding: 3px;
   border-radius: 6px;
 }
@@ -524,12 +577,13 @@ input:checked+.slider:before {
   font-weight: bold;
   border-radius: 4px;
   transition: 0.2s;
+  color: var(--text-muted);
 }
 
 .lang-switch-btn.active {
-  background: white;
+  background: var(--bg-card);
   color: var(--bg-blue);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow-card);
 }
 
 /* Wiki言語設定バーのスタイル */
@@ -634,7 +688,7 @@ input:checked+.slider:before {
   text-align: center;
   padding: 6px 2px;
   /* 上下パディングを微調整 */
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-strong);
   border-radius: 4px;
   font-weight: bold;
   font-size: 1rem;
@@ -644,7 +698,7 @@ input:checked+.slider:before {
 /* 完了時のスタイル */
 .item-done {
   border-left: 8px solid var(--done-green) !important;
-  background-color: #e8f8f5 !important;
+  background-color: var(--bg-item-done) !important;
   opacity: 0.8;
 }
 
@@ -688,7 +742,7 @@ input:checked+.slider:before {
   /* 右側が残りの幅を占有 */
   margin-top: 0 !important;
   padding-left: 20px;
-  border-left: 2px solid #eee;
+  border-left: 2px solid var(--border-color);
   font-size: 0.9rem;
   line-height: 1.6;
   /* 行間を広げて読みやすく */
@@ -698,7 +752,7 @@ input:checked+.slider:before {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #444;
+  color: var(--text-primary);
 }
 
 .req-item-list {
@@ -709,12 +763,12 @@ input:checked+.slider:before {
 
 .req-item-list li {
   margin-bottom: 4px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 /* 「最大レベルです」の表示をマイルドに */
 .max-level-text {
-  color: #999;
+  color: var(--text-muted);
   font-style: italic;
   display: flex;
   align-items: center;
@@ -725,14 +779,14 @@ input:checked+.slider:before {
 .account-section {
   margin-top: 20px;
   padding-top: 15px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-strong);
   text-align: center;
 }
 
 .account-section h4 {
   margin: 0 0 10px 0;
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .auth-status {
@@ -758,7 +812,7 @@ input:checked+.slider:before {
 
 .auth-msg {
   font-size: 0.7rem;
-  color: #888;
+  color: var(--text-muted);
   margin-top: 5px;
   line-height: 1.2;
 }
@@ -767,10 +821,12 @@ input:checked+.slider:before {
   width: 100%;
   padding: 8px;
   margin-bottom: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-strong);
   border-radius: 4px;
   font-size: 0.8rem;
   box-sizing: border-box;
+  background: var(--bg-card);
+  color: var(--text-primary);
 }
 
 .auth-buttons {
@@ -808,7 +864,7 @@ input:checked+.slider:before {
 
 .user-email {
   font-size: 0.8rem;
-  color: #333;
+  color: var(--text-primary);
   word-break: break-all;
   margin-bottom: 10px;
 }
@@ -833,9 +889,10 @@ input:checked+.slider:before {
 }
 
 /* ホバー時の挙動 */
+/* ホバー時の挙動 */
 .status-btn:hover {
   background-color: var(--bg-blue);
-  color: white;
+  color: var(--text-on-accent);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(74, 105, 189, 0.2);
 }
@@ -844,7 +901,7 @@ input:checked+.slider:before {
 .status-btn.completed {
   background-color: var(--done-green);
   border-color: var(--done-green);
-  color: white;
+  color: var(--text-on-accent);
 }
 
 .status-btn.completed:hover {
@@ -857,7 +914,7 @@ input:checked+.slider:before {
 /* 完了時のスタイル */
 .item-done {
   border-left: 8px solid var(--done-green) !important;
-  background-color: #e8f8f5 !important;
+  background-color: var(--bg-item-done) !important;
   opacity: 0.8;
 }
 
@@ -1070,7 +1127,7 @@ input:checked+.slider:before {
 /* タスクカード自体の完了時スタイルを調整 */
 .task-card.completed {
   border-color: var(--done-green);
-  background-color: #f0faf8;
+  background-color: var(--bg-item-done);
   opacity: 0.9;
 }
 
@@ -1172,7 +1229,7 @@ input:checked+.slider:before {
   cursor: pointer;
   font-size: 1.2rem;
   margin-right: 10px;
-  color: #ccc;
+  color: var(--border-strong);
   /* デフォルトはグレー */
   transition: transform 0.2s ease, color 0.2s ease;
   user-select: none;
@@ -1193,12 +1250,12 @@ input:checked+.slider:before {
   display: flex;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* お気に入りされた行の背景を少し変える（任意） */
 .item-row.is-fav {
-  background-color: #fffdf0;
+  background-color: var(--bg-trader-btn-active);
 }
 
 /* モーダル全体のオーバーレイ */
@@ -1210,7 +1267,7 @@ input:checked+.slider:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--shadow-color);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -1219,36 +1276,36 @@ input:checked+.slider:before {
 
 /* モーダル本体 */
 .modal-content {
-  background: #1e1e1e;
-  color: #e0e0e0;
+  background: var(--bg-card);
+  color: var(--text-primary);
   padding: 25px;
   border-radius: 12px;
   width: 90%;
   max-width: 450px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid #333;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
 }
 
 .modal-content h3 {
   margin-top: 0;
-  color: var(--secondary-yellow);
+  color: var(--text-primary);
 }
 
 /* タスクリストのスタイル */
 .modal-task-list {
-  background: #2a2a2a;
+  background: var(--bg-main);
   padding: 15px 15px 15px 35px;
   border-radius: 8px;
   max-height: 200px;
   overflow-y: auto;
   margin: 15px 0;
-  border: 1px solid #444;
+  border: 1px solid var(--border-color);
 }
 
 .modal-task-list li {
   margin-bottom: 5px;
   font-size: 0.9rem;
-  color: #bbb;
+  color: var(--text-secondary);
 }
 
 /* ボタン周り */
@@ -1269,12 +1326,13 @@ input:checked+.slider:before {
 
 .modal-btn.confirm {
   background-color: var(--done-green);
-  color: #fff;
+  color: white;
 }
 
 .modal-btn.cancel {
-  background-color: #444;
-  color: #ccc;
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .modal-btn:hover {
@@ -1326,9 +1384,9 @@ input:checked+.slider:before {
 
 /* 前提タスクバッジ：落ち着いたグレー */
 .pre-badge {
-  background-color: #eee;
-  color: #555;
-  border: 1px solid #ddd;
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
   max-width: 100%;
   /* 180pxの枠内に収める */
   overflow: hidden;
@@ -1382,7 +1440,7 @@ input:checked+.slider:before {
 
 .status-text {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   margin-top: 15px;
 }
 

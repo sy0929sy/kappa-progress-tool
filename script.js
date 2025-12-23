@@ -37,6 +37,7 @@ let userData = { tasks: {}, hideout: {}, favorites: {} };
 let itemProgress = {};
 let uid = "";
 let wikiLang = "jp";
+let currentTheme = "light";
 let hideCompleted = true;
 let hideoutFirOnly = false;
 const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
@@ -65,9 +66,13 @@ async function init() {
           userData.hideout = data.hideout || {};
           itemProgress = data.itemProgress || {};
           wikiLang = data.wikiLang || "jp";
+          currentTheme = data.theme || "light";
           updateWikiLangUI();
+          applyTheme(currentTheme);
         } else {
-          await setDoc(userRef, { tasks: {}, hideout: {}, itemProgress: {}, createdAt: new Date() });
+          // New user or no data
+          applyTheme(currentTheme);
+          await setDoc(userRef, { tasks: {}, hideout: {}, itemProgress: {}, createdAt: new Date(), theme: currentTheme });
         }
         setupTraderFilters();
         refreshUI();
@@ -590,6 +595,15 @@ function updateWikiLangUI() {
   document.getElementById("wikiLangEN").classList.toggle("active", wikiLang === "en");
 }
 
+function applyTheme(theme) {
+  document.body.setAttribute("data-theme", theme);
+  const btn = document.getElementById("themeToggleBtn");
+  if (btn) {
+    btn.textContent = theme === "light" ? "🌙" : "☀️";
+    btn.title = theme === "light" ? "ダークモード切替" : "ライトモード切替";
+  }
+}
+
 function setupEventListeners() {
   // アカウント系
   document.getElementById("linkAccountBtn").onclick = async () => {
@@ -612,6 +626,15 @@ function setupEventListeners() {
   };
 
   document.getElementById("logoutBtn").onclick = () => signOut(auth);
+
+  // Theme Toggle
+  document.getElementById("themeToggleBtn").addEventListener("click", async () => {
+    currentTheme = currentTheme === "light" ? "dark" : "light";
+    applyTheme(currentTheme);
+    if (uid) {
+      await updateDoc(doc(db, "users", uid), { theme: currentTheme });
+    }
+  });
 
   // UI系
   document.getElementById("searchBox")?.addEventListener("input", renderTasks);

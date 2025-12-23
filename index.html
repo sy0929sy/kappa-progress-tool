@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarkov Multi Tracker</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="app-container">
     <main class="main-content">
@@ -16,6 +18,7 @@
             <button id="wikiLangJP" class="lang-switch-btn active">日本語</button>
             <button id="wikiLangEN" class="lang-switch-btn">英語</button>
           </div>
+          <button id="themeToggleBtn" class="lang-switch-btn" style="margin-left: 10px;" title="ダークモード切替">🌙</button>
         </div>
         <div id="traderButtons" class="trader-grid"></div>
         <div class="search-bar">
@@ -32,7 +35,7 @@
       <div id="task-tab" class="tab-panel active">
         <div id="taskList" class="card-list"></div>
       </div>
-      
+
       <div id="item-tab" class="tab-panel">
         <div id="requiredItemsList" class="card-list"></div>
       </div>
@@ -47,7 +50,7 @@
           <h3>施設アップグレード状況</h3>
           <div id="hideoutList" class="card-list"></div>
         </div>
-        
+
         <div id="h-total" class="sub-tab-panel">
           <div class="h-total-header">
             <h3>Hideout必要アイテム一覧</h3>
@@ -76,17 +79,17 @@
         </div>
         <div id="progressCount" class="count-text">0 / 0</div>
       </div>
-      
+
       <button id="toggleCompletedBtn" class="action-btn">完了済を非表示中</button>
       <button id="resetBtn" class="action-btn reset">データリセット</button>
-    
+
       <div class="account-section">
         <h4>マルチデバイス同期</h4>
         <div id="authStatus" class="auth-status">
           <span class="status-badge anon">一時保存中</span>
           <p class="auth-msg">キャッシュ削除でデータが消えます。同期するには登録してください。</p>
         </div>
-        
+
         <div id="unauthFields">
           <input type="email" id="authEmail" placeholder="メールアドレス" class="auth-input">
           <input type="password" id="authPassword" placeholder="パスワード" class="auth-input">
@@ -95,7 +98,7 @@
             <button id="loginBtn" class="auth-btn login">既存垢でログイン</button>
           </div>
         </div>
-    
+
         <div id="authFields" style="display: none;">
           <p id="userEmailDisplay" class="user-email"></p>
           <button id="logoutBtn" class="auth-btn logout">ログアウト</button>
@@ -116,4 +119,5 @@
   </div>
   <script type="module" src="script.js"></script>
 </body>
+
 </html>
