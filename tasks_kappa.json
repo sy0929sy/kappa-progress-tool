@@ -165,8 +165,7 @@
 		"trader": "Prapor",
 		"requiredLevel": 10,
 		"preRequisites": [
-			"ice_cream_cones",
-			"postman_pat_part_2"
+			"ice_cream_cones"
 		],
 		"kappaRequired": true
 	},
