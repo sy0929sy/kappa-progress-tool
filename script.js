@@ -205,6 +205,21 @@ function renderRequiredItems() {
   });
 }
 
+function arePrerequisitesMet(requirements) {
+  if (!requirements) return true;
+  for (const r of requirements) {
+    if (r.type === "pre_facility") {
+      const currentLevel = userData.hideout[r.name] || 0;
+      if (currentLevel < r.level) return false;
+    } else if (r.type === "pre_trader") {
+      const currentLevel = userData.traders[r.name] || 1;
+      if (currentLevel < r.level) return false;
+    }
+    // pre_skill は現状追跡していないためスキップ
+  }
+  return true;
+}
+
 function renderHideout() {
   const container = document.getElementById("hideoutList");
   if (!container) return;
@@ -243,6 +258,11 @@ function renderHideout() {
     const endLevel = hideoutNextOnly ? nextLevel : data.max;
 
     for (let lv = startLevel; lv <= endLevel; lv++) {
+      // 次レベルのみ表示かつ前提条件が未達成の場合はスキップ
+      if (hideoutNextOnly && lv === nextLevel && !arePrerequisitesMet(data.requirements[lv])) {
+        continue;
+      }
+
       (data.requirements[lv] || []).forEach(r => {
         if (!r.type && (!hideoutFirOnly || r.fir)) {
           if (!totalCounts[r.name]) {
@@ -633,7 +653,7 @@ function renderTraderLevels() {
     const currentLevel = userData.traders[trader] || 1;
     const card = document.createElement("div");
     card.className = "task-card hideout-card";
-    
+
     const traderLower = trader.toLowerCase();
     const imagePath = `assets/traders/${traderLower}.png`;
 
