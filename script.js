@@ -33,7 +33,7 @@ const db = getFirestore(app);
 
 let TASKS = [];
 let HIDEOUT_DATA = {};
-let userData = { tasks: {}, hideout: {}, favorites: {} };
+let userData = { tasks: {}, hideout: {}, favorites: {}, traders: {} };
 let itemProgress = {};
 let uid = "";
 let wikiLang = "jp";
@@ -65,6 +65,7 @@ async function init() {
           const data = userDoc.data();
           userData.tasks = data.tasks || {};
           userData.hideout = data.hideout || {};
+          userData.traders = data.traders || {};
           itemProgress = data.itemProgress || {};
           wikiLang = data.wikiLang || "jp";
           currentTheme = data.theme || "light";
@@ -73,7 +74,7 @@ async function init() {
         } else {
           // New user or no data
           applyTheme(currentTheme);
-          await setDoc(userRef, { tasks: {}, hideout: {}, itemProgress: {}, createdAt: new Date(), theme: currentTheme });
+          await setDoc(userRef, { tasks: {}, hideout: {}, traders: {}, itemProgress: {}, createdAt: new Date(), theme: currentTheme });
         }
         setupTraderFilters();
         refreshUI();
@@ -615,7 +616,45 @@ window.updateStationLevel = async (station, level) => {
   refreshUI();
 };
 
-function refreshUI() { renderTasks(); renderRequiredItems(); renderHideout(); }
+window.updateTraderLevel = async (trader, level) => {
+  userData.traders[trader] = parseInt(level);
+  await setDoc(doc(db, "users", uid), { traders: { [trader]: userData.traders[trader] } }, { merge: true });
+  refreshUI();
+};
+
+function renderTraderLevels() {
+  const container = document.getElementById("traderLevelList");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const targetTraders = TRADERS.filter(t => t !== "Fence" && t !== "Lightkeeper");
+
+  targetTraders.forEach(trader => {
+    const currentLevel = userData.traders[trader] || 1;
+    const card = document.createElement("div");
+    card.className = "task-card hideout-card";
+    
+    const traderLower = trader.toLowerCase();
+    const imagePath = `assets/traders/${traderLower}.png`;
+
+    card.innerHTML = `
+      <div class="hideout-info-main" style="flex-direction: row; align-items: center; gap: 15px;">
+        <div class="trader-icon-badge" style="width: 40px; height: 40px;">
+          <img src="${imagePath}" alt="${trader}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="width: 100%; height: 100%; object-fit: contain;">
+          <span style="display:none;">${trader.charAt(0)}</span>
+        </div>
+        <h4 style="margin:0;">${trader}</h4>
+      </div>
+      <div class="req-area" style="border-left: none; padding-left: 0; display: flex; justify-content: flex-end;">
+        <select class="level-select" onchange="window.updateTraderLevel('${trader}', this.value)">
+          ${Array.from({ length: 4 }, (_, i) => `<option value="${i + 1}" ${currentLevel === i + 1 ? 'selected' : ''}>Lv.${i + 1}</option>`).join("")}
+        </select>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+function refreshUI() { renderTasks(); renderRequiredItems(); renderHideout(); renderTraderLevels(); }
 
 function updateProgress() {
   const total = TASKS.length;
@@ -725,8 +764,8 @@ function setupEventListeners() {
   });
   document.getElementById("resetBtn").onclick = async () => {
     if (confirm("すべてリセットしますか？")) {
-      userData.tasks = {}; userData.hideout = {}; itemProgress = {};
-      await updateDoc(doc(db, "users", uid), { tasks: {}, hideout: {}, itemProgress: {} });
+      userData.tasks = {}; userData.hideout = {}; userData.traders = {}; itemProgress = {};
+      await updateDoc(doc(db, "users", uid), { tasks: {}, hideout: {}, traders: {}, itemProgress: {} });
       refreshUI();
     }
   };
