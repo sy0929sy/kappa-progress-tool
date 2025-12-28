@@ -678,7 +678,7 @@ function refreshUI() { renderTasks(); renderRequiredItems(); renderHideout(); re
 
 function updateProgress() {
   const total = TASKS.length;
-  const done = Object.values(userData.tasks || {}).filter(v => v).length;
+  const done = TASKS.filter(task => userData.tasks[task.id]).length;
   const percent = total === 0 ? 0 : Math.round((done / total) * 100);
   const circle = document.getElementById("progressCircle");
   if (circle) circle.style.strokeDashoffset = 283 - (283 * percent / 100);
