@@ -375,7 +375,7 @@ function renderTasks(tasks, containerId) {
       : "";
 
     const preHtml = preTasksDisplay
-      ? `<span class="badge pre-badge clickable-badge" onclick="window.showPrerequisites('${task.id}')">${preTasksDisplay}</span>`
+      ? `<span class="badge pre-badge clickable-badge" onclick="window.showPrerequisites('${task.id}', '${containerId === 'taskList' ? 'kappa' : 'lk'}')">${preTasksDisplay}</span>`
       : "";
 
     const itemHtml = (task.requiredItems && task.requiredItems.length > 0)
