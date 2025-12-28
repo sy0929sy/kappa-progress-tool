@@ -17,7 +17,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "MP-133 12ga ショットガン",
+				"name": "MP-133 12ga ポンプアクション ショットガン",
 				"count": 2,
 				"fir": false
 			}
@@ -259,7 +259,7 @@
 				"fir": true
 			},
 			{
-				"name": "PM ピストル",
+				"name": "Makarov PM 9x18PM pistol",
 				"count": 2,
 				"fir": true
 			}
