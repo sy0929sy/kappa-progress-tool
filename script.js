@@ -509,7 +509,7 @@ window.showPrerequisites = (taskId, type = 'kappa') => {
       const li = document.createElement('li');
 
       // Network Provider - Part 1 の場合のみステータスアイコンを表示しない
-      if (preId === 'network_provider_part_1') {
+      if (task.id === 'network_provider_part_1') {
         li.innerHTML = `<span style="color:var(--secondary-yellow)">[${preTask.trader}]</span> ${preTask.name}`;
       } else {
         li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <span style="color:var(--secondary-yellow)">[${preTask.trader}]</span> ${preTask.name}`;
