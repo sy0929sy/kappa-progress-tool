@@ -621,10 +621,20 @@ window.toggleTask = async (taskId, type = 'kappa') => {
   // 本体の状態を更新
   userData.tasks[taskId] = isNowCompleted;
 
+  // アイテムの減算ロジック (完了にした場合のみ)
+  if (isNowCompleted && task.requiredItems) {
+    task.requiredItems.forEach(item => {
+      if (itemProgress[item.name]) {
+        itemProgress[item.name] = Math.max(0, itemProgress[item.name] - item.count);
+      }
+    });
+  }
+
   // Firestoreに保存
   try {
     await updateDoc(doc(db, "users", uid), {
-      tasks: { ...userData.tasks }
+      tasks: { ...userData.tasks },
+      itemProgress: { ...itemProgress }
     });
   } catch (error) {
     console.error("Save error:", error);
@@ -636,9 +646,37 @@ window.toggleTask = async (taskId, type = 'kappa') => {
 };
 
 window.updateStationLevel = async (station, level) => {
-  userData.hideout[station] = parseInt(level);
-  await setDoc(doc(db, "users", uid), { hideout: { [station]: userData.hideout[station] } }, { merge: true });
-  refreshUI();
+  const oldLevel = userData.hideout[station] || 0;
+  const newLevel = parseInt(level);
+  userData.hideout[station] = newLevel;
+
+  // レベルが上がった場合のみアイテムを減算
+  if (newLevel > oldLevel) {
+    const data = HIDEOUT_DATA[station];
+    if (data) {
+      for (let lv = oldLevel + 1; lv <= newLevel; lv++) {
+        const requirements = data.requirements[lv] || [];
+        requirements.forEach(r => {
+          if (!r.type) { // アイテムのみ
+            if (itemProgress[r.name]) {
+              itemProgress[r.name] = Math.max(0, itemProgress[r.name] - r.count);
+            }
+          }
+        });
+      }
+    }
+  }
+
+  try {
+    const userRef = doc(db, "users", uid);
+    await updateDoc(userRef, {
+      hideout: { ...userData.hideout },
+      itemProgress: { ...itemProgress }
+    });
+    refreshUI();
+  } catch (error) {
+    console.error("Save error:", error);
+  }
 };
 
 window.updateTraderLevel = async (trader, level) => {
