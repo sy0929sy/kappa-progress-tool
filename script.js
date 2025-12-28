@@ -146,7 +146,11 @@ function renderRequiredItems(tasks, containerId) {
   container.innerHTML = "";
   const itemSummary = {};
   tasks.forEach(task => {
-    if (!userData.tasks[task.id] && task.requiredItems) {
+    // コンテナに応じて表示対象（Kappa/灯台）をフィルタリング
+    const isKappaReq = containerId === 'requiredItemsList' && task.kappaRequired;
+    const isLKReq = containerId === 'lkRequiredItemsList' && task.LightkeeperRequired;
+
+    if ((isKappaReq || isLKReq) && !userData.tasks[task.id] && task.requiredItems) {
       task.requiredItems.forEach(item => {
         if (!itemSummary[item.name]) {
           itemSummary[item.name] = { total: 0, tasks: [] };
@@ -346,11 +350,16 @@ function renderTasks(tasks, containerId) {
 
   const searchText = document.getElementById("searchBox")?.value.toLowerCase() || "";
 
-  const filtered = tasks.filter(t =>
-    activeTraders.includes(t.trader) &&
-    t.name.toLowerCase().includes(searchText) &&
-    (!hideCompleted || !userData.tasks[t.id])
-  );
+  const filtered = tasks.filter(t => {
+    // コンテナに応じて表示対象（Kappa/灯台）をフィルタリング
+    const isKappaReq = containerId === 'taskList' && t.kappaRequired;
+    const isLKReq = containerId === 'lkTaskList' && t.LightkeeperRequired;
+
+    return (isKappaReq || isLKReq) &&
+      activeTraders.includes(t.trader) &&
+      t.name.toLowerCase().includes(searchText) &&
+      (!hideCompleted || !userData.tasks[t.id]);
+  });
 
   filtered.forEach(task => {
     const isCompleted = userData.tasks[task.id];
