@@ -680,6 +680,7 @@ window.updateStationLevel = async (station, level) => {
       itemProgress: { ...itemProgress }
     });
     refreshUI();
+    updateProgress();
   } catch (error) {
     console.error("Save error:", error);
   }
@@ -736,19 +737,31 @@ function updateProgress() {
   const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab;
   let targetTasks = [];
   let title = "Kappa進捗";
+  let isHideout = false;
 
   if (activeTab === "lighthouse-tab") {
     targetTasks = LK_TASKS.filter(t => t.LightkeeperRequired);
     title = "灯台進捗";
+  } else if (activeTab === "hideout-tab") {
+    isHideout = true;
+    title = "Hideout進捗";
   } else {
-    // デフォルト（KappaタブまたはHideoutタブ時はKappaを表示）
+    // デフォルト（Kappaタブ時はKappaを表示）
     targetTasks = TASKS.filter(t => t.kappaRequired);
     title = "Kappa進捗";
   }
 
-  const total = targetTasks.length;
-  const done = targetTasks.filter(task => userData.tasks[task.id]).length;
-  const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+  let done, total, percent;
+
+  if (isHideout) {
+    total = Object.values(HIDEOUT_DATA).reduce((sum, d) => sum + d.max, 0);
+    done = Object.entries(HIDEOUT_DATA).reduce((sum, [station, d]) => sum + (userData.hideout[station] || 0), 0);
+  } else {
+    total = targetTasks.length;
+    done = targetTasks.filter(task => userData.tasks[task.id]).length;
+  }
+
+  percent = total === 0 ? 0 : Math.round((done / total) * 100);
 
   const titleEl = document.getElementById("progressTitle");
   if (titleEl) titleEl.textContent = title;
@@ -760,7 +773,7 @@ function updateProgress() {
   if (percentEl) percentEl.textContent = `${percent}%`;
 
   const countEl = document.getElementById("progressCount");
-  if (countEl) countEl.textContent = `${done} / ${total}`;
+  if (countEl) countEl.textContent = isHideout ? `${done} / ${total} Lv` : `${done} / ${total}`;
 }
 
 function setupTraderFilters() {
