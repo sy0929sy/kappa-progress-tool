@@ -507,7 +507,13 @@ window.showPrerequisites = (taskId, type = 'kappa') => {
       const statusIcon = isDone ? '✓' : '未';
       const statusColor = isDone ? 'var(--done-green)' : 'gray';
       const li = document.createElement('li');
-      li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <span style="color:var(--secondary-yellow)">[${preTask.trader}]</span> ${preTask.name}`;
+
+      // Network Provider - Part 1 の場合のみステータスアイコンを表示しない
+      if (preId === 'network_provider_part_1') {
+        li.innerHTML = `<span style="color:var(--secondary-yellow)">[${preTask.trader}]</span> ${preTask.name}`;
+      } else {
+        li.innerHTML = `<span style="color:${statusColor}; font-weight:bold; margin-right:5px;">[${statusIcon}]</span> <span style="color:var(--secondary-yellow)">[${preTask.trader}]</span> ${preTask.name}`;
+      }
       taskList.appendChild(li);
     }
   });
