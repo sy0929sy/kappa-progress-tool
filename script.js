@@ -789,9 +789,14 @@ function setupEventListeners() {
   });
   document.querySelectorAll(".sub-tab-btn").forEach(btn => {
     btn.onclick = () => {
-      document.querySelectorAll(".sub-tab-btn, .sub-tab-panel").forEach(el => el.classList.remove("active"));
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.subtab).classList.add("active");
+      const parentPanel = btn.closest(".tab-panel");
+      if (parentPanel) {
+        parentPanel.querySelectorAll(".sub-tab-btn").forEach(el => el.classList.remove("active"));
+        parentPanel.querySelectorAll(".sub-tab-panel").forEach(el => el.classList.remove("active"));
+        btn.classList.add("active");
+        const subPanel = parentPanel.querySelector(`#${btn.dataset.subtab}`);
+        if (subPanel) subPanel.classList.add("active");
+      }
     };
   });
   document.getElementById("resetBtn").onclick = async () => {

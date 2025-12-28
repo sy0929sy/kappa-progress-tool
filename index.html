@@ -27,27 +27,35 @@
       </header>
 
       <div class="tab-container">
-        <button class="tab-btn active" data-tab="task-tab">Kappaタスク一覧</button>
-        <button class="tab-btn" data-tab="item-tab">Kappaタスク必要アイテム</button>
-        <button class="tab-btn" data-tab="lk-task-tab">灯台タスク一覧</button>
-        <button class="tab-btn" data-tab="lk-item-tab">灯台タスク必要アイテム</button>
+        <button class="tab-btn active" data-tab="kappa-tab">Kappa進捗</button>
+        <button class="tab-btn" data-tab="lighthouse-tab">灯台進捗</button>
         <button class="tab-btn" data-tab="hideout-tab">Hideout管理</button>
       </div>
 
-      <div id="task-tab" class="tab-panel active">
-        <div id="taskList" class="card-list"></div>
+      <div id="kappa-tab" class="tab-panel active">
+        <div class="sub-tab-container">
+          <button class="sub-tab-btn active" data-subtab="kappa-tasks">タスク一覧</button>
+          <button class="sub-tab-btn" data-subtab="kappa-items">必要アイテム</button>
+        </div>
+        <div id="kappa-tasks" class="sub-tab-panel active">
+          <div id="taskList" class="card-list"></div>
+        </div>
+        <div id="kappa-items" class="sub-tab-panel">
+          <div id="requiredItemsList" class="card-list"></div>
+        </div>
       </div>
 
-      <div id="item-tab" class="tab-panel">
-        <div id="requiredItemsList" class="card-list"></div>
-      </div>
-
-      <div id="lk-task-tab" class="tab-panel">
-        <div id="lkTaskList" class="card-list"></div>
-      </div>
-
-      <div id="lk-item-tab" class="tab-panel">
-        <div id="lkRequiredItemsList" class="card-list"></div>
+      <div id="lighthouse-tab" class="tab-panel">
+        <div class="sub-tab-container">
+          <button class="sub-tab-btn active" data-subtab="lk-tasks">タスク一覧</button>
+          <button class="sub-tab-btn" data-subtab="lk-items">必要アイテム</button>
+        </div>
+        <div id="lk-tasks" class="sub-tab-panel active">
+          <div id="lkTaskList" class="card-list"></div>
+        </div>
+        <div id="lk-items" class="sub-tab-panel">
+          <div id="lkRequiredItemsList" class="card-list"></div>
+        </div>
       </div>
 
       <div id="hideout-tab" class="tab-panel">
