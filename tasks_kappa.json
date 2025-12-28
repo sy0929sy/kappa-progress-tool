@@ -179,6 +179,17 @@
 		"kappaRequired": true
 	},
 	{
+		"id": "big_customer",
+		"name": "Big Customer",
+		"trader": "Prapor",
+		"preRequisites": [
+			"chemical_part_3",
+			"chemical_part_4",
+			"out_of_curiosity"
+		],
+		"kappaRequired": true
+	},
+	{
 		"id": "the_punisher_part_1",
 		"name": "The Punisher - Part 1",
 		"trader": "Prapor",
@@ -652,7 +663,9 @@
 		"trader": "Therapist",
 		"requiredLevel": 11,
 		"preRequisites": [
-			"chemical_part_3"
+			"chemical_part_3",
+			"chemical_part_4",
+			"big_customer"
 		],
 		"kappaRequired": true
 	},
@@ -1418,7 +1431,9 @@
 		"trader": "Skier",
 		"requiredLevel": 11,
 		"preRequisites": [
-			"chemical_part_3"
+			"chemical_part_3",
+			"out_of_curiosity",
+			"big_customer"
 		],
 		"kappaRequired": true
 	},

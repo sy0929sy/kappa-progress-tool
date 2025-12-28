@@ -358,7 +358,7 @@ function renderTasks(tasks, containerId) {
     // 前提タスクの取得と「1つだけ表示」のロジック
     const preTaskIds = task.preRequisites || [];
     const preTaskNames = preTaskIds
-      .map(preId => tasks.find(t => t.id === preId)?.name)
+      .map(preId => tasks.find(t => t.id === preId)?.name || TASKS.find(t => t.id === preId)?.name || LK_TASKS.find(t => t.id === preId)?.name)
       .filter(Boolean);
 
     let preTasksDisplay = "";
@@ -501,7 +501,7 @@ window.showPrerequisites = (taskId, type = 'kappa') => {
   taskList.innerHTML = '';
   // 直近の前提タスクを表示
   task.preRequisites.forEach(preId => {
-    const preTask = tasks.find(t => t.id === preId);
+    const preTask = tasks.find(t => t.id === preId) || TASKS.find(t => t.id === preId) || LK_TASKS.find(t => t.id === preId);
     if (preTask) {
       const isDone = userData.tasks[preId];
       const statusIcon = isDone ? '✓' : '未';
@@ -593,7 +593,7 @@ window.toggleTask = async (taskId, type = 'kappa') => {
   const isNowCompleted = !userData.tasks[taskId];
 
   // 完了にする場合のみ一括チェックロジックを走らせる
-  if (isNowCompleted) {
+  if (isNowCompleted && taskId !== 'network_provider_part_1') {
     const preIds = getRecursivePreRequisites(taskId, tasks);
     // 未完了の前提タスクのみを抽出
     const incompletePres = preIds.filter(id => !userData.tasks[id]);

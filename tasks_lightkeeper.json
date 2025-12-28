@@ -150,5 +150,17 @@
             "knock_knock"
         ],
         "LightkeeperRequired": true
+    },
+    {
+        "id": "broadcast_part_2",
+        "name": "Broadcast - Part 2",
+        "trader": "Mechanic",
+        "LightkeeperRequired": false
+    },
+    {
+        "id": "house_arrest_part_1",
+        "name": "House Arrest - Part 1",
+        "trader": "Skier",
+        "LightkeeperRequired": false
     }
 ]
