@@ -1,1 +1,154 @@
-[]
+[
+    {
+        "id": "network_provider_part_1",
+        "name": "Network Provider - Part 1",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "the_punisher_part_4",
+            "lost_contact",
+            "seaside_vacation",
+            "the_cult_part_2",
+            "cargo_x_part_4",
+            "broadcast_part_2",
+            "gunsmith_part_10",
+            "database_part_2",
+            "a_fuel_matter",
+            "courtesy_visit",
+            "huntsman_forest_cleaning",
+            "house_arrest_part_1",
+            "chemical_part_4",
+            "big_customer",
+            "out_of_curiosity"
+        ],
+        "LightkeeperRequired": true,
+        "requiredItems": [
+            {
+                "name": "電子部品",
+                "count": 4,
+                "fir": true
+            },
+            {
+                "name": "軍用 COFDM 無線信号送信機",
+                "count": 4,
+                "fir": true
+            },
+            {
+                "name": "ガスアナライザー",
+                "count": 4,
+                "fir": true
+            },
+            {
+                "name": "壊れた GPhone",
+                "count": 4,
+                "fir": true
+            }
+        ]
+    },
+    {
+        "id": "network_provider_part_2",
+        "name": "Network Provider - Part 2",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "network_provider_part_1"
+        ],
+        "LightkeeperRequired": true
+    },
+    {
+        "id": "assessment_part_1",
+        "name": "Assessment - Part 1",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "network_provider_part_2"
+        ],
+        "LightkeeperRequired": true
+    },
+    {
+        "id": "assessment_part_2",
+        "name": "Assessment - Part 2",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "assessment_part_1"
+        ],
+        "LightkeeperRequired": true
+    },
+    {
+        "id": "assessment_part_3",
+        "name": "Assessment - Part 3",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "assessment_part_2"
+        ],
+        "LightkeeperRequired": true,
+        "requiredItems": [
+            {
+                "name": "TGLabs SJ1 の注射器",
+                "count": 15,
+                "fir": true
+            },
+            {
+                "name": "TGLabs SJ1 の注射器",
+                "count": 6,
+                "fir": true
+            },
+            {
+                "name": "TGLabs SJ9 の注射器",
+                "count": 1,
+                "fir": true
+            }
+        ]
+    },
+    {
+        "id": "key_to_the_tower",
+        "name": "Key to the Tower",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "assessment_part_3"
+        ],
+        "LightkeeperRequired": true,
+        "requiredItems": [
+            {
+                "name": "プレキシグラス",
+                "count": 2,
+                "fir": true
+            },
+            {
+                "name": "絶縁テープ",
+                "count": 1,
+                "fir": true
+            },
+            {
+                "name": "軍用回路基板",
+                "count": 2,
+                "fir": true
+            },
+            {
+                "name": "軍用 COFDM 無線信号送信機",
+                "count": 1,
+                "fir": true
+            },
+            {
+                "name": "液晶パネル",
+                "count": 1,
+                "fir": true
+            }
+        ]
+    },
+    {
+        "id": "knock_knock",
+        "name": "Knock-Knock",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "key_to_the_tower"
+        ],
+        "LightkeeperRequired": true
+    },
+    {
+        "id": "getting_acquainted",
+        "name": "Getting Acquainted",
+        "trader": "Mechanic",
+        "preRequisites": [
+            "knock_knock"
+        ],
+        "LightkeeperRequired": true
+    }
+]

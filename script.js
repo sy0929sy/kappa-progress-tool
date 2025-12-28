@@ -42,7 +42,7 @@ let currentTheme = "light";
 let hideCompleted = true;
 let hideoutFirOnly = false;
 let hideoutNextOnly = false; // 次レベルのみ表示するかどうか
-const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger", "Lightkeeper"];
+const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
 let activeTraders = [...TRADERS];
 
 async function init() {
@@ -652,7 +652,7 @@ function renderTraderLevels() {
   if (!container) return;
   container.innerHTML = "";
 
-  const targetTraders = TRADERS.filter(t => t !== "Fence" && t !== "Lightkeeper");
+  const targetTraders = TRADERS.filter(t => t !== "Fence");
 
   targetTraders.forEach(trader => {
     const currentLevel = userData.traders[trader] || 1;
