@@ -727,13 +727,34 @@ function refreshUI() {
 }
 
 function updateProgress() {
-  const total = TASKS.length;
-  const done = TASKS.filter(task => userData.tasks[task.id]).length;
+  const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab;
+  let targetTasks = [];
+  let title = "Kappa進捗";
+
+  if (activeTab === "lighthouse-tab") {
+    targetTasks = LK_TASKS.filter(t => t.LightkeeperRequired);
+    title = "灯台進捗";
+  } else {
+    // デフォルト（KappaタブまたはHideoutタブ時はKappaを表示）
+    targetTasks = TASKS.filter(t => t.kappaRequired);
+    title = "Kappa進捗";
+  }
+
+  const total = targetTasks.length;
+  const done = targetTasks.filter(task => userData.tasks[task.id]).length;
   const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+
+  const titleEl = document.getElementById("progressTitle");
+  if (titleEl) titleEl.textContent = title;
+
   const circle = document.getElementById("progressCircle");
   if (circle) circle.style.strokeDashoffset = 283 - (283 * percent / 100);
-  document.getElementById("progressPercent").textContent = `${percent}%`;
-  document.getElementById("progressCount").textContent = `${done} / ${total}`;
+
+  const percentEl = document.getElementById("progressPercent");
+  if (percentEl) percentEl.textContent = `${percent}%`;
+
+  const countEl = document.getElementById("progressCount");
+  if (countEl) countEl.textContent = `${done} / ${total}`;
 }
 
 function setupTraderFilters() {
@@ -823,6 +844,7 @@ function setupEventListeners() {
       document.querySelectorAll(".tab-btn, .tab-panel").forEach(el => el.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById(btn.dataset.tab).classList.add("active");
+      updateProgress();
     };
   });
   document.querySelectorAll(".sub-tab-btn").forEach(btn => {
