@@ -1,1018 +1,755 @@
 {
-  "モーター": {
-    "en": "Electric_motor",
-    "jp": "Electric%20motor"
-  },
-  "RB-OB の鍵": {
-    "en": "RB-OB_key",
-    "jp": "RB-OB"
-  },
-  "TT-33 7.62x25 TT pistol (Golden)": {
-    "en": "TT-33_7.62x25_TT_pistol_Golden",
-    "jp": "TT-33%207.62x25%20TT%20pistol%20%28Golden%29"
-  },
-  "マルボロ シガレット": {
-    "en": "マルボロ_シガレット",
-    "jp": "マルボロ%20シガレット"
-  },
-  "Lucky Scav Junk box": {
-    "en": "Lucky_Scav_Junk_box",
-    "jp": "Lucky%20Scav%20Junk%20box"
-  },
-  "軍用パワーフィルター": {
-    "en": "Military_power_filter",
-    "jp": "Military%20power%20filter"
-  },
-  "WD-40 100ml": {
-    "en": "WD-40_100ml_can",
-    "jp": "WD-40%20100ml"
-  },
-  "金属製のスペアパーツ": {
-    "en": "Metal_spare_parts",
-    "jp": "Metal%20spare%20parts"
-  },
-  "グラフィックボード": {
-    "en": "Graphics_card",
-    "jp": "Graphics%20card"
-  },
-  "Glorious E lightweight armored mask": {
-    "en": "Glorious_E_lightweight_armored_mask",
-    "jp": "Glorious%20E%20lightweight%20armored%20mask"
-  },
-  "ミリタリーケーブル": {
-    "en": "ミリタリーケーブル",
-    "jp": "ミリタリーケーブル"
-  },
-  "AK-74N": {
-    "en": "AK-74N",
-    "jp": "AK-74N"
-  },
-  "Domontovich ushanka hat": {
-    "en": "Domontovich_ushanka_hat",
-    "jp": "Domontovich%20ushanka%20hat"
-  },
-  "箱入りのクギ": {
-    "en": "Pack_of_nails",
-    "jp": "Pack%20of%20nails"
-  },
-  "MP-133 12ga ショットガン": {
-    "en": "MP-133_12ga_pump-action_shotgun",
-    "jp": "MP-133"
-  },
-  "オブドルボス カクテルの注射器": {
-    "en": "オブドルボス_カクテルの注射器",
-    "jp": "オブドルボス%20カクテルの注射器"
-  },
-  "RB-KSM の鍵": {
-    "en": "RB-KSM_key",
-    "jp": "RB-KSM"
-  },
-  "ダクトテープ": {
-    "en": "Duct_tape",
-    "jp": "Duct%20tape"
-  },
-  "地形図": {
-    "en": "地形図",
-    "jp": "地形図"
-  },
-  "JohnB Liquid DNB glasses": {
-    "en": "JohnB_Liquid_DNB_glasses",
-    "jp": "JohnB%20Liquid%20DNB%20glasses"
-  },
-  "TerraGroup ストレージルーム キーカード": {
-    "en": "TerraGroup_storage_room_keycard",
-    "jp": "TerraGroup%20storage%20room%20keycard"
-  },
-  "ゼノモーフ シーリングフォーム": {
-    "en": "Xenomorph_sealing_foam",
-    "jp": "Xenomorph%20sealing%20foam"
-  },
-  "Ushanka ear flap hat": {
-    "en": "Ushanka_ear_flap_hat",
-    "jp": "Ushanka%20ear%20flap%20hat"
-  },
-  "イスクラ レーションパック": {
-    "en": "イスクラ_レーションパック",
-    "jp": "イスクラ%20レーションパック"
-  },
-  "軍用 COFDM 無線信号送信機": {
-    "en": "Military_COFDM_wireless_signal_transmitter",
-    "jp": "Military%20COFDM_wireless_signal_transmitter"
-  },
-  "Inseq gas pipe wrench": {
-    "en": "Inseq_gas_pipe_wrench",
-    "jp": "Inseq%20gas%20pipe%20wrench"
-  },
-  "白熱電球": {
-    "en": "Light_bulb",
-    "jp": "Light%20bulb"
-  },
-  "CPUファン": {
-    "en": "CPU_fan",
-    "jp": "CPU%20fan"
-  },
-  "映画 サイボーグ・キラー のビデオ": {
-    "en": "Cygorg_Killer_video_tape",
-    "jp": "Cygorg%20Killer%20video%20tape"
-  },
-  "BOSS キャップ": {
-    "en": "BOSS_cap",
-    "jp": "BOSS%20cap"
-  },
-  "ビーフシチューの缶詰 (大)": {
-    "en": "ビーフシチューの缶詰_(大)",
-    "jp": "ビーフシチューの缶詰%20(大)"
-  },
-  "アナログ温度計": {
-    "en": "アナログ温度計",
-    "jp": "アナログ温度計"
-  },
-  "Shturman's stash key": {
-    "en": "Shturman%27s_stash_key",
-    "jp": "Shturman%27s%20stash%20key"
-  },
-  "オウムの Axel の置物": {
-    "en": "オウムの_Axel_の置物",
-    "jp": "オウムの%20Axel%20の置物"
-  },
-  "SSD": {
-    "en": "SSD",
-    "jp": "SSD"
-  },
-  "TerraGroup Labs アクセスキーカード": {
-    "en": "TerraGroup_Labs_access_keycard",
-    "jp": "TerraGroup%20Labs%20access%20keycard"
-  },
-  "手術室の鍵": {
-    "en": "Operating_room_key",
-    "jp": "Operating%20room%20key"
-  },
-  "パイプグリップレンチ": {
-    "en": "パイプグリップレンチ",
-    "jp": "パイプグリップレンチ"
-  },
-  "スパークプラグ": {
-    "en": "Spark_plug",
-    "jp": "Spark%20plug"
-  },
-  "検眼鏡": {
-    "en": "Ophthalmoscope",
-    "jp": "Ophthalmoscope"
-  },
-  "電球形蛍光灯": {
-    "en": "Energy-saving_lamp",
-    "jp": "Energy-saving%20lamp"
-  },
-  "モルヒネの注射器": {
-    "en": "モルヒネの注射器",
-    "jp": "モルヒネの注射器"
-  },
-  "Ox 漂白剤": {
-    "en": "Ox_漂白剤",
-    "jp": "Ox%20漂白剤"
-  },
-  "Module-3M ボディアーマー": {
-    "en": "Module-3M_ボディアーマー",
-    "jp": "Module-3M%20ボディアーマー"
-  },
-  "プリント基板": {
-    "en": "Printed_circuit_board",
-    "jp": "Printed%20circuit%20board"
-  },
-  "TerraGroup 科学オフィスの鍵": {
-    "en": "TerraGroup_science_office_key",
-    "jp": "TerraGroup%20science%20office%20key"
-  },
-  "金属製燃料タンク": {
-    "en": "Metal_fuel_tank",
-    "jp": "Metal%20fuel%20tank"
-  },
-  "フェーズドアレイ アンテナの部品": {
-    "en": "フェーズドアレイ_アンテナの部品",
-    "jp": "フェーズドアレイ%20アンテナの部品"
-  },
-  "マジャイカ コーヒー豆": {
-    "en": "マジャイカ_コーヒー豆",
-    "jp": "マジャイカ%20コーヒー豆"
-  },
-  "\"Maska-1SCh\" bulletproof helmet (Killa)": {
-    "en": "%22Maska-1SCh%22_bulletproof_helmet_Killa",
-    "jp": "%22Maska-1SCh%22%20bulletproof%20helmet%20%28Killa%29"
-  },
-  "Bulbex ラチェットケーブルカッター": {
-    "en": "Bulbex_cable_cutters",
-    "jp": "Bulbex%20cable%20cutters"
-  },
-  "Gingyのキーホルダー": {
-    "en": "Gingyのキーホルダー",
-    "jp": "Gingyのキーホルダー"
-  },
-  "Factory plan map": {
-    "en": "Factory_plan_map",
-    "jp": "Factory%20plan%20map"
-  },
-  "Goshan のレジの鍵": {
-    "en": "Goshan_cash_register_key",
-    "jp": "Goshan%20cash%20register%20key"
-  },
-  "用途不明の鍵": {
-    "en": "Unknown_key",
-    "jp": "Unknown%20key"
-  },
-  "GreenBat リチウムイオン電池": {
-    "en": "GreenBat_lithium-battery",
-    "jp": "GreenBat"
-  },
-  "固形石鹸": {
-    "en": "固形石鹸",
-    "jp": "固形石鹸"
-  },
-  "使い捨て注射器": {
-    "en": "使い捨て注射器",
-    "jp": "使い捨て注射器"
-  },
-  "FireKlean ガンオイル": {
-    "en": "FireKlean_ガンオイル",
-    "jp": "FireKlean%20ガンオイル"
-  },
-  "Mazoni golden dumbbell": {
-    "en": "Mazoni_golden_dumbbell",
-    "jp": "Mazoni%20golden%20dumbbell"
-  },
-  "コテージの裏口の鍵": {
-    "en": "Cottage_back_entrance_key",
-    "jp": "Cottage%20back%20entrance%20key"
-  },
-  "金のチェーンネックレス": {
-    "en": "Gold_chain",
-    "jp": "Gold%20chain"
-  },
-  "OFZ 30x160mm 砲弾": {
-    "en": "OFZ_30x160mm_砲弾",
-    "jp": "OFZ%2030x160mm%20砲弾"
-  },
-  "液晶パネル": {
-    "en": "LCD_panel",
-    "jp": "LCD%20panel"
-  },
-  "Baddie's red beard": {
-    "en": "Baddie's_red_beard",
-    "jp": "Baddie's%20red%20beard"
-  },
-  "アンティークのティーポット": {
-    "en": "アンティークのティーポット",
-    "jp": "アンティークのティーポット"
-  },
-  "SurvL サバイバルライター": {
-    "en": "SurvL_サバイバルライター",
-    "jp": "SurvL%20サバイバルライター"
-  },
-  "Elite ペンチ": {
-    "en": "Elite_pliers",
-    "jp": "Elite%20pliers"
-  },
-  "42 シグニチャーブレンド 英国紅茶": {
-    "en": "42_シグニチャーブレンド_英国紅茶",
-    "jp": "42%20シグニチャーブレンド%20英国紅茶"
-  },
-  "RB-ORB1 の鍵": {
-    "en": "RB-ORB1_key",
-    "jp": "RB-ORB1"
-  },
-  "炭酸水素ナトリウム": {
-    "en": "Sodium_bicarbonate",
-    "jp": "Sodium%20bicarbonate"
-  },
-  "Shroud ハーフマスク": {
-    "en": "Shroud_ハーフマスク",
-    "jp": "Shroud%20ハーフマスク"
-  },
-  "アンティークの斧": {
-    "en": "Antique_axe",
-    "jp": "Antique%20axe"
-  },
-  "メルドニンの注射器": {
-    "en": "メルドニンの注射器",
-    "jp": "メルドニンの注射器"
-  },
-  "WZ ウォレット": {
-    "en": "WZ_ウォレット",
-    "jp": "WZ%20ウォレット"
-  },
-  "保養所 東棟306号室の鍵": {
-    "en": "Sanatorium_east_wing_room_306_key",
-    "jp": "Sanatorium%20east%20wing%20room%2306%20key"
-  },
-  "クリン ガラスクリーナー": {
-    "en": "クリン_ガラスクリーナー",
-    "jp": "クリン%20ガラスクリーナー"
-  },
-  "社員寮203号室の鍵": {
-    "en": "Dorm_room_203_key",
-    "jp": "Dorm%20room%20203%20key"
-  },
-  "Factory 非常口の鍵": {
-    "en": "Factory_emergency_exit_key",
-    "jp": "Factory%20emergency%20exit%20key"
-  },
-  "スパナ": {
-    "en": "Wrench",
-    "jp": "Wrench"
-  },
-  "Gzhel-K ボディアーマー (50-100%)": {
-    "en": "Gzhel-K_ボディアーマー_(50-100%)",
-    "jp": "Gzhel-K%20ボディアーマー%20(50-100%)"
-  },
-  "保養所 西棟休憩室112号室の鍵": {
-    "en": "Sanatorium_west_wing_office_112_key",
-    "jp": "Sanatorium%20west%20wing%20office%20112%20key"
-  },
-  "輸血セット": {
-    "en": "Bloodset",
-    "jp": "Bloodset"
-  },
-  "プレキシグラス": {
-    "en": "プレキシグラス",
-    "jp": "プレキシグラス"
-  },
-  "6-STEN-140-M 軍用バッテリー": {
-    "en": "6-STEN-140-M_軍用バッテリー",
-    "jp": "6-STEN-140-M%20軍用バッテリー"
-  },
-  "AK-74 5.45x39 6L31 60連マガジン": {
-    "en": "AK-74_5.45x39_6L31_60-round_magazine",
-    "jp": "AK-74"
-  },
-  "アルカリクリーナー": {
-    "en": "アルカリクリーナー",
-    "jp": "アルカリクリーナー"
-  },
-  "コンベックス": {
-    "en": "Measuring_tape",
-    "jp": "Measuring%20tape"
-  },
-  "Pestily ペストマスク": {
-    "en": "Pestily_ペストマスク",
-    "jp": "Pestily%20ペストマスク"
-  },
-  "食用塩": {
-    "en": "Pack_of_chlorine",
-    "jp": "Pack%20of%20chlorine"
-  },
-  "軍用回路基板": {
-    "en": "Military_circuit_board",
-    "jp": "Military%20circuit%20board"
-  },
-  "青銅のライオン": {
-    "en": "Bronze_lion",
-    "jp": "Bronze%20lion"
-  },
-  "アーマーリペアキット": {
-    "en": "Armor_repair_kit",
-    "jp": "Armor%20repair%20kit"
-  },
-  "DVDドライブ": {
-    "en": "DVD_drive",
-    "jp": "DVD%20drive"
-  },
-  "絶縁テープ": {
-    "en": "Insulating_tape",
-    "jp": "Insulating%20tape"
-  },
-  "会社役員室の鍵": {
-    "en": "Operating_room_key",
-    "jp": "Operating%20room%20key"
-  },
-  "RB-SMP の鍵": {
-    "en": "RB-SMP_key",
-    "jp": "RB-SMP"
-  },
-  "TGLabs SJ1 の注射器": {
-    "en": "TGLabs_SJ1_の注射器",
-    "jp": "TGLabs%20SJ1%20の注射器"
-  },
-  "エスマルヒ 止血帯": {
-    "en": "エスマルヒ_止血帯",
-    "jp": "エスマルヒ%20止血帯"
-  },
-  "Pilgrim ツーリストバックパック": {
-    "en": "Pilgrim_ツーリストバックパック",
-    "jp": "Pilgrim%20ツーリストバックパック"
-  },
-  "MRE レーションパック": {
-    "en": "MRE_レーションパック",
-    "jp": "MRE%20レーションパック"
-  },
-  "RB-ORB2 の鍵": {
-    "en": "RB-ORB2_key",
-    "jp": "RB-ORB2"
-  },
-  "6-STE-M2 軍用バッテリー": {
-    "en": "6-STE-M2_軍用バッテリー",
-    "jp": "6-STE-M2%20軍用バッテリー"
-  },
-  "丸ペンチ": {
-    "en": "丸ペンチ",
-    "jp": "丸ペンチ"
-  },
-  "アンティークの花瓶": {
-    "en": "アンティークの花瓶",
-    "jp": "アンティークの花瓶"
-  },
-  "デビルドッグ マヨネーズ": {
-    "en": "デビルドッグ_マヨネーズ",
-    "jp": "デビルドッグ%20マヨネーズ"
-  },
-  "Missamのフォークリフトの鍵": {
-    "en": "Missamのフォークリフトの鍵",
-    "jp": "Missamのフォークリフトの鍵"
-  },
-  "圧力計": {
-    "en": "圧力計",
-    "jp": "圧力計"
-  },
-  "フューエルコンディショナー": {
-    "en": "フューエルコンディショナー",
-    "jp": "フューエルコンディショナー"
-  },
-  "金切りバサミ": {
-    "en": "Metal_cutting_shears",
-    "jp": "Metal%20cutting%20shears"
-  },
-  "Pack of instant noodles": {
-    "en": "Pack_of_instant_noodles",
-    "jp": "Pack%20of%20instant%20noodles"
-  },
-  "M4A1": {
-    "en": "M4A1",
-    "jp": "M4A1"
-  },
-  "医薬品": {
-    "en": "医薬品",
-    "jp": "医薬品"
-  },
-  "LEDX 静脈発見器": {
-    "en": "LEDX_静脈発見器",
-    "jp": "LEDX%20静脈発見器"
-  },
-  "充電式バッテリー": {
-    "en": "充電式バッテリー",
-    "jp": "充電式バッテリー"
-  },
-  "UHF RFID リーダー": {
-    "en": "UHF_RFID_リーダー",
-    "jp": "UHF%20RFID%20リーダー"
-  },
-  "社員寮114号室の鍵": {
-    "en": "Dorm_room_114_key",
-    "jp": "Dorm%20room%20114%20key"
-  },
-  "NIXXOR レンズ": {
-    "en": "NIXXOR_lens",
-    "jp": "NIXXOR%20lens"
-  },
-  "ストライク シガレット": {
-    "en": "ストライク_シガレット",
-    "jp": "ストライク%20シガレット"
-  },
-  "TOZ-106 ボルトアクションショットガン": {
-    "en": "TOZ-106_ボルトアクションショットガン",
-    "jp": "TOZ-106%20ボルトアクションショットガン"
-  },
-  "マークの刻まれた社員寮314号室の鍵": {
-    "en": "Dorm_room_314_marked_key",
-    "jp": "Dorm%20room%20314%20marked%20key"
-  },
-  "袋入りのネジ": {
-    "en": "Pack_of_screws",
-    "jp": "Pack%20of%20screws"
-  },
-  "#FireKlean ガンオイル": {
-    "en": "#FireKlean_ガンオイル",
-    "jp": "#FireKlean%20ガンオイル"
-  },
-  "暗号化された USB フラッシュドライブ": {
-    "en": "Encrypted_flash_drive",
-    "jp": "Encrypted%20flash%20drive"
-  },
-  "固形燃料": {
-    "en": "Dry_fuel",
-    "jp": "Dry%20fuel"
-  },
-  "サービスマニュアル": {
-    "en": "サービスマニュアル",
-    "jp": "サービスマニュアル"
-  },
-  "保養所 西棟219号室の鍵": {
-    "en": "Sanatorium_west_wing_room_219_key",
-    "jp": "Sanatorium%20west%20wing%20room%219%20key"
-  },
-  "RB-ST の鍵": {
-    "en": "RB-ST_key",
-    "jp": "RB-ST"
-  },
-  "生理食用塩水": {
-    "en": "Saline_solution",
-    "jp": "Saline%20solution"
-  },
-  "ミリタリーフラッシュドライブ": {
-    "en": "ミリタリーフラッシュドライブ",
-    "jp": "ミリタリーフラッシュドライブ"
-  },
-  "保養所 西棟306号室の鍵": {
-    "en": "Sanatorium_west_wing_room_306_key",
-    "jp": "Sanatorium%20west%20wing%20room%20306%20key"
-  },
-  "カウボーイハット": {
-    "en": "Cowboy_hat",
-    "jp": "Cowboy%20hat"
-  },
-  "Evasion アームバンド": {
-    "en": "Evasion_アームバンド",
-    "jp": "Evasion%20アームバンド"
-  },
-  "カラスの置物": {
-    "en": "カラスの置物",
-    "jp": "カラスの置物"
-  },
-  "特殊車両の鍵": {
-    "en": "Machinery_key",
-    "jp": "Machinery%20key"
-  },
-  "フリースの生地": {
-    "en": "Fleece_fabric",
-    "jp": "Fleece%20fabric"
-  },
-  "マッチ": {
-    "en": "Matches",
-    "jp": "Matches"
-  },
-  "BEAR バディのぬいぐるみ": {
-    "en": "BEAR_バディのぬいぐるみ",
-    "jp": "BEAR%20バディのぬいぐるみ"
-  },
-  "ケクテープ": {
-    "en": "KEKTAPE",
-    "jp": "KEKTAPE"
-  },
-  "可搬式の詰所の鍵": {
-    "en": "Portable_cabin_key_of_Customs_Factory_zone",
-    "jp": "Portable%20cabin%20key%20of%20Customs%20Factory%20zone"
-  },
-  "保養所 東棟308号室の鍵": {
-    "en": "Sanatorium_east_wing_room_308_key",
-    "jp": "Sanatorium%20east_wing%20room%2308%20key"
-  },
-  "千枚通し": {
-    "en": "Awl",
-    "jp": "Awl"
-  },
-  "テルミット": {
-    "en": "テルミット",
-    "jp": "テルミット"
-  },
-  "故障したハードディスク": {
-    "en": "Hard_drive",
-    "jp": "Hard%20drive"
-  },
-  "ハーフマスク": {
-    "en": "ハーフマスク",
-    "jp": "ハーフマスク"
-  },
-  "社員寮220号室の鍵": {
-    "en": "Dorm_room_220_key",
-    "jp": "Dorm%20room%20220_key"
-  },
-  "コーデュラナイロンの生地": {
-    "en": "Cordura_polyamide_fabric",
-    "jp": "Cordura%20polyamide%20fabric"
-  },
-  "手術器具": {
-    "en": "手術器具",
-    "jp": "手術器具"
-  },
-  "保養所 東棟328号室の鍵": {
-    "en": "Sanatorium_east_wing_room_328_key",
-    "jp": "Sanatorium%20east_wing%20room%2328%20key"
-  },
-  "6B43 Zabralo-Sh ボディアーマー (50-100%)": {
-    "en": "6B43_Zabralo-Sh_ボディアーマー_(50-100%)",
-    "jp": "6B43%20Zabralo-Sh%20ボディアーマー%20(50-100%)"
-  },
-  "パイプクリーナー": {
-    "en": "パイプクリーナー",
-    "jp": "パイプクリーナー"
-  },
-  "ビーフシチューの缶詰 (小)": {
-    "en": "ビーフシチューの缶詰_(小)",
-    "jp": "ビーフシチューの缶詰%20(小)"
-  },
-  "壊れた GPhone": {
-    "en": "壊れた_GPhone",
-    "jp": "壊れた%20GPhone"
-  },
-  "L1 (ノルエピネフリン)の注射器": {
-    "en": "L1_(ノルエピネフリン)の注射器",
-    "jp": "L1%20(ノルエピネフリン)の注射器"
-  },
-  "フィアスブロウ スレッジハンマー": {
-    "en": "フィアスブロウ_スレッジハンマー",
-    "jp": "フィアスブロウ%20スレッジハンマー"
-  },
-  "TP-200 TNT火薬": {
-    "en": "TP-200_TNT_block",
-    "jp": "TP-200%20TNT%20block"
-  },
-  "コルゲートチューブ": {
-    "en": "コルゲートチューブ",
-    "jp": "コルゲートチューブ"
-  },
-  "ツールセット": {
-    "en": "ツールセット",
-    "jp": "ツールセット"
-  },
-  "DRD body armor": {
-    "en": "DRD_body_armor",
-    "jp": "DRD%20body%20armor"
-  },
-  "SMT データカートリッジ": {
-    "en": "SMT_データカートリッジ",
-    "jp": "SMT%20データカートリッジ"
-  },
-  "保養所 西棟216号室の鍵": {
-    "en": "Sanatorium_west_wing_room_216_key",
-    "jp": "Sanatorium%20west%20wing%20room%216%20key"
-  },
-  "BakeEzy レシピ本": {
-    "en": "BakeEzy_レシピ本",
-    "jp": "BakeEzy%20レシピ本"
-  },
-  "古いファイヤースチール": {
-    "en": "古いファイヤースチール",
-    "jp": "古いファイヤースチール"
-  },
-  "ウィルストン シガレット": {
-    "en": "ウィルストン_シガレット",
-    "jp": "ウィルストン%20シガレット"
-  },
-  "ネコの置物": {
-    "en": "ネコの置物",
-    "jp": "ネコの置物"
-  },
-  "\"Master\" ヤスリセット": {
-    "en": "%22Master%22_file_set",
-    "jp": "%22Master%22%20file%20set"
-  },
-  "T型プラグ": {
-    "en": "T型プラグ",
-    "jp": "T型プラグ"
-  },
-  "ガスマスクのフィルター": {
-    "en": "ガスマスクのフィルター",
-    "jp": "ガスマスクのフィルター"
-  },
-  "電子部品": {
-    "en": "Electronic_components",
-    "jp": "Electronic%20components"
-  },
-  "Salewa ファーストエイドキット": {
-    "en": "Salewa_ファーストエイドキット",
-    "jp": "Salewa%20ファーストエイドキット"
-  },
-  "歯磨き粉": {
-    "en": "Toothpaste",
-    "jp": "Toothpaste"
-  },
-  "チェーンネックレス": {
-    "en": "チェーンネックレス",
-    "jp": "チェーンネックレス"
-  },
-  "VPX フラッシュストレージモジュール": {
-    "en": "VPX_フラッシュストレージモジュール",
-    "jp": "VPX%20フラッシュストレージモジュール"
-  },
-  "ハンドドリル": {
-    "en": "Hand_drill",
-    "jp": "Hand%20drill"
-  },
-  "電源ユニット": {
-    "en": "Power_supply_unit",
-    "jp": "Power%20supply%20unit"
-  },
-  "密造酒 \"フィアス ハッチリング\"": {
-    "en": "密造酒_\"フィアス_ハッチリング\"",
-    "jp": "密造酒%20\"フィアス%20ハッチリング\""
-  },
-  "三相監視リレー": {
-    "en": "Phase_control_relay",
-    "jp": "Phase%20control%20relay"
-  },
-  "ウマの置物": {
-    "en": "ウマの置物",
-    "jp": "ウマの置物"
-  },
-  "銃器のパーツ": {
-    "en": "Weapon_parts",
-    "jp": "Weapon%20parts"
-  },
-  "Leatherman マルチツール": {
-    "en": "Leatherman_multitool",
-    "jp": "Leatherman%20multitool"
-  },
-  "ゴールデンエッグ": {
-    "en": "ゴールデンエッグ",
-    "jp": "ゴールデンエッグ"
-  },
-  "NoiceGuy のプレスカード": {
-    "en": "NoiceGuy_のプレスカード",
-    "jp": "NoiceGuy%20のプレスカード"
-  },
-  "Nut Sack balaclava": {
-    "en": "Nut_Sack_balaclava",
-    "jp": "Nut%20Sack%20balaclava"
-  },
-  "6B43 Zabralo-Sh ボディアーマー (0-50%)": {
-    "en": "6B43_Zabralo-Sh_ボディアーマー_(0-50%)",
-    "jp": "6B43%20Zabralo-Sh%20ボディアーマー%20(0-50%)"
-  },
-  "Keycard with a blue marking": {
-    "en": "Keycard_with_a_blue_marking",
-    "jp": "Keycard%20with%20a%20blue%20marking"
-  },
-  "Viibiin sneaker": {
-    "en": "Viibiin_sneaker",
-    "jp": "Viibiin%20sneaker"
-  },
-  "1GPhone オレンジゴールド": {
-    "en": "1GPhone_オレンジゴールド",
-    "jp": "1GPhone%20オレンジゴールド"
-  },
-  "Tamatthi kunai knife replica": {
-    "en": "Tamatthi_kunai_knife_replica",
-    "jp": "Tamatthi%20kunai%20knife%20replica"
-  },
-  "電熱線": {
-    "en": "Heating_elements",
-    "jp": "Heating%20elements"
-  },
-  "ボルト": {
-    "en": "Bolt",
-    "jp": "Bolt"
-  },
-  "WD-40": {
-    "en": "WD-40",
-    "jp": "WD-40"
-  },
-  "Tigzresq splint": {
-    "en": "Tigzresq_splint",
-    "jp": "Tigzresq%20splint"
-  },
-  "ハンティングマッチ": {
-    "en": "Hunting_matches",
-    "jp": "Hunting%20matches"
-  },
-  "Kotton ビーニー": {
-    "en": "Kotton_ビーニー",
-    "jp": "Kotton%20ビーニー"
-  },
-  "EMERCOM の仮設診療所の鍵": {
-    "en": "MES_key",
-    "jp": "MES%20key"
-  },
-  "3-(b-TG) の注射器": {
-    "en": "3-(b-TG)_stimulant_injector",
-    "jp": "3-%28b-TG%29"
-  },
-  "付け髭": {
-    "en": "付け髭",
-    "jp": "付け髭"
-  },
-  "ポケットダイアリー": {
-    "en": "ポケットダイアリー",
-    "jp": "ポケットダイアリー"
-  },
-  "Dr. Lupo's コーヒー豆": {
-    "en": "Dr._Lupo's_コーヒー豆",
-    "jp": "Dr.%20Lupo's%20コーヒー豆"
-  },
-  "ナット": {
-    "en": "Screw_nut",
-    "jp": "Screw%20nut"
-  },
-  "Crickent ライター": {
-    "en": "Crickent_lighter",
-    "jp": "Crickent%20lighter"
-  },
-  "ラットコーラ": {
-    "en": "ラットコーラ",
-    "jp": "ラットコーラ"
-  },
-  "社員寮303号室の鍵": {
-    "en": "Dorm_room_303_key",
-    "jp": "Dorm%20room%20303%20key"
-  },
-  "シルバーバッジ": {
-    "en": "シルバーバッジ",
-    "jp": "シルバーバッジ"
-  },
-  "機密情報フォルダー": {
-    "en": "Folder_with_intelligence",
-    "jp": "Folder%20with%20intelligence"
-  },
-  "CPU": {
-    "en": "CPU",
-    "jp": "CPU"
-  },
-  "キビナゴの缶詰": {
-    "en": "キビナゴの缶詰",
-    "jp": "キビナゴの缶詰"
-  },
-  "電圧コンバータ": {
-    "en": "Voltage_converter",
-    "jp": "Voltage%20converter"
-  },
-  "PAID 殺虫剤": {
-    "en": "PAID_殺虫剤",
-    "jp": "PAID%20殺虫剤"
-  },
-  "除細動器": {
-    "en": "LEDX_Skin_Transilluminator",
-    "jp": "LEDX"
-  },
-  "PM ピストル": {
-    "en": "PM_ピストル",
-    "jp": "PM%20ピストル"
-  },
-  "ダイアリー": {
-    "en": "ダイアリー",
-    "jp": "ダイアリー"
-  },
-  "P22 (Product 22) の注射器": {
-    "en": "P22_(Product_22)_の注射器",
-    "jp": "P22%20(Product%2022)%20の注射器"
-  },
-  "ソーイングセット": {
-    "en": "Sewing_kit",
-    "jp": "Sewing%20kit"
-  },
-  "OLI 物流部事務室の鍵": {
-    "en": "OLI_logistics_department_office_key",
-    "jp": "OLI%20logistics%20department%20office%20key"
-  },
-  "Smoke バラクラバ": {
-    "en": "Smoke_バラクラバ",
-    "jp": "Smoke%20バラクラバ"
-  },
-  "Veritas ギターピック": {
-    "en": "Veritas_ギターピック",
-    "jp": "Veritas%20ギターピック"
-  },
-  "OLOLO マルチビタミン": {
-    "en": "OLOLO_マルチビタミン",
-    "jp": "OLOLO%20マルチビタミン"
-  },
-  "RB-ORB3 の鍵": {
-    "en": "RB-ORB3_key",
-    "jp": "RB-ORB3"
-  },
-  "電動ドリル": {
-    "en": "Electric_drill",
-    "jp": "Electric%20drill"
-  },
-  "電磁石": {
-    "en": "Magnet",
-    "jp": "Magnet"
-  },
-  "TGLabs SJ9 の注射器": {
-    "en": "TGLabs_SJ9_の注射器",
-    "jp": "TGLabs%20SJ9%20の注射器"
-  },
-  "GPS 信号増幅器": {
-    "en": "GPS_信号増幅器",
-    "jp": "GPS%20信号増幅器"
-  },
-  "ELITE ペンチ": {
-    "en": "ELITE_ペンチ",
-    "jp": "ELITE%20ペンチ"
-  },
-  "Gzhel-K ボディアーマー (0-50%)": {
-    "en": "Gzhel-K_ボディアーマー_(0-50%)",
-    "jp": "Gzhel-K%20ボディアーマー%20(0-50%)"
-  },
-  "アンティークの本": {
-    "en": "アンティークの本",
-    "jp": "アンティークの本"
-  },
-  "救急包帯": {
-    "en": "Aseptic_bandage",
-    "jp": "Aseptic%20bandage"
-  },
-  "黄金のニワトリ": {
-    "en": "Golden_rooster",
-    "jp": "Golden%20rooster"
-  },
-  "保養所 西棟220号室の鍵": {
-    "en": "Sanatorium_west_wing_room_220_key",
-    "jp": "Sanatorium%20west%20wing%20room%220%20key"
-  },
-  "電源ケーブル": {
-    "en": "Power_cord",
-    "jp": "Power%20cord"
-  },
-  "CMS サージカルキット": {
-    "en": "CMS_サージカルキット",
-    "jp": "CMS%20サージカルキット"
-  },
-  "Roler サブマリーナー": {
-    "en": "Roler_サブマリーナー",
-    "jp": "Roler%20サブマリーナー"
-  },
-  "ビニル絶縁電線": {
-    "en": "Wires",
-    "jp": "Wires"
-  },
-  "WI-FI カメラ": {
-    "en": "WI-FI_カメラ",
-    "jp": "WI-FI%20カメラ"
-  },
-  "ポキセラム": {
-    "en": "Poxeram",
-    "jp": "Poxeram"
-  },
-  "AHF1-M の注射器": {
-    "en": "AHF1-M_stimulant_injector",
-    "jp": "AHF1-M"
-  },
-  "トレーラーパークの可搬式詰所の鍵": {
-    "en": "トレーラーパークの可搬式詰所の鍵",
-    "jp": "トレーラーパークの可搬式詰所の鍵"
-  },
-  "Tarcone 管理事務室の鍵": {
-    "en": "Tarcone_Director%27s_office_key",
-    "jp": "Tarcone%20Director%27s%20office%20key"
-  },
-  "金のスカルリング": {
-    "en": "Golden_skull_ring",
-    "jp": "Golden%20skull%20ring"
-  },
-  "カーバッテリー": {
-    "en": "Car_battery",
-    "jp": "Car%20battery"
-  },
-  "ガスアナライザー": {
-    "en": "Gas_analyzer",
-    "jp": "Gas%20analyzer"
-  },
-  "ラチェットレンチ": {
-    "en": "Ratchet_wrench",
-    "jp": "Ratchet%20wrench"
-  },
-  "DeadlySlob's ビアードオイル": {
-    "en": "DeadlySlob's_ビアードオイル",
-    "jp": "DeadlySlob's%20ビアードオイル"
-  },
-  "ルートロードのぬいぐるみ": {
-    "en": "ルートロードのぬいぐるみ",
-    "jp": "ルートロードのぬいぐるみ"
-  },
-  "トイレットペーパー": {
-    "en": "Toilet_paper",
-    "jp": "Toilet%20paper"
-  },
-  "青いテープの貼られた保養所の事務室の鍵": {
-    "en": "Sanatorium_office_key_with_a_blue_tape",
-    "jp": "Sanatorium%20office%20key%20with%20a%20blue%20tape"
-  },
-  "プロパンタンク (5L)": {
-    "en": "プロパンタンク_(5L)",
-    "jp": "プロパンタンク%20(5L)"
-  },
-  "トリマドールの注射器": {
-    "en": "トリマドールの注射器",
-    "jp": "トリマドールの注射器"
-  },
-  "シュストリロ シーリングフォーム": {
-    "en": "Shustrilo_sealing_foam",
-    "jp": "Shustrilo%20sealing%20foam"
-  },
-  "シリコンチューブ": {
-    "en": "シリコンチューブ",
-    "jp": "シリコンチューブ"
-  },
-  "軍用コルゲートチューブ": {
-    "en": "Military_corrugated_tube",
-    "jp": "Military%20corrugated%20tube"
-  },
-  "LVNDMARK's 殺鼠剤": {
-    "en": "LVNDMARK's_殺鼠剤",
-    "jp": "LVNDMARK's%20殺鼠剤"
-  },
-  "アラミド繊維の生地": {
-    "en": "Aramid_fiber_fabric",
-    "jp": "Aramid%20fiber%20fabric"
-  },
-  "コンデンサ": {
-    "en": "Capacitors",
-    "jp": "Capacitors"
-  }
+    "モーター": {
+        "uri": "Electric%20motor"
+    },
+    "RB-OB の鍵": {
+        "uri": "RB-OB%20key"
+    },
+    "TT-33 7.62x25 TT pistol (Golden)": {
+        "uri": "TT-33%207.62x25%20TT%20pistol%20%28Golden%29"
+    },
+    "マルボロ シガレット": {
+        "uri": "Malboro%20Cigarettes"
+    },
+    "Lucky Scav ジャンクボックス": {
+        "uri": "Lucky%20Scav%20Junk%20box"
+    },
+    "軍用パワーフィルター": {
+        "uri": "Military%20power%20filter"
+    },
+    "WD-40 (100ml)": {
+        "uri": "WD-40%20%28100ml%29"
+    },
+    "WD-40": {
+        "uri": "WD-40%20%28100ml%29"
+    },
+    "金属製のスペアパーツ": {
+        "uri": "Metal%20spare%20parts"
+    },
+    "グラフィックボード": {
+        "uri": "Graphics%20card"
+    },
+    "Glorious E lightweight armored mask": {
+        "uri": "Glorious%20E%20lightweight%20armored%20mask"
+    },
+    "ミリタリーケーブル": {
+        "uri": "Military%20cable"
+    },
+    "Kalashnikov AK-74N 5.45x39 assault rifle": {
+        "uri": "Kalashnikov%20AK-74N%205.45x39%20assault%20rifle"
+    },
+    "Domontovich ushanka hat": {
+        "uri": "Domontovich%20ushanka%20hat"
+    },
+    "箱入りのクギ": {
+        "uri": "Pack%20of%20nails"
+    },
+    "MP-133 12ga ポンプアクション ショットガン": {
+        "uri": "MP-133%2012ga%20pump-action%20shotgun"
+    },
+    "オブドルボス カクテルの注射器": {
+        "uri": "Obdolbos%20cocktail%20injector"
+    },
+    "RB-KSM の鍵": {
+        "uri": "RB-KSM%20key"
+    },
+    "ダクトテープ": {
+        "uri": "Duct%20tape"
+    },
+    "地形図": {
+        "uri": "Topographic%20survey%20maps"
+    },
+    "JohnB Liquid DNB glasses": {
+        "uri": "JohnB%20Liquid%20DNB%20glasses"
+    },
+    "TerraGroup ストレージルーム キーカード": {
+        "uri": "TerraGroup%20storage%20room%20keycard"
+    },
+    "ゼノモーフ シーリングフォーム": {
+        "uri": "Xenomorph%20sealing%20foam"
+    },
+    "Ushanka ear flap hat": {
+        "uri": "Ushanka%20ear%20flap%20hat"
+    },
+    "イスクラ レーションパック": {
+        "uri": "Iskra%20relation%20pack"
+    },
+    "軍用 COFDM 無線信号送信機": {
+        "uri": "Military%20COFDM%20wireless%20signal%20transmitter"
+    },
+    "Inseq gas pipe wrench": {
+        "uri": "Inseq%20gas%20pipe%20wrench"
+    },
+    "白熱電球": {
+        "uri": "Light%20bulb"
+    },
+    "CPUファン": {
+        "uri": "CPU%20fan"
+    },
+    "映画 \"サイボーグ・キラー\" のビデオ": {
+        "uri": "Video%20cassette%20with%20the%20Cyborg%20Killer%20movie"
+    },
+    "BOSS キャップ": {
+        "uri": "BOSS%20cap"
+    },
+    "ビーフシチューの缶詰 (大)": {
+        "uri": "Can%20of%20beef%20stew%20%28Large%29"
+    },
+    "アナログ温度計": {
+        "uri": "Analog%20thermometer"
+    },
+    "Shturman's stash key": {
+        "uri": "Shturman%27s%20stash%20key"
+    },
+    "オウムの Axel の置物": {
+        "uri": "Axel%20parrot%20figurine"
+    },
+    "SSD": {
+        "uri": "SSD%20drive"
+    },
+    "TerraGroup Labs アクセスキーカード": {
+        "uri": "TerraGroup%20Labs%20access%20keycard"
+    },
+    "手術室の鍵": {
+        "uri": "Operating%20room%20key"
+    },
+    "Pipe%20grip%20wrench": {
+        "uri": "Pipe%20wrench"
+    },
+    "スパークプラグ": {
+        "uri": "Spark%20plug"
+    },
+    "検眼鏡": {
+        "uri": "Ophthalmoscope"
+    },
+    "電球形蛍光灯": {
+        "uri": "Energy-saving%20lamp"
+    },
+    "モルヒネの注射器": {
+        "uri": "Morphine%20injector"
+    },
+    "Ox 漂白剤": {
+        "uri": "Ox%20bleach"
+    },
+    "Module-3M ボディアーマー": {
+        "uri": "BNTI%20Module-3M%20body%20armor"
+    },
+    "プリント基板": {
+        "uri": "Printed%20circuit%20board"
+    },
+    "TerraGroup 科学オフィスの鍵": {
+        "uri": "TerraGroup%20science%20office%20key"
+    },
+    "金属製燃料タンク": {
+        "uri": "Metal%20fuel%20tank"
+    },
+    "フェーズドアレイ アンテナの部品": {
+        "uri": "Phased%20array%20element"
+    },
+    "マジャイカ コーヒー豆": {
+        "uri": "Can%20of%20Majaica%20coffee%20beans"
+    },
+    "\"Maska-1SCh\" bulletproof helmet (Killa)": {
+        "uri": "Maska-1SCh%20bulletproof%20helmet%20%28Olive%20Drab%29"
+    },
+    "Bulbex ラチェットケーブルカッター": {
+        "uri": "Bulbex%20cable%20cutter"
+    },
+    "Gingyのキーホルダー": {
+        "uri": "Gingy%20keychain"
+    },
+    "Factory plan map": {
+        "uri": "Factory%20plan%20map"
+    },
+    "Goshan のレジの鍵": {
+        "uri": "Goshan%20cash%20register%20key"
+    },
+    "用途不明の鍵": {
+        "uri": "Unknown%20key"
+    },
+    "GreenBat リチウムイオン電池": {
+        "uri": "GreenBat%20lithium%20battery"
+    },
+    "固形石鹸": {
+        "uri": "Soap"
+    },
+    "使い捨て注射器": {
+        "uri": "Disposable%20syringe"
+    },
+    "#FireKlean ガンオイル": {
+        "uri": "FireKlean%20gun%20lube"
+    },
+    "Mazoni golden dumbbell": {
+        "uri": "Mazoni%20golden%20dumbbell"
+    },
+    "コテージの裏口の鍵": {
+        "uri": "Cottage%20back%20door%20key"
+    },
+    "金のチェーンネックレス": {
+        "uri": "Golden%20neck%20chain"
+    },
+    "OFZ 30x160mm 砲弾": {
+        "uri": "OFZ%2030x165mm%20shell"
+    },
+    "液晶パネル": {
+        "uri": "Working%20LCD"
+    },
+    "Baddie's red beard": {
+        "uri": "Baddie's%20red%20beard"
+    },
+    "アンティークのティーポット": {
+        "uri": "Antique%20teapot"
+    },
+    "SurvL サバイバルライター": {
+        "uri": "SurvL%20Survivor%20Lighter"
+    },
+    "Elite ペンチ": {
+        "uri": "Pliers%20Elite"
+    },
+    "42 シグニチャーブレンド 英国紅茶": {
+        "uri": "42%20Signature%20Blend%20English%20Tea"
+    },
+    "RB-ORB1 の鍵": {
+        "uri": "RB-ORB1%20key"
+    },
+    "炭酸水素ナトリウム": {
+        "uri": "Pack%20of%20sodium%20bicarbonate"
+    },
+    "Shroud ハーフマスク": {
+        "uri": "Shroud%20half-mask"
+    },
+    "アンティークの斧": {
+        "uri": "Antique%20axe"
+    },
+    "メルドニンの注射器": {
+        "uri": "Meldonin%20injector"
+    },
+    "WZ ウォレット": {
+        "uri": "WZ%20Wallet"
+    },
+    "保養所 東棟306号室の鍵": {
+        "uri": "Health%20Resort%20east%20wing%20room%20306%20key"
+    },
+    "クリン ガラスクリーナー": {
+        "uri": "Clin%20window%20cleaner"
+    },
+    "社員寮203号室の鍵": {
+        "uri": "Dorm%20room%20203%20Key"
+    },
+    "Factory 非常口の鍵": {
+        "uri": "Factory%20emergency%20exit%20key"
+    },
+    "スパナ": {
+        "uri": "Wrench"
+    },
+    "Gzhel-K ボディアーマー (50-100%)": {
+        "uri": "BNTI%20Gzhel-K%20body%20armor"
+    },
+    "保養所 西棟休憩室112号室の鍵": {
+        "uri": "Health%20Resort%20west%20wing%20office%20room%20112%20key"
+    },
+    "輸血セット": {
+        "uri": "Medical%20bloodset"
+    },
+    "プレキシグラス": {
+        "uri": "Piece%20of%20plexiglass"
+    },
+    "6-STEN-140-M 軍用バッテリー": {
+        "uri": "6-STEN-140-M%20military%20battery"
+    },
+    "AK-74 5.45x39 6L31 60-round magazine": {
+        "uri": "AK-74%205.45x39%206L31%2060-round%20magazine"
+    },
+    "アルカリクリーナー": {
+        "uri": "Alkaline%20cleaner%20for%20heat%20exchangers"
+    },
+    "コンベックス": {
+        "uri": "Construction%20measuring%20tape"
+    },
+    "Pestily ペストマスク": {
+        "uri": "Pestily%20plague%20mask"
+    },
+    "食用塩": {
+        "uri": "Can%20of%20white%20salt"
+    },
+    "軍用回路基板": {
+        "uri": "Military%20circuit%20board"
+    },
+    "青銅のライオン": {
+        "uri": "Bronze%20lion%20figurine"
+    },
+    "アーマーリペアキット": {
+        "uri": "Body%20armor%20repair%20kit"
+    },
+    "DVDドライブ": {
+        "uri": "DVD%20drive"
+    },
+    "絶縁テープ": {
+        "uri": "Insulating%20tape"
+    },
+    "会社役員室の鍵": {
+        "uri": "Operating%20room%20key"
+    },
+    "RB-SMP の鍵": {
+        "uri": "RB-SMP%20key"
+    },
+    "TGLabs SJ1 の注射器": {
+        "uri": "SJ1%20TGLabs%20combat%20stimulant%20injector"
+    },
+    "エスマルヒ 止血帯": {
+        "uri": "Esmarch%20tourniquet"
+    },
+    "Pilgrim ツーリストバックパック": {
+        "uri": "Pilgrim%20tourist%20backpack"
+    },
+    "MRE レーションパック": {
+        "uri": "MRE%20ration%20pack"
+    },
+    "RB-ORB2 の鍵": {
+        "uri": "RB-ORB2%20key"
+    },
+    "丸ペンチ": {
+        "uri": "Round%20pliers"
+    },
+    "アンティークの花瓶": {
+        "uri": "Antique%20vase"
+    },
+    "デビルドッグ マヨネーズ": {
+        "uri": "Jar%20of%20DevilDog%20mayonnaise"
+    },
+    "Missamのフォークリフトの鍵": {
+        "uri": "Missam%20forklift%20key"
+    },
+    "圧力計": {
+        "uri": "Pressure%20gauge"
+    },
+    "フューエルコンディショナー": {
+        "uri": "Fuel%20conditioner"
+    },
+    "金切りバサミ": {
+        "uri": "Metal%20cutting%20scissors"
+    },
+    "Pack of instant noodles": {
+        "uri": "Pack%20of%20instant%20noodles"
+    },
+    "M4A1 5.56x45 アサルトライフル Standard": {
+        "uri": "Colt%20M4A1%205.56x45%20assault%20rifle%20Carbine"
+    },
+    "医薬品": {
+        "uri": "Pile%20of%20meds"
+    },
+    "LEDX 静脈発見器": {
+        "uri": "LEDX%20Skin%20Transilluminator"
+    },
+    "充電式バッテリー": {
+        "uri": "Rechargeable%20battery"
+    },
+    "UHF RFID リーダー": {
+        "uri": "UHF%20RFID%20Reader"
+    },
+    "社員寮114号室の鍵": {
+        "uri": "Dorm%20room%20114%20Key"
+    },
+    "NIXXOR レンズ": {
+        "uri": "NIXXOR%20lens"
+    },
+    "ストライク シガレット": {
+        "uri": "Strike%20Cigarettes"
+    },
+    "TOZ-106 ボルトアクションショットガン": {
+        "uri": "TOZ-106%2020ga%20bolt-action%20shotgun"
+    },
+    "マークの刻まれた社員寮314号室の鍵": {
+        "uri": "Dorm%20room%20314%20marked%20key"
+    },
+    "袋入りのネジ": {
+        "uri": "Pack%20of%20screws"
+    },
+    "暗号化された USB フラッシュドライブ": {
+        "uri": "Secure%20Flash%20drive"
+    },
+    "固形燃料": {
+        "uri": "Dry%20fuel"
+    },
+    "サービスマニュアル": {
+        "uri": "Tech%20manual"
+    },
+    "保養所 西棟219号室の鍵": {
+        "uri": "Health%20Resort%20west%20wing%20room%20219%20key"
+    },
+    "RB-ST の鍵": {
+        "uri": "RB-ST%20key"
+    },
+    "生理食用塩水": {
+        "uri": "Bottle%20of%20saline%20solution"
+    },
+    "ミリタリーフラッシュドライブ": {
+        "uri": "Military%20flash%20drive"
+    },
+    "保養所 西棟306号室の鍵": {
+        "uri": "Health%20Resort%20west%20wing%20room%20306%20key"
+    },
+    "カウボーイハット": {
+        "uri": "Kinda%20cowboy%20hat"
+    },
+    "Evasion アームバンド": {
+        "uri": "Evasion%20armband"
+    },
+    "カラスの置物": {
+        "uri": "Raven%20figurine"
+    },
+    "特殊車両の鍵": {
+        "uri": "Machinery%20key"
+    },
+    "フリースの生地": {
+        "uri": "Fleece%20fabric"
+    },
+    "マッチ": {
+        "uri": "Classic%20matches"
+    },
+    "BEAR バディのぬいぐるみ": {
+        "uri": "BEAR%20Buddy%20plush%20toy"
+    },
+    "ケクテープ": {
+        "uri": "KEKTAPE%20duct%20tape"
+    },
+    "可搬式の詰所の鍵": {
+        "uri": "Portable%20bunkhouse%20key"
+    },
+    "保養所 東棟308号室の鍵": {
+        "uri": "Health%20Resort%20east%20wing%20room%20308%20key"
+    },
+    "千枚通し": {
+        "uri": "Awl"
+    },
+    "テルミット": {
+        "uri": "Can%20of%20thermite"
+    },
+    "故障したハードディスク": {
+        "uri": "Damaged%20hard%20drive"
+    },
+    "ハーフマスク": {
+        "uri": "Lower%20half-mask"
+    },
+    "社員寮220号室の鍵": {
+        "uri": "Dorm%20room%20220%20Key"
+    },
+    "コーデュラナイロンの生地": {
+        "uri": "Cordura%20polyamide%20fabric"
+    },
+    "手術器具": {
+        "uri": "Medical%20tools"
+    },
+    "保養所 東棟328号室の鍵": {
+        "uri": "Health%20Resort%20east%20wing%20room%20328%20key"
+    },
+    "6B43 Zabralo-Sh ボディアーマー (50-100%)": {
+        "uri": "6B43%20Zabralo-Sh%20body%20armor%20%28Digital%20Flora%29"
+    },
+    "パイプクリーナー": {
+        "uri": "Smoked%20Chimney%20drain%20cleaner"
+    },
+    "ビーフシチューの缶詰 (小)": {
+        "uri": "Can%20of%20beef%20stew%20%28Small%29"
+    },
+    "壊れた GPhone": {
+        "uri": "Broken%20GPhone%20smartphone"
+    },
+    "L1 (ノルエピネフリン)の注射器": {
+        "uri": "L1%20%28Norepinephrine%29%20injector"
+    },
+    "フィアスブロウ スレッジハンマー": {
+        "uri": "Fierce%20Blow%20sledgehammer"
+    },
+    "TP-200 TNT火薬": {
+        "uri": "TP-200%20TNT%20brick"
+    },
+    "コルゲートチューブ": {
+        "uri": "Corrugated%20hose"
+    },
+    "ツールセット": {
+        "uri": "Toolset"
+    },
+    "DRD body armor": {
+        "uri": "DRD%20body%20armor"
+    },
+    "SMT データカートリッジ": {
+        "uri": "Secure%20magnetic%20tape%20cassette"
+    },
+    "保養所 西棟216号室の鍵": {
+        "uri": "Health%20Resort%20west%20wing%20room%20216%20key"
+    },
+    "BakeEzy レシピ本": {
+        "uri": "BakeEzy%20cook%20book"
+    },
+    "古いファイヤースチール": {
+        "uri": "Old%20firesteel"
+    },
+    "ウィルストン シガレット": {
+        "uri": "Wilston%20cigarettes"
+    },
+    "ネコの置物": {
+        "uri": "Cat%20figurine"
+    },
+    "\"Master\" ヤスリセット": {
+        "uri": "Set%20of%20files%20Master"
+    },
+    "T型プラグ": {
+        "uri": "T-Shaped%20plug"
+    },
+    "ガスマスクのフィルター": {
+        "uri": "Gas%20mask%20air%20filter"
+    },
+    "電子部品": {
+        "uri": "Electronic%20components"
+    },
+    "Salewa ファーストエイドキット": {
+        "uri": "Salewa%20first%20aid%20kit"
+    },
+    "歯磨き粉": {
+        "uri": "Toothpaste"
+    },
+    "チェーンネックレス": {
+        "uri": "チェーンネックレス"
+    },
+    "VPX フラッシュストレージモジュール": {
+        "uri": "VPX%20Flash%20Storage%20Module"
+    },
+    "ハンドドリル": {
+        "uri": "Hand%20drill"
+    },
+    "電源ユニット": {
+        "uri": "Power%20supply%20unit"
+    },
+    "密造酒 \"フィアス ハッチリング\"": {
+        "uri": "Bottle%20of%20Fierce%20Hatchling%20moonshine"
+    },
+    "三相監視リレー": {
+        "uri": "Phase%20control%20relay"
+    },
+    "ウマの置物": {
+        "uri": "Horse%20figurine"
+    },
+    "銃器のパーツ": {
+        "uri": "Weapon%20parts"
+    },
+    "Leatherman マルチツール": {
+        "uri": "Leatherman%20Multitool"
+    },
+    "ゴールデンエッグ": {
+        "uri": "Golden%20egg"
+    },
+    "NoiceGuy のプレスカード": {
+        "uri": "Press%20pass%20%28issued%20for%20NoiceGuy%29"
+    },
+    "Nut Sack balaclava": {
+        "uri": "Nut%20Sack%20balaclava"
+    },
+    "6B43 Zabralo-Sh ボディアーマー (0-50%)": {
+        "uri": "6B43%20Zabralo-Sh%20body%20armor%20%28Digital%20Flora%29"
+    },
+    "Keycard with a blue marking": {
+        "uri": "Keycard%20with%20a%20blue%20marking"
+    },
+    "Viibiin sneaker": {
+        "uri": "Viibiin%20sneaker"
+    },
+    "1GPhone オレンジゴールド": {
+        "uri": "Golden%201GPhone%20smartphone"
+    },
+    "Tamatthi kunai knife replica": {
+        "uri": "Tamatthi%20kunai%20knife%20replica"
+    },
+    "電熱線": {
+        "uri": "Radiator%20helix"
+    },
+    "ボルト": {
+        "uri": "Bolts"
+    },
+    "Tigzresq splint": {
+        "uri": "Tigzresq%20splint"
+    },
+    "ハンティングマッチ": {
+        "uri": "Hunting%20matches"
+    },
+    "Kotton ビーニー": {
+        "uri": "Kotton%20beanie"
+    },
+    "EMERCOM の仮設診療所の鍵": {
+        "uri": "EMERCOM%20medical%20unit%20key"
+    },
+    "3-(b-TG) の注射器": {
+        "uri": "3-%28b-TG%29%20stimulant%20injector"
+    },
+    "付け髭": {
+        "uri": "Fake%20mustache"
+    },
+    "ポケットダイアリー": {
+        "uri": "Slim%20diary"
+    },
+    "Dr. Lupo's コーヒー豆": {
+        "uri": "Can%20of%20Dr.%20Lupo%27s%20coffee%20beans"
+    },
+    "ナット": {
+        "uri": "Screw%20nuts"
+    },
+    "Crickent ライター": {
+        "uri": "Crickent%20lighter"
+    },
+    "ラットコーラ": {
+        "uri": "Can%20of%20RatCola%20soda"
+    },
+    "社員寮303号室の鍵": {
+        "uri": "Dorm%20room%20303%20Key"
+    },
+    "シルバーバッジ": {
+        "uri": "Silver%20Badge"
+    },
+    "機密情報フォルダー": {
+        "uri": "Intelligence%20folder"
+    },
+    "CPU": {
+        "uri": "PC%20CPU"
+    },
+    "キビナゴの缶詰": {
+        "uri": "Can%20of%20sprats"
+    },
+    "電圧コンバータ": {
+        "uri": "Advanced%20current%20converter"
+    },
+    "PAID 殺虫剤": {
+        "uri": "PAID%20AntiRoach%20spray"
+    },
+    "除細動器": {
+        "uri": "Portable%20defibrillator"
+    },
+    "Makarov PM 9x18PM pistol": {
+        "uri": "Makarov%20PM%209x18PM%20pistol"
+    },
+    "ダイアリー": {
+        "uri": "Diary"
+    },
+    "P22 (Product 22) の注射器": {
+        "uri": "P22%20(Product%2022)%20stimulant%20injector"
+    },
+    "ソーイングセット": {
+        "uri": "Sewing%20kit"
+    },
+    "OLI 物流部事務室の鍵": {
+        "uri": "OLI%20logistics%20department%20office%20key"
+    },
+    "Smoke バラクラバ": {
+        "uri": "Smoke%20balaclava"
+    },
+    "Veritas ギターピック": {
+        "uri": "Veritas%20guitar%20pick"
+    },
+    "OLOLO マルチビタミン": {
+        "uri": "Bottle%20of%20OLOLO%20Multivitamins"
+    },
+    "RB-ORB3 の鍵": {
+        "uri": "RB-ORB3%20Key"
+    },
+    "電動ドリル": {
+        "uri": "Electric%20drill"
+    },
+    "電磁石": {
+        "uri": "Magnet"
+    },
+    "TGLabs SJ9 の注射器": {
+        "uri": "SJ9%20TGLabs%20combat%20stimulant%20injector"
+    },
+    "GPS 信号増幅器": {
+        "uri": "Far-forward%20GPS%20Signal%20Amplifier%20Unit"
+    },
+    "Gzhel-K ボディアーマー (0-50%)": {
+        "uri": "BNTI%20Gzhel-K%20body%20armor"
+    },
+    "アンティークの本": {
+        "uri": "Battered%20antique%20book"
+    },
+    "救急包帯": {
+        "uri": "Aseptic%20bandage"
+    },
+    "黄金のニワトリ": {
+        "uri": "Golden%20rooster%20figurine"
+    },
+    "保養所 西棟220号室の鍵": {
+        "uri": "Health%20Resort%20west%20wing%20room%20220%20key"
+    },
+    "電源ケーブル": {
+        "uri": "Power%20cord"
+    },
+    "CMS サージカルキット": {
+        "uri": "CMS%20surgical%20kit"
+    },
+    "Roler サブマリーナー": {
+        "uri": "Roler%20Submariner%20gold%20wrist%20watch"
+    },
+    "ビニル絶縁電線": {
+        "uri": "Bundle%20of%20wires"
+    },
+    "WI-FI カメラ": {
+        "uri": "WI-FI%20Camera"
+    },
+    "ポキセラム": {
+        "uri": "Tube%20of%20Poxeram%20cold%20welding"
+    },
+    "AHF1-M の注射器": {
+        "uri": "AHF1-M%20stimulant%20injector"
+    },
+    "トレーラーパークの可搬式詰所の鍵": {
+        "uri": "Trailer%20park%20portable%20cabin%20key"
+    },
+    "Tarcone 管理事務室の鍵": {
+        "uri": "Tarcone%20Director%27s%20office%20key"
+    },
+    "金のスカルリング": {
+        "uri": "Gold%20skull%20ring"
+    },
+    "カーバッテリー": {
+        "uri": "Car%20battery"
+    },
+    "ガスアナライザー": {
+        "uri": "Gas%20analyzer"
+    },
+    "ラチェットレンチ": {
+        "uri": "Ratchet%20wrench"
+    },
+    "DeadlySlob's ビアードオイル": {
+        "uri": "Deadlyslob%27s%20beard%20oil"
+    },
+    "ルートロードのぬいぐるみ": {
+        "uri": "Loot%20Lord%20plushie"
+    },
+    "トイレットペーパー": {
+        "uri": "Toilet%20paper"
+    },
+    "青いテープの貼られた保養所の事務室の鍵": {
+        "uri": "Health%20Resort%20office%20key%20with%20a%20blue%20tape"
+    },
+    "プロパンタンク (5L)": {
+        "uri": "Propane%20tank%20%285L%29"
+    },
+    "トリマドールの注射器": {
+        "uri": "Trimadol%20stimulant%20injector"
+    },
+    "シュストリロ シーリングフォーム": {
+        "uri": "Shustrilo%20sealing%20foam"
+    },
+    "シリコンチューブ": {
+        "uri": "Silicone%20tube"
+    },
+    "軍用コルゲートチューブ": {
+        "uri": "Military%20corrugated%20tube"
+    },
+    "LVNDMARK's 殺鼠剤": {
+        "uri": "LVNDMARK%27s%20rat%20poison"
+    },
+    "アラミド繊維の生地": {
+        "uri": "Aramid%20fiber%20fabric"
+    },
+    "コンデンサ": {
+        "uri": "Capacitors"
+    }
 }

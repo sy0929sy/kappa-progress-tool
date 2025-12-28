@@ -19,14 +19,20 @@ const firebaseConfig = {
 // Helper to generate Wiki URL for items
 function getItemWikiUrl(itemName) {
   const mapEntry = ITEM_MAP[itemName];
+
   if (wikiLang === "en") {
     // English: Direct link to Fandom Wiki
-    const slug = mapEntry?.en || itemName.replace(/\s+/g, '_');
+    const baseName = mapEntry?.uri ?? itemName;
+
+    const slug = decodeURIComponent(baseName)
+      .replace(/\s+/g, "_");
+
     return `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(slug)}`;
+
   } else {
     // Japanese: Map entry direct link or search on Wikiwiki
-    if (mapEntry?.jp) {
-      return `https://wikiwiki.jp/eft/${mapEntry.jp}`;
+    if (mapEntry?.uri) {
+      return `https://wikiwiki.jp/eft/${mapEntry.uri}`;
     }
     return `https://wikiwiki.jp/eft/?cmd=search&word=${encodeURIComponent(itemName)}`;
   }

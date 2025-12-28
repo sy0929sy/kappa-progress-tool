@@ -132,7 +132,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "AK-74 5.45x39 6L31 60連マガジン",
+				"name": "AK-74 5.45x39 6L31 60-round magazine",
 				"count": 3,
 				"fir": true
 			}
@@ -249,12 +249,12 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "AK-74N",
+				"name": "Kalashnikov AK-74N 5.45x39 アサルトライフル",
 				"count": 1,
 				"fir": true
 			},
 			{
-				"name": "M4A1",
+				"name": "M4A1 5.56x45 アサルトライフル Standard",
 				"count": 1,
 				"fir": true
 			},
@@ -383,7 +383,7 @@
 		"kappaRequired": true,
 		"requiredItems": [
 			{
-				"name": "6-STE-M2 軍用バッテリー",
+				"name": "6-STEN-140-M 軍用バッテリー",
 				"count": 1,
 				"fir": true
 			},
@@ -1266,7 +1266,7 @@
 				"fir": true
 			},
 			{
-				"name": "映画 サイボーグ・キラー のビデオ",
+				"name": "映画 \"サイボーグ・キラー\" のビデオ",
 				"count": 1,
 				"fir": true
 			},

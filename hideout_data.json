@@ -13,7 +13,7 @@
           "count": 2500000
         },
         {
-          "name": "WD-40 100ml",
+          "name": "WD-40 (100ml)",
           "count": 4
         },
         {
@@ -151,7 +151,7 @@
           "level": 2
         },
         {
-          "name": "WD-40 100ml",
+          "name": "WD-40 (100ml)",
           "count": 2
         },
         {
@@ -1290,7 +1290,7 @@
           "fir": true
         },
         {
-          "name": "FireKlean ガンオイル",
+          "name": "#FireKlean ガンオイル",
           "count": 1,
           "fir": true
         },
@@ -1646,7 +1646,7 @@
           "fir": true
         },
         {
-          "name": "Lucky Scav Junk box",
+          "name": "Lucky Scav ジャンクボックス",
           "count": 1
         }
       ]
@@ -1993,7 +1993,7 @@
           "fir": true
         },
         {
-          "name": "WD-40 100ml",
+          "name": "WD-40 (100ml)",
           "count": 1
         },
         {
@@ -2060,7 +2060,7 @@
           "fir": true
         },
         {
-          "name": "ELITE ペンチ",
+          "name": "Elite ペンチ",
           "count": 1,
           "fir": true
         },
