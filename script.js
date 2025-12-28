@@ -391,6 +391,10 @@ function renderTasks(tasks, containerId) {
       ? `<span class="badge item-badge clickable-badge" onclick="window.showRequiredItems('${task.id}', '${containerId === 'taskList' ? 'kappa' : 'lk'}')">納品アイテム</span>`
       : "";
 
+    const keyHtml = (task.requiredKeys && task.requiredKeys.length > 0)
+      ? `<span class="badge key-badge clickable-badge" onclick="window.showRequiredKeys('${task.id}', '${containerId === 'taskList' ? 'kappa' : 'lk'}')">鍵必要</span>`
+      : "";
+
     const card = document.createElement("div");
     card.className = `task-card ${isCompleted ? 'completed' : ''}`;
 
@@ -420,6 +424,7 @@ function renderTasks(tasks, containerId) {
             ${levelHtml ? `<div class="req-row">${levelHtml}</div>` : ''}
             ${preHtml ? `<div class="req-row">${preHtml}</div>` : ''}
             ${itemHtml ? `<div class="req-row">${itemHtml}</div>` : ''}
+            ${keyHtml ? `<div class="req-row">${keyHtml}</div>` : ''}
           </div>
         </div>
       </div>
@@ -432,6 +437,49 @@ function renderTasks(tasks, containerId) {
 
   updateProgress();
 }
+
+// 鍵一覧表示用のモーダル
+window.showRequiredKeys = (taskId, type = 'kappa') => {
+  const tasks = type === 'kappa' ? TASKS : LK_TASKS;
+  const task = tasks.find(t => t.id === taskId);
+  if (!task || !task.requiredKeys || task.requiredKeys.length === 0) return;
+
+  const modal = document.getElementById('customModal');
+  const title = document.getElementById('modalTitle');
+  const message = document.getElementById('modalMessage');
+  const taskList = document.getElementById('modalTaskList');
+  const confirmBtn = document.getElementById('modalConfirm');
+  const cancelBtn = document.getElementById('modalCancel');
+
+  title.textContent = "必要な鍵";
+  message.textContent = "タスク完了に必要な鍵：";
+  taskList.innerHTML = '';
+
+  task.requiredKeys.forEach(keyName => {
+    const li = document.createElement('li');
+    li.innerHTML = `<b><a href="${getItemWikiUrl(keyName)}" target="_blank" class="wiki-link">${keyName}</a></b>`;
+    taskList.appendChild(li);
+  });
+
+  confirmBtn.style.display = 'none';
+  cancelBtn.textContent = '閉じる';
+  modal.style.display = 'flex';
+
+  const cleanup = () => {
+    cancelBtn.removeEventListener('click', handleClose);
+    confirmBtn.style.display = '';
+    cancelBtn.textContent = 'キャンセル';
+    title.textContent = '確認';
+    message.textContent = '以下のタスクも一括で完了になります：';
+  };
+
+  const handleClose = () => {
+    modal.style.display = 'none';
+    cleanup();
+  };
+
+  cancelBtn.addEventListener('click', handleClose);
+};
 
 // 前提タスクをすべて（先祖代々）取得する関数
 function getRecursivePreRequisites(taskId, taskList, allPreIds = new Set()) {

@@ -1440,6 +1440,20 @@ input:checked+.slider:before {
   white-space: nowrap;
 }
 
+/* 納品アイテムバッジ：少し明るい青 */
+.item-badge {
+  background-color: #2196f3;
+  color: white;
+  border: 1px solid #1976d2;
+}
+
+/* 鍵必要バッジ：黄色/オレンジ系（注意を引くため） */
+.key-badge {
+  background-color: #ff9800;
+  color: white;
+  border: 1px solid #f57c00;
+}
+
 /* リンクのスタイル微調整 */
 .wiki-link {
   text-decoration: none;

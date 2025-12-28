@@ -50,7 +50,10 @@
 		"preRequisites": [
 			"luxurious_life"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Machinery key"
+		]
 	},
 	{
 		"id": "shootout_picnic",
@@ -110,7 +113,10 @@
 		"preRequisites": [
 			"bp_depot"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Portable cabin key of Customs Factory zone"
+		]
 	},
 	{
 		"id": "ice_cream_cones",
@@ -176,7 +182,10 @@
 		"preRequisites": [
 			"ice_cream_cones"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Cabinet key"
+		]
 	},
 	{
 		"id": "big_customer",
