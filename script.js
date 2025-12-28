@@ -32,6 +32,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 let TASKS = [];
+let LK_TASKS = [];
 let HIDEOUT_DATA = {};
 let userData = { tasks: {}, hideout: {}, favorites: {}, traders: {} };
 let itemProgress = {};
@@ -41,16 +42,18 @@ let currentTheme = "light";
 let hideCompleted = true;
 let hideoutFirOnly = false;
 let hideoutNextOnly = false; // 次レベルのみ表示するかどうか
-const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
+const TRADERS = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger", "Lightkeeper"];
 let activeTraders = [...TRADERS];
 
 async function init() {
   try {
-    const [resTasks, resHideout] = await Promise.all([
+    const [resTasks, resLKTasks, resHideout] = await Promise.all([
       fetch("./tasks_kappa.json"),
+      fetch("./tasks_lightkeeper.json"),
       fetch("./hideout_data.json")
     ]);
     TASKS = await resTasks.json();
+    LK_TASKS = await resLKTasks.json();
     HIDEOUT_DATA = await resHideout.json();
 
     onAuthStateChanged(auth, async (user) => {
@@ -137,12 +140,12 @@ window.updateItemCount = async (name, delta) => {
   }
 };
 
-function renderRequiredItems() {
-  const container = document.getElementById("requiredItemsList");
+function renderRequiredItems(tasks, containerId) {
+  const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = "";
   const itemSummary = {};
-  TASKS.forEach(task => {
+  tasks.forEach(task => {
     if (!userData.tasks[task.id] && task.requiredItems) {
       task.requiredItems.forEach(item => {
         if (!itemSummary[item.name]) {
@@ -336,14 +339,14 @@ window.toggleFavorite = async (itemId) => {
   refreshUI();
 };
 
-function renderTasks() {
-  const container = document.getElementById("taskList");
+function renderTasks(tasks, containerId) {
+  const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = "";
 
   const searchText = document.getElementById("searchBox")?.value.toLowerCase() || "";
 
-  const filtered = TASKS.filter(t =>
+  const filtered = tasks.filter(t =>
     activeTraders.includes(t.trader) &&
     t.name.toLowerCase().includes(searchText) &&
     (!hideCompleted || !userData.tasks[t.id])
@@ -355,7 +358,7 @@ function renderTasks() {
     // 前提タスクの取得と「1つだけ表示」のロジック
     const preTaskIds = task.preRequisites || [];
     const preTaskNames = preTaskIds
-      .map(preId => TASKS.find(t => t.id === preId)?.name)
+      .map(preId => tasks.find(t => t.id === preId)?.name)
       .filter(Boolean);
 
     let preTasksDisplay = "";
@@ -376,7 +379,7 @@ function renderTasks() {
       : "";
 
     const itemHtml = (task.requiredItems && task.requiredItems.length > 0)
-      ? `<span class="badge item-badge clickable-badge" onclick="window.showRequiredItems('${task.id}')">納品アイテム</span>`
+      ? `<span class="badge item-badge clickable-badge" onclick="window.showRequiredItems('${task.id}', '${containerId === 'taskList' ? 'kappa' : 'lk'}')">納品アイテム</span>`
       : "";
 
     const card = document.createElement("div");
@@ -411,7 +414,7 @@ function renderTasks() {
           </div>
         </div>
       </div>
-      <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}')">
+      <button class="status-btn ${isCompleted ? 'completed' : ''}" onclick="window.toggleTask('${task.id}', '${containerId === 'taskList' ? 'kappa' : 'lk'}')">
         ${isCompleted ? '<span>✓</span> 完了' : '未完了'}
       </button>`;
 
@@ -422,8 +425,8 @@ function renderTasks() {
 }
 
 // 前提タスクをすべて（先祖代々）取得する関数
-function getRecursivePreRequisites(taskId, allPreIds = new Set()) {
-  const task = TASKS.find(t => t.id === taskId);
+function getRecursivePreRequisites(taskId, taskList, allPreIds = new Set()) {
+  const task = taskList.find(t => t.id === taskId);
   // taskがない、または前提条件が空の場合は現在のSetを返す
   if (!task || !task.preRequisites || task.preRequisites.length === 0) {
     return Array.from(allPreIds);
@@ -433,7 +436,7 @@ function getRecursivePreRequisites(taskId, allPreIds = new Set()) {
     if (!allPreIds.has(preId)) {
       allPreIds.add(preId);
       // さらに深く掘り下げる
-      getRecursivePreRequisites(preId, allPreIds);
+      getRecursivePreRequisites(preId, taskList, allPreIds);
     }
   }
   return Array.from(allPreIds);
@@ -479,8 +482,9 @@ function showConfirmModal(targetTasks) {
 }
 
 // 前提タスク一覧表示用のモーダル
-window.showPrerequisites = (taskId) => {
-  const task = TASKS.find(t => t.id === taskId);
+window.showPrerequisites = (taskId, type = 'kappa') => {
+  const tasks = type === 'kappa' ? TASKS : LK_TASKS;
+  const task = tasks.find(t => t.id === taskId);
   if (!task || !task.preRequisites || task.preRequisites.length === 0) return;
 
   const modal = document.getElementById('customModal');
@@ -497,7 +501,7 @@ window.showPrerequisites = (taskId) => {
   taskList.innerHTML = '';
   // 直近の前提タスクを表示
   task.preRequisites.forEach(preId => {
-    const preTask = TASKS.find(t => t.id === preId);
+    const preTask = tasks.find(t => t.id === preId);
     if (preTask) {
       const isDone = userData.tasks[preId];
       const statusIcon = isDone ? '✓' : '未';
@@ -532,8 +536,9 @@ window.showPrerequisites = (taskId) => {
 };
 
 // 必要アイテム一覧表示用のモーダル
-window.showRequiredItems = (taskId) => {
-  const task = TASKS.find(t => t.id === taskId);
+window.showRequiredItems = (taskId, type = 'kappa') => {
+  const tasks = type === 'kappa' ? TASKS : LK_TASKS;
+  const task = tasks.find(t => t.id === taskId);
   if (!task || !task.requiredItems || task.requiredItems.length === 0) return;
 
   const modal = document.getElementById('customModal');
@@ -580,21 +585,22 @@ window.showRequiredItems = (taskId) => {
 };
 
 // 既存の toggleTask を更新
-window.toggleTask = async (taskId) => {
-  const task = TASKS.find(t => t.id === taskId);
+window.toggleTask = async (taskId, type = 'kappa') => {
+  const tasks = type === 'kappa' ? TASKS : LK_TASKS;
+  const task = tasks.find(t => t.id === taskId);
   if (!task) return;
 
   const isNowCompleted = !userData.tasks[taskId];
 
   // 完了にする場合のみ一括チェックロジックを走らせる
   if (isNowCompleted) {
-    const preIds = getRecursivePreRequisites(taskId);
+    const preIds = getRecursivePreRequisites(taskId, tasks);
     // 未完了の前提タスクのみを抽出
     const incompletePres = preIds.filter(id => !userData.tasks[id]);
 
     if (incompletePres.length > 0) {
       const targetTaskObjects = incompletePres
-        .map(id => TASKS.find(t => t.id === id))
+        .map(id => tasks.find(t => t.id === id))
         .filter(Boolean);
 
       // カスタムモーダルを表示（モダンな確認画面）
@@ -606,7 +612,7 @@ window.toggleTask = async (taskId) => {
         });
       } else {
         // ユーザーが「キャンセル」を押した場合は、チェックを入れずに終了
-        renderTasks(); // 念のため再描画して状態を維持
+        refreshUI(); // 念のため再描画して状態を維持
         return;
       }
     }
@@ -625,8 +631,7 @@ window.toggleTask = async (taskId) => {
   }
 
   // UI更新
-  renderTasks();
-  renderRequiredItems();
+  refreshUI();
   updateProgress();
 };
 
@@ -674,7 +679,14 @@ function renderTraderLevels() {
   });
 }
 
-function refreshUI() { renderTasks(); renderRequiredItems(); renderHideout(); renderTraderLevels(); }
+function refreshUI() {
+  renderTasks(TASKS, "taskList");
+  renderRequiredItems(TASKS, "requiredItemsList");
+  renderTasks(LK_TASKS, "lkTaskList");
+  renderRequiredItems(LK_TASKS, "lkRequiredItemsList");
+  renderHideout();
+  renderTraderLevels();
+}
 
 function updateProgress() {
   const total = TASKS.length;
@@ -695,7 +707,7 @@ function setupTraderFilters() {
       const t = btn.dataset.trader;
       activeTraders = activeTraders.includes(t) ? activeTraders.filter(a => a !== t) : [...activeTraders, t];
       btn.classList.toggle("active");
-      renderTasks();
+      refreshUI();
     };
   });
 }
@@ -752,7 +764,7 @@ function setupEventListeners() {
   });
 
   // UI系
-  document.getElementById("searchBox")?.addEventListener("input", renderTasks);
+  document.getElementById("searchBox")?.addEventListener("input", refreshUI);
   document.getElementById("hideoutFirOnly")?.addEventListener("change", (e) => {
     hideoutFirOnly = e.target.checked;
     renderHideout();
@@ -761,12 +773,12 @@ function setupEventListeners() {
     hideoutNextOnly = e.target.checked;
     renderHideout();
   });
-  document.getElementById("wikiLangJP").onclick = () => { wikiLang = "jp"; updateWikiLangUI(); renderTasks(); };
-  document.getElementById("wikiLangEN").onclick = () => { wikiLang = "en"; updateWikiLangUI(); renderTasks(); };
+  document.getElementById("wikiLangJP").onclick = () => { wikiLang = "jp"; updateWikiLangUI(); refreshUI(); };
+  document.getElementById("wikiLangEN").onclick = () => { wikiLang = "en"; updateWikiLangUI(); refreshUI(); };
   document.getElementById("toggleCompletedBtn").onclick = (e) => {
     hideCompleted = !hideCompleted;
     e.target.textContent = hideCompleted ? "完了済を非表示中" : "完了済を表示中";
-    renderTasks();
+    refreshUI();
   };
   document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.onclick = () => {
