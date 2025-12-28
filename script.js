@@ -18,11 +18,16 @@ const firebaseConfig = {
 
 // Helper to generate Wiki URL for items
 function getItemWikiUrl(itemName) {
+  const mapEntry = ITEM_MAP[itemName];
   if (wikiLang === "en") {
     // English: Direct link to Fandom Wiki
-    return `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(itemName.replace(/\s+/g, '_'))}`;
+    const slug = mapEntry?.en || itemName.replace(/\s+/g, '_');
+    return `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(slug)}`;
   } else {
-    // Japanese: Search on Wikiwiki (safest for items)
+    // Japanese: Map entry direct link or search on Wikiwiki
+    if (mapEntry?.jp) {
+      return `https://wikiwiki.jp/eft/${mapEntry.jp}`;
+    }
     return `https://wikiwiki.jp/eft/?cmd=search&word=${encodeURIComponent(itemName)}`;
   }
 }
@@ -33,6 +38,7 @@ const db = getFirestore(app);
 
 let TASKS = [];
 let LK_TASKS = [];
+let ITEM_MAP = {};
 let HIDEOUT_DATA = {};
 let userData = { tasks: {}, hideout: {}, favorites: {}, traders: {} };
 let itemProgress = {};
@@ -47,14 +53,16 @@ let activeTraders = [...TRADERS];
 
 async function init() {
   try {
-    const [resTasks, resLKTasks, resHideout] = await Promise.all([
+    const [resTasks, resLKTasks, resHideout, resItemMap] = await Promise.all([
       fetch("./tasks_kappa.json"),
       fetch("./tasks_lightkeeper.json"),
-      fetch("./hideout_data.json")
+      fetch("./hideout_data.json"),
+      fetch("./item_map.json")
     ]);
     TASKS = await resTasks.json();
     LK_TASKS = await resLKTasks.json();
     HIDEOUT_DATA = await resHideout.json();
+    ITEM_MAP = await resItemMap.json();
 
     onAuthStateChanged(auth, async (user) => {
       if (user) {
