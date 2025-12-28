@@ -52,7 +52,7 @@
 		],
 		"kappaRequired": true,
 		"requiredKeys": [
-			"Machinery key"
+			"特殊車両の鍵"
 		]
 	},
 	{
@@ -73,7 +73,10 @@
 		"preRequisites": [
 			"background_check"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Tarcone 管理事務室の鍵"
+		]
 	},
 	{
 		"id": "bp_depot",
@@ -115,7 +118,7 @@
 		],
 		"kappaRequired": true,
 		"requiredKeys": [
-			"Portable cabin key of Customs Factory zone"
+			"可搬式の詰所の鍵"
 		]
 	},
 	{
@@ -134,16 +137,6 @@
 				"fir": true
 			}
 		]
-	},
-	{
-		"id": "shaking_up_teller",
-		"name": "Shaking up teller",
-		"trader": "Prapor",
-		"requiredLevel": 10,
-		"preRequisites": [
-			"ice_cream_cones"
-		],
-		"kappaRequired": true
 	},
 	{
 		"id": "no_place_for_renegades",
@@ -177,14 +170,14 @@
 	},
 	{
 		"id": "shaking_up_the_teller",
-		"name": "Shaking Up the Teller",
+		"name": "Shaking up the Teller",
 		"trader": "Prapor",
 		"preRequisites": [
 			"ice_cream_cones"
 		],
 		"kappaRequired": true,
 		"requiredKeys": [
-			"Cabinet key"
+			"社員寮203号室の鍵"
 		]
 	},
 	{
@@ -530,7 +523,10 @@
 		"preRequisites": [
 			"sanitary_standards_part_2"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"社員寮114号室の鍵"
+		]
 	},
 	{
 		"id": "car_repair",
@@ -567,7 +563,10 @@
 		"preRequisites": [
 			"health_care_privacy_part_1"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"保養所 西棟306号室の鍵"
+		]
 	},
 	{
 		"id": "health_care_privacy_part_3",
@@ -613,7 +612,10 @@
 		"preRequisites": [
 			"health_care_privacy_part_5"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Factory 非常口の鍵"
+		]
 	},
 	{
 		"id": "disease_history",
@@ -623,7 +625,11 @@
 		"preRequisites": [
 			"pharmacist"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"RB-KSM の鍵",
+			"RB-SMP の鍵"
+		]
 	},
 	{
 		"id": "postman_pat_part_2",
@@ -653,7 +659,10 @@
 		"preRequisites": [
 			"colleagues_part_1"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"コテージの裏口の鍵"
+		]
 	},
 	{
 		"id": "colleagues_part_3",
@@ -664,7 +673,24 @@
 			"colleagues_part_2",
 			"huntsman_sadist"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "AHF1-M の注射器",
+				"count": 1,
+				"fir": true
+			},
+			{
+				"name": "3-(b-TG) の注射器",
+				"count": 1,
+				"fir": true
+			},
+			{
+				"name": "TerraGroup Labs アクセスキーカード",
+				"count": 10,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "out_of_curiosity",
@@ -819,7 +845,10 @@
 		"preRequisites": [
 			"drug_trafficking"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"会社役員室の鍵"
+		]
 	},
 	{
 		"id": "closer_to_the_people",
@@ -1365,7 +1394,10 @@
 		"preRequisites": [
 			"supplier"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"用途不明の鍵"
+		]
 	},
 	{
 		"id": "stirrup",
@@ -1379,7 +1411,7 @@
 	},
 	{
 		"id": "whats_on_the_flash_drive",
-		"name": "What's on the Flash Drive?",
+		"name": "What’s on the Flash Drive?",
 		"trader": "Skier",
 		"requiredLevel": 8,
 		"preRequisites": [
@@ -1402,7 +1434,11 @@
 		"preRequisites": [
 			"whats_on_the_flash_drive"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"社員寮303号室の鍵",
+			"トレーラーパークの可搬式詰所の鍵"
+		]
 	},
 	{
 		"id": "chemical_part_1",
@@ -1412,7 +1448,10 @@
 		"preRequisites": [
 			"golden_swag"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"社員寮220号室の鍵"
+		]
 	},
 	{
 		"id": "chemical_part_2",
@@ -1422,7 +1461,10 @@
 		"preRequisites": [
 			"chemical_part_1"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"社員寮220号室の鍵"
+		]
 	},
 	{
 		"id": "chemical_part_3",
@@ -1454,7 +1496,11 @@
 		"preRequisites": [
 			"chemical_part_4"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"保養所 西棟休憩室112号室の鍵",
+			"EMERCOM の仮設診療所の鍵"
+		]
 	},
 	{
 		"id": "vitamins_part_2",
@@ -1468,7 +1514,7 @@
 	},
 	{
 		"id": "friend_from_the_west_part_1",
-		"name": "Friend From the West - Part 1",
+		"name": "Friend from the West - Part 1",
 		"trader": "Skier",
 		"requiredLevel": 9,
 		"preRequisites": [
@@ -1478,7 +1524,7 @@
 	},
 	{
 		"id": "friend_from_the_west_part_2",
-		"name": "Friend From the West - Part 2",
+		"name": "Friend from the West - Part 2",
 		"trader": "Skier",
 		"requiredLevel": 9,
 		"preRequisites": [
@@ -1533,7 +1579,12 @@
 		"preRequisites": [
 			"friend_from_the_west_part_2"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"保養所 西棟216号室の鍵",
+			"保養所 東棟306号室の鍵",
+			"保養所 東棟308号室の鍵"
+		]
 	},
 	{
 		"id": "rigged_game",
@@ -1674,7 +1725,10 @@
 		"preRequisites": [
 			"the_cult_part_1"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"マークの刻まれた社員寮314号室の鍵"
+		]
 	},
 	{
 		"id": "spa_tour_part_1",
@@ -1736,7 +1790,11 @@
 		"preRequisites": [
 			"spa_tour_part_3"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"保養所 西棟219号室の鍵",
+			"保養所 西棟220号室の鍵"
+		]
 	},
 	{
 		"id": "spa_tour_part_5",
@@ -1798,7 +1856,11 @@
 		"preRequisites": [
 			"spa_tour_part_7"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"保養所 東棟306号室の鍵",
+			"保養所 東棟308号室の鍵"
+		]
 	},
 	{
 		"id": "cargo_x_part_2",
@@ -1868,7 +1930,10 @@
 		"preRequisites": [
 			"wet_job_part_4"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"保養所 東棟328号室の鍵"
+		]
 	},
 	{
 		"id": "wet_job_part_6",
@@ -1946,7 +2011,10 @@
 			"samples",
 			"huntsman_sadist"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Keycard with a blue marking"
+		]
 	},
 	{
 		"id": "lend_lease_part_2",
@@ -1984,7 +2052,10 @@
 		"preRequisites": [
 			"humanitarian_supplies"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"RB-ST の鍵"
+		]
 	},
 	{
 		"id": "cargo_x_part_4",
@@ -2038,7 +2109,10 @@
 		"name": "Saving the Mole",
 		"trader": "Mechanic",
 		"preRequisites": [],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"TerraGroup 科学オフィスの鍵"
+		]
 	},
 	{
 		"id": "introduction",
@@ -2362,7 +2436,10 @@
 		"preRequisites": [
 			"back_door"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"RB-ST の鍵"
+		]
 	},
 	{
 		"id": "back_door",
@@ -2449,7 +2526,10 @@
 		"preRequisites": [
 			"farming_part_2"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"Tarcone 管理事務室の鍵"
+		]
 	},
 	{
 		"id": "farming_part_4",
@@ -2555,7 +2635,10 @@
 			"colleagues_part_1",
 			"anesthesia"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"青いテープの貼られた保養所の事務室の鍵"
+		]
 	},
 	{
 		"id": "corporate_secrets",
@@ -2584,7 +2667,10 @@
 		"preRequisites": [
 			"farming_part_2"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"手術室の鍵"
+		]
 	},
 	{
 		"id": "only_business",
@@ -2632,7 +2718,13 @@
 		"preRequisites": [
 			"a_fuel_matter"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"RB-ORB1 の鍵",
+			"RB-ORB2 の鍵",
+			"RB-ORB3 の鍵",
+			"RB-OB の鍵"
+		]
 	},
 	{
 		"id": "the_blood_of_war_part_1",
@@ -2734,7 +2826,10 @@
 		"preRequisites": [
 			"database_part_1"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"OLI 物流部事務室の鍵"
+		]
 	},
 	{
 		"id": "minibus",
@@ -2857,7 +2952,14 @@
 			"sales_night",
 			"the_key_to_success"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "Goshan のレジの鍵",
+				"count": 1,
+				"fir": false
+			}
+		]
 	},
 	{
 		"id": "living_high_part_1",
@@ -3145,7 +3247,14 @@
 		"preRequisites": [
 			"nostalgia"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "TerraGroup Labs アクセスキーカード",
+				"count": 2,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "huntsman_trophy",
@@ -3155,7 +3264,14 @@
 		"preRequisites": [
 			"huntsman_secured_perimeter"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "TT-33 7.62x25 TT pistol (Golden)",
+				"count": 1,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "huntsman_justice",
@@ -3176,7 +3292,14 @@
 			"sales_night",
 			"huntsman_forest_cleaning"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "\"Maska-1SCh\" bulletproof helmet (Killa)",
+				"count": 1,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "huntsman_woods_keeper",
@@ -3186,7 +3309,14 @@
 		"preRequisites": [
 			"huntsman_secured_perimeter"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "Shturman's stash key",
+				"count": 1,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "hunting_trip",
@@ -3207,7 +3337,14 @@
 			"scout",
 			"huntsman_forest_cleaning"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "BOSS キャップ",
+				"count": 1,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "huntsman_eraser_part_1",
@@ -3400,7 +3537,10 @@
 			"a_healthy_alternative",
 			"one_less_loose_end"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredKeys": [
+			"TerraGroup ストレージルーム キーカード"
+		]
 	},
 	{
 		"id": "claustrophobia",
@@ -3427,7 +3567,14 @@
 		"preRequisites": [
 			"work_smarter"
 		],
-		"kappaRequired": true
+		"kappaRequired": true,
+		"requiredItems": [
+			{
+				"name": "金属製燃料タンク",
+				"count": 2,
+				"fir": true
+			}
+		]
 	},
 	{
 		"id": "huntsman_sadist",
